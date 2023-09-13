@@ -25,9 +25,13 @@ export default function Home() {
 			</nav>
 			<div className="hidden w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-900/0 via-zinc-900/50 to-zinc-900/0" />
 			<Particles
-				className="absolute inset-0 -z-10 animate-fade-in"
+				className="absolute hidden sm:block inset-0 -z-10 animate-fade-in"
 				quantity={350}
-			/>{/**TODO: not that much particles for mobile */}
+			/>
+			<Particles
+				className="absolute inset-0 block sm:hidden -z-10 animate-fade-in"
+				quantity={50}
+			/>
 			<h1 className="z-10 text-4xl text-transparent duration-1000 bg-black cursor-default animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text ">
 				Kurt Schambach
 			</h1>
