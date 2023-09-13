@@ -13,6 +13,17 @@
   src: url('fonts/ibm_plex/IBM-Plex-Mono/fonts/complete/otf/IBMPlexMono-Regular.otf') format('opentype');
 }
 
+::selection {
+  background-color: #34d399;
+  color: #171717;
+}
+
+/* Fallback for older Browsers */
+::-moz-selection {
+  background-color: #34d399;
+  color: #171717;
+}
+
 body, html {
   font-family: 'IBM Plex', monospace, sans-serif;
 }
