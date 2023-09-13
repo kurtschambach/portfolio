@@ -7,7 +7,7 @@ import { Article } from "./article";
 import { Redis } from "@upstash/redis";
 import { Eye } from "lucide-react";
 
-const redis = Redis.fromEnv();
+//const redis = Redis.fromEnv();
 
 export const revalidate = 60;
 export default async function ProjectsPage() {
@@ -20,7 +20,6 @@ export default async function ProjectsPage() {
 		return acc;
 	}, {} as Record<string, number>);*/
 
-	const views = null;
 
 	const featured = allProjects.find((project) => project.slug === "plant-org")!;
 	const top2 = allProjects.find((project) => project.slug === "py-shop")!;
@@ -68,7 +67,7 @@ export default async function ProjectsPage() {
 										) : (
 											<span>SOON</span>
 										)}
-									</div>
+									</div>{/**TODO: mybe here wie bei vercel das icon, um die website zu sehen */}
 									{/*<span className="flex items-center gap-1 text-xs text-emerald-500">
 										<Eye className="w-4 h-4" />{" "}
 										{Intl.NumberFormat("de-DE", { notation: "compact" }).format(

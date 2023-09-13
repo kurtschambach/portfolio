@@ -16,7 +16,7 @@ export default function Home() {
 						<Link
 							key={item.href}
 							href={item.href}
-							className="text-xl font-bold font-display duration-500 text-zinc-300 hover:text-zinc-100"
+							className="text-xl font-bold font-plex duration-500 text-zinc-300 hover:text-zinc-100"
 						>
 							{item.name}
 						</Link>
@@ -38,7 +38,7 @@ export default function Home() {
 
 			<div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-900/0 via-zinc-900/50 to-zinc-900/0" />
 			<div className="my-16 text-center animate-fade-in">
-				<h2 className="text-sm font-plex text-emerald-200 ">
+				<h2 className="text-sm font-bold font-plex text-emerald-200 ">
 					Hi, my name is Kurt, I am a Software Developer at {" "}
 					<Link
 						target="_blank"
