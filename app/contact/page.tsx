@@ -1,16 +1,16 @@
 "use client";
-import { Github, Mail, Twitter } from "lucide-react";
+import { CoffeeIcon, Github, Mail } from "lucide-react";
 import Link from "next/link";
 import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
 
 const socials = [
-	/*{
-		icon: <Twitter size={20} />,
-		href: "https://twitter.com/chronark_",
-		label: "Twitter",
-		handle: "@chronark_",
-	},*/
+	{
+		icon: <CoffeeIcon size={20} />,
+		href: "https://buymeacoffee.com/kurtschambach",
+		label: "Buy Me a Coffee",
+		handle: "Kurt",
+	},
 	{
 		icon: <Mail size={20} />,
 		href: "mailto:kurt.schambach@gmail.com",

@@ -32,13 +32,13 @@ export default function Home() {
 				className="absolute inset-0 block sm:hidden -z-10 animate-fade-in"
 				quantity={50}
 			/>
-			<h1 className="z-10 text-4xl text-transparent duration-1000 bg-black cursor-default animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text ">
+			<h1 className="z-10 text-4xl text-transparent duration-1000 bg-black cursor-default animate-title font-bold font-plex sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text ">
 				Kurt Schambach
 			</h1>
 
 			<div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-900/0 via-zinc-900/50 to-zinc-900/0" />
 			<div className="my-16 text-center animate-fade-in">
-				<h2 className="text-sm text-emerald-200 ">
+				<h2 className="text-sm font-plex text-emerald-200 ">
 					Hi, my name is Kurt, I am a Software Developer at {" "}
 					<Link
 						target="_blank"

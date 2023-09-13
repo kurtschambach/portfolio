@@ -31,6 +31,7 @@ module.exports = {
 			fontFamily: {
 				sans: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
 				display: ["var(--font-calsans)"],
+				plex: ["IBM Plex"],
 			},
 			backgroundImage: {
 				"gradient-radial":
