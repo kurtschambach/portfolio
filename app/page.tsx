@@ -53,7 +53,7 @@ export default function Home() {
 					<Link
 						target="_blank"
 						href="https://plant-organizer.vercel.app"
-						className="underline duration-500 hover:text-zinc-300"
+						className="underline duration-500 hover:text-emerald-100"
 					>
 						Plant Organizer
 					</Link>{" "}
