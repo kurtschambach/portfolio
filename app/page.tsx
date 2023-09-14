@@ -16,14 +16,14 @@ export default function Home() {
 						<Link
 							key={item.href}
 							href={item.href}
-							className="text-xl font-bold font-plex duration-500 text-zinc-300 hover:text-zinc-100"
+							className="text-xl font-bold font-plex duration-500 text-emerald-400 hover:text-zinc-200"
 						>
 							{item.name}
 						</Link>
 					))}
 				</ul>
 			</nav>
-			<div className="hidden w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-900/0 via-zinc-900/50 to-zinc-900/0" />
+			<div className="hidden w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-black/0 via-black/50 to-black/0" />
 			<Particles
 				className="absolute hidden sm:block inset-0 -z-10 animate-fade-in"
 				quantity={350}
@@ -32,14 +32,14 @@ export default function Home() {
 				className="absolute inset-0 block sm:hidden -z-10 animate-fade-in"
 				quantity={50}
 			/>
-			<h1 className="z-10 text-4xl text-transparent duration-1000 bg-black cursor-default animate-title font-bold font-plex sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text ">
-				Kurt Schambach
+			<h1 className="z-10 text-4xl text-transparent duration-1000 bg-black/80 cursor-default animate-title font-bold font-plex sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text ">
+				a3chron
 			</h1>
 
-			<div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-900/0 via-zinc-900/50 to-zinc-900/0" />
+			<div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-black/0 via-black/50 to-black/0" />
 			<div className="my-16 text-center animate-fade-in">
-				<h2 className="text-sm font-bold font-plex text-emerald-200 ">
-					Hi, my name is Kurt, I am a Software Developer at {" "}
+				<h2 className="text-sm font-bold font-plex text-emerald-300 ">
+					Hi, my name is Kurt Schambach, I am a Software Developer at {" "}
 					<Link
 						target="_blank"
 						href="https://www.titanom.com"
