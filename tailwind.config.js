@@ -42,6 +42,13 @@ module.exports = {
 				title: "title 3s ease-out forwards",
 				"fade-left": "fade-left 3s ease-in-out forwards",
 				"fade-right": "fade-right 3s ease-in-out forwards",
+				/**"blur": "blur 10s ease-in-out infinite forwards",
+				"blur1": "blur1 10s ease-in-out infinite forwards",
+				"blur2": "blur2 10s ease-in-out infinite forwards",
+				"blur3": "blur3 10s ease-in-out infinite forwards",
+				"blur4": "blur4 10s ease-in-out infinite forwards",
+				"blur5": "blur5 10s ease-in-out infinite forwards",
+				"blur6": "blur6 10s ease-in-out infinite forwards",*/
 			},
 			keyframes: {
 				"fade-in": {
@@ -102,6 +109,125 @@ module.exports = {
 						opacity: "100%",
 					},
 				},
+				/**"blur": {
+					"0%": {
+						opacity: "100%",
+					},
+					"10%": {
+						opacity: "80%",
+					},
+					"20%": {
+						opacity: "20%",
+					},
+					"30%": {
+						opacity: "80%",
+					},
+					"100%": {
+						opacity: "100%",
+					},
+				},
+				"blur1": {
+					"0%": {
+						opacity: "100%",
+					},
+					"12%": {
+						opacity: "80%",
+					},
+					"22%": {
+						opacity: "20%",
+					},
+					"32%": {
+						opacity: "80%",
+					},
+					"100%": {
+						opacity: "100%",
+					},
+				},
+				"blur2": {
+					"0%": {
+						opacity: "100%",
+					},
+					"14%": {
+						opacity: "80%",
+					},
+					"24%": {
+						opacity: "20%",
+					},
+					"34%": {
+						opacity: "80%",
+					},
+					"100%": {
+						opacity: "100%",
+					},
+				},
+				"blur3": {
+					"0%": {
+						opacity: "100%",
+					},
+					"16%": {
+						opacity: "80%",
+					},
+					"26%": {
+						opacity: "20%",
+					},
+					"36%": {
+						opacity: "80%",
+					},
+					"100%": {
+						opacity: "100%",
+					},
+				},
+				"blur4": {
+					"0%": {
+						opacity: "100%",
+					},
+					"18%": {
+						opacity: "80%",
+					},
+					"28%": {
+						opacity: "20%",
+					},
+					"38%": {
+						opacity: "80%",
+					},
+					"100%": {
+						opacity: "100%",
+					},
+				},
+				"blur5": {
+					"0%": {
+						opacity: "100%",
+					},
+					"20%": {
+						opacity: "80%",
+					},
+					"30%": {
+						opacity: "20%",
+					},
+					"40%": {
+						opacity: "80%",
+					},
+					"100%": {
+						opacity: "100%",
+					},
+				},
+				"blur6": {
+					"0%": {
+						opacity: "100%",
+					},
+					"22%": {
+						opacity: "80%",
+					},
+					"32%": {
+						opacity: "20%",
+					},
+					"42%": {
+						opacity: "80%",
+					},
+					"100%": {
+						opacity: "100%",
+					},
+				},*/
 			},
 			colors: {
 				"c-black": "#171717",
