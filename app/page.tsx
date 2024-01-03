@@ -15,7 +15,7 @@ export default function Home() {
 				className="absolute inset-0 block sm:hidden -z-10 animate-fade-in"
 				quantity={50}
 					/>*/}
-			<div className="flex flex-row flex-wrap items-start justify-start gap-6 h-80">
+			<div className="flex flex-row flex-wrap items-start justify-center gap-6 h-80 w-full">
 				<InfoCard />
 				<GithubCard />
 				<ProjectsCard />
