@@ -1,18 +1,16 @@
 import type { Project } from "@/.contentlayer/generated";
 import Link from "next/link";
-import { Eye, View } from "lucide-react";
 
 type Props = {
 	project: Project;
-	views: number;
 };
 
-export const Article: React.FC<Props> = ({ project, views }) => {
+export const Article: React.FC<Props> = ({ project }) => {
 	return (
 		<Link href={`/projects/${project.slug}`}>
 			<article className="p-4 md:p-8">
 				<div className="flex justify-between gap-2 items-center">
-					<span className="text-xs duration-150 text-emerald-200 group-hover:text-black group-hover:border-black drop-shadow-orange">
+					<span className="text-xs duration-300 text-text">
 						{project.date ? (
 							<time dateTime={new Date(project.date).toISOString()}>
 								{Intl.DateTimeFormat(undefined, { dateStyle: "medium" }).format(
@@ -23,15 +21,11 @@ export const Article: React.FC<Props> = ({ project, views }) => {
 							<span>SOON</span>
 						)}
 					</span>
-					{/*<span className="text-emerald-500 text-xs flex items-center gap-1">
-						<Eye className="w-4 h-4" />{" "}
-						{Intl.NumberFormat("en-US", { notation: "compact" }).format(views)}
-						</span>*/}
 				</div>
-				<h2 className="z-20 text-xl font-medium duration-150 lg:text-3xl text-emerald-200 group-hover:text-black font-display">
+				<h2 className="z-20 text-xl font-medium duration-300 lg:text-3xl text-hover font-display">
 					{project.title}
 				</h2>
-				<p className="z-20 mt-4 text-sm duration-150 text-emerald-400 group-hover:text-black">
+				<p className="z-20 mt-4 text-sm duration-300 text-text group-hover:text-hover">
 					{project.description}
 				</p>
 			</article>

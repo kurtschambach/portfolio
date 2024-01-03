@@ -103,7 +103,7 @@ export default function Particles({
 		const targetAlpha = parseFloat((Math.random() * 0.8 + 0.1).toFixed(1));
 		const dx = (Math.random() - 0.5) * 0.4;
 		const dy = (Math.random() - 0.5) * 0.4;
-		const magnetism = 0.1 + Math.random() * (size ** 2) / 3;
+		const magnetism = 0.1 + (Math.random() * size ** 2) / 3;
 		return {
 			x,
 			y,
@@ -124,7 +124,7 @@ export default function Particles({
 			context.current.translate(translateX, translateY);
 			context.current.beginPath();
 			context.current.arc(x, y, size, 0, 2 * Math.PI);
-			context.current.fillStyle = `rgba(255, 200, 180, ${alpha})`; // good orange: 252, 211, 77
+			context.current.fillStyle = `rgba(100, 200, 180, ${alpha})`; // good orange: 252, 211, 77
 			context.current.fill();
 			context.current.setTransform(dpr, 0, 0, dpr, 0, 0);
 

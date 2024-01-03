@@ -7,6 +7,13 @@ const nextConfig = {
 		appDir: true,
 		mdxRs: true,
 	},
+	images: {
+		remotePatterns: [
+			{
+				hostname: "avatars.githubusercontent.com",
+			},
+		],
+	},
 };
 
 export default withContentlayer(nextConfig);
