@@ -30,11 +30,11 @@ export default function Example() {
 			<div className="container flex items-center justify-center h-full w-full pr-4 mx-auto">
 				<div className="grid w-full grid-cols-1 gap-8 mx-auto mt-32 sm:mt-0 sm:grid-cols-3 lg:gap-16">
 					{socials.map((s) => (
-						<Card>
+						<Card key={s.handle}>
 							<Link
 								href={s.href}
 								target="_blank"
-								className="p-4 relative flex flex-col items-center gap-4 duration-700 group md:gap-24 lg:pb-32 p-16"
+								className="relative flex flex-col items-center gap-4 duration-700 group md:gap-24 lg:pb-32 p-16"
 							>
 								<span
 									className="absolute w-px h-2/3 bg-gradient-to-b from-violet via-transparent to-transparent"

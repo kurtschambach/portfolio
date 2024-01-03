@@ -87,7 +87,7 @@ export default async function ProjectsPage() {
 						))}
 					</div>
 				</div>
-				<div className="w-full h-px bg-gradient-to-l from-black/0 via-black to-black/0" />
+				<div className="w-full h-px bg-gradient-to-l from-bg/0 via-violet to-bg/0" />
 
 				<div className="grid grid-cols-1 gap-4 mx-auto lg:mx-0 md:grid-cols-3">
 					<div className="grid grid-cols-1 gap-4">
