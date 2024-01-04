@@ -1,4 +1,4 @@
-export const andromeda = {
+{
     "name": "Andromeda",
     "type": "dark",
     "colors": {
@@ -364,4 +364,4 @@ export const andromeda = {
             }
         }
     ]
-};
+}
