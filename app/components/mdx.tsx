@@ -11,7 +11,7 @@ const components = {
 	h1: ({ className, ...props }) => (
 		<h1
 			className={clsx(
-				"[&:not(:first-child)]:mt-16 scroll-m-20 text-4xl font-bold tracking-tight text-text",
+				"[&:not(:first-child)]:mt-16 scroll-m-20 text-4xl font-bold tracking-tight text-inherit",
 				className,
 			)}
 			{...props}
@@ -20,7 +20,7 @@ const components = {
 	h2: ({ className, ...props }) => (
 		<h2
 			className={clsx(
-				"mt-10 scroll-m-20 border-b-2 border-b-text text-text pb-1 text-3xl font-semibold tracking-tight first:mt-0",
+				"mt-10 scroll-m-20 border-b-2 border-b-text text-inherit pb-1 text-3xl font-semibold tracking-tight first:mt-0",
 				className,
 			)}
 			{...props}
@@ -29,7 +29,7 @@ const components = {
 	h3: ({ className, ...props }) => (
 		<h3
 			className={clsx(
-				"mt-8 scroll-m-20 text-2xl text-text font-semibold tracking-tight",
+				"mt-8 scroll-m-20 text-2xl text-inherit font-semibold tracking-tight",
 				className,
 			)}
 			{...props}
@@ -38,7 +38,7 @@ const components = {
 	h4: ({ className, ...props }) => (
 		<h4
 			className={clsx(
-				"mt-8 scroll-m-20 text-xl text-text font-semibold tracking-tight",
+				"mt-8 scroll-m-20 text-xl text-inherit font-semibold tracking-tight",
 				className,
 			)}
 			{...props}
@@ -47,7 +47,7 @@ const components = {
 	h5: ({ className, ...props }) => (
 		<h5
 			className={clsx(
-				"mt-8 scroll-m-20 text-lg text-text font-semibold tracking-tight",
+				"mt-8 scroll-m-20 text-lg text-inherit font-semibold tracking-tight",
 				className,
 			)}
 			{...props}
@@ -56,7 +56,7 @@ const components = {
 	h6: ({ className, ...props }) => (
 		<h6
 			className={clsx(
-				"mt-8 scroll-m-20 text-base text-text font-semibold tracking-tight",
+				"mt-8 scroll-m-20 text-base text-inherit font-semibold tracking-tight",
 				className,
 			)}
 			{...props}
@@ -74,7 +74,7 @@ const components = {
 	p: ({ className, ...props }) => (
 		<p
 			className={clsx(
-				"leading-7 text-text [&:not(:first-child)]:mt-6",
+				"leading-7 text-inherit [&:not(:first-child)]:mt-6",
 				className,
 			)}
 			{...props}
@@ -82,13 +82,13 @@ const components = {
 	),
 	ul: ({ className, ...props }) => (
 		<ul
-			className={clsx("my-6 ml-6 text-text list-disc", className)}
+			className={clsx("my-6 ml-6 text-inherit list-disc", className)}
 			{...props}
 		/>
 	),
 	ol: ({ className, ...props }) => (
 		<ol
-			className={clsx("my-6 ml-6 text-text list-decimal", className)}
+			className={clsx("my-6 ml-6 text-inherit list-decimal", className)}
 			{...props}
 		/>
 	),
@@ -98,7 +98,7 @@ const components = {
 	blockquote: ({ className, ...props }) => (
 		<blockquote
 			className={clsx(
-				"mt-6 border-l-2 border-dark-bg pl-6 italic text-hover bg-dark-bg rounded-lg",
+				"mt-6 border-l-2 border-dark-bg pl-6 italic text-inherit bg-dark-bg rounded-lg",
 				className,
 			)}
 			{...props}
@@ -160,7 +160,7 @@ const components = {
 	code: ({ className, ...props }) => (
 		<code
 			className={clsx(
-				"relative rounded border bg-dark-bg bg-opacity-50 py-[0.2rem] px-[0.3rem] font-mono text-sm text-text",
+				"relative rounded border bg-dark-bg bg-opacity-50 py-[0.2rem] px-[0.3rem] font-mono text-sm text-inherit",
 				className,
 			)}
 			{...props}
