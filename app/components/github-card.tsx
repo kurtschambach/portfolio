@@ -7,7 +7,7 @@ const GithubCard = () => {
 		<Link
 			href="https://github.com/kurtschambach/"
 			target="_blank"
-			className="text-start font-bold bg-dark-bg p-4 px-6 rounded-xl w-72 h-full text-text duration-500 flex flex-col items-center justify-center"
+			className="text-start font-bold z-10 bg-dark-bg p-4 px-6 rounded-xl w-72 h-full text-text duration-500 flex flex-col items-center justify-center"
 		>
 			<span className="bg-dark-bg rounded-full border-2 border-dark-bg p-2">
 				<Image

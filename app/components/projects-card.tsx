@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const ProjectsCard = () => {
 	return (
-		<div className="font-bold bg-dark-bg p-6 py-12 rounded-xl w-72 h-full duration-500 flex flex-col items-center justify-center gap-6 text-text hover:text-hover">
+		<div className="font-bold bg-dark-bg z-10 p-6 py-12 rounded-xl w-72 h-full duration-500 flex flex-col items-center justify-center gap-6 text-text hover:text-hover">
 			<h2 className="text-lg">Some of my Apps</h2>
 			<Link
 				href="https://plant-organizer.vercel.app"
