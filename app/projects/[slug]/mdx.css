@@ -1,5 +1,5 @@
 [data-rehype-pretty-code-fragment] code {
-    @apply grid min-w-full break-words rounded-2xl border-0 bg-transparent p-0 text-sm;
+    @apply grid min-w-full break-words rounded-2xl border-0 bg-transparent p-0 text-sm scrollbar-thin scrollbar-track-bg scrollbar-thumb-text;
     counter-reset: line;
     box-decoration-break: clone;
   }
@@ -13,7 +13,7 @@
     width: 1rem;
     margin-right: 1rem;
     text-align: right;
-    color: #e96e7b;
+    color: #526777;
   }
   [data-rehype-pretty-code-fragment] .line--highlighted {
     @apply bg-zinc-300 bg-opacity-10 rounded-lg;

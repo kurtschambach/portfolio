@@ -11,7 +11,7 @@ const components = {
 	h1: ({ className, ...props }) => (
 		<h1
 			className={clsx(
-				"mt-12 scroll-m-20 text-4xl font-bold tracking-tight text-text",
+				"[&:not(:first-child)]:mt-16 scroll-m-20 text-4xl font-bold tracking-tight text-text",
 				className,
 			)}
 			{...props}
@@ -20,7 +20,7 @@ const components = {
 	h2: ({ className, ...props }) => (
 		<h2
 			className={clsx(
-				"mt-10 scroll-m-20 border-b border-b-text text-text pb-1 text-3xl font-semibold tracking-tight first:mt-0",
+				"mt-10 scroll-m-20 border-b-2 border-b-text text-text pb-1 text-3xl font-semibold tracking-tight first:mt-0",
 				className,
 			)}
 			{...props}
@@ -73,15 +73,24 @@ const components = {
 	),
 	p: ({ className, ...props }) => (
 		<p
-			className={clsx("leading-7 text-text [&:not(:first-child)]:mt-6", className)}
+			className={clsx(
+				"leading-7 text-text [&:not(:first-child)]:mt-6",
+				className,
+			)}
 			{...props}
 		/>
 	),
 	ul: ({ className, ...props }) => (
-		<ul className={clsx("my-6 ml-6 text-text list-disc", className)} {...props} />
+		<ul
+			className={clsx("my-6 ml-6 text-text list-disc", className)}
+			{...props}
+		/>
 	),
 	ol: ({ className, ...props }) => (
-		<ol className={clsx("my-6 ml-6 text-text list-decimal", className)} {...props} />
+		<ol
+			className={clsx("my-6 ml-6 text-text list-decimal", className)}
+			{...props}
+		/>
 	),
 	li: ({ className, ...props }) => (
 		<li className={clsx("mt-2", className)} {...props} />
@@ -117,10 +126,7 @@ const components = {
 	),
 	tr: ({ className, ...props }: React.HTMLAttributes<HTMLTableRowElement>) => (
 		<tr
-			className={clsx(
-				"m-0 border-t border-dark-bg p-0 even:bg-bg",
-				className,
-			)}
+			className={clsx("m-0 border-t border-dark-bg p-0 even:bg-bg", className)}
 			{...props}
 		/>
 	),
@@ -145,7 +151,7 @@ const components = {
 	pre: ({ className, ...props }) => (
 		<pre
 			className={clsx(
-				"mt-6 mb-4 overflow-x-auto rounded-2xl bg-dark-bg py-4",
+				"mt-6 mb-4 duration-1000 overflow-x-auto rounded-2xl bg-dark-bg group-hover:bg-bg scrollbar-thin scrollbar-track-bg group-hover:scrollbar-track-dark-bg scrollbar-thumb-text py-4",
 				className,
 			)}
 			{...props}

@@ -7,12 +7,13 @@ import Navigation from "./components/navigation";
 export const metadata: Metadata = {
 	title: "a3chron - Kurt Schambach",
 	description:
-		"Hi, my name is Kurt Schambach. I'm a Software engineer at Titanom Technologies, working on some of my own Projects in free time",
+		"Hi, my name is Kurt Schambach. I'm a Software Developer at Titanom Technologies, working on some of my own Projects in free time",
 	openGraph: {
 		title: "Kurt Schambach",
 		description:
-			"Hi, my name is Kurt Schambach. I'm a Software engineer at Titanom Technologies, working on some of my own Projects in free time",
+			"Hi, my name is Kurt Schambach. I'm a Software Developer at Titanom Technologies, working on some of my own Projects in free time",
 		url: "https://a3chron.vercel.app/",
+		emails: "kurt.schambach@gmail.com",
 		siteName: "a3chron - Kurt Schambach - Portfolio",
 		locale: "de-DE",
 		type: "website",

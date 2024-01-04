@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { ArrowRight, Linkedin, Mail, X } from "lucide-react";
 import Link from "next/link";
@@ -8,19 +8,26 @@ const ContactCard = () => {
 	const [notifyCopy, setNotifyCopy] = useState(false);
 
 	const handleCopy = (text: string) => {
-		navigator.clipboard.writeText(text).then(() => setNotifyCopy(true)).catch((error) => {
-			console.error("Error copying text: ", error);
-		});
+		navigator.clipboard
+			.writeText(text)
+			.then(() => setNotifyCopy(true))
+			.catch((error) => {
+				console.error("Error copying text: ", error);
+			});
 	};
 	return (
 		<>
 			{notifyCopy && (
-				<div onClick={() => setNotifyCopy(false)} className="absolute left-0 top-0 w-screen h-screen flex flex-col items-center justify-end">
+				<div
+					onClick={() => setNotifyCopy(false)}
+					className="absolute left-0 top-0 w-screen h-screen flex flex-col items-center justify-end"
+				>
 					<div className="bg-primary/10 backdrop-blur-xl z-30 border-2 border-primary text-hover rounded-xl p-2 px-4 mb-12 flex flex-row items-center justify-between gap-4">
-						<span>
-							Copied Email to Clipboard
-						</span>
-						<X onClick={() => setNotifyCopy(false)} className="cursor-pointer" />
+						<span>Copied Email to Clipboard</span>
+						<X
+							onClick={() => setNotifyCopy(false)}
+							className="cursor-pointer"
+						/>
 					</div>
 				</div>
 			)}
@@ -32,7 +39,10 @@ const ContactCard = () => {
 							<Mail />
 							<span>Gmail</span>
 						</div>
-						<span onClick={() => handleCopy("kurt.schambach@gmail.com")} className="rounded-lg bg-dark-bg text-sm p-1 px-2 cursor-pointer">
+						<span
+							onClick={() => handleCopy("kurt.schambach@gmail.com")}
+							className="rounded-lg bg-dark-bg text-sm p-1 px-2 cursor-pointer"
+						>
 							Copy
 						</span>
 					</div>
@@ -41,7 +51,10 @@ const ContactCard = () => {
 							<Mail />
 							<span>Proton</span>
 						</div>
-						<span onClick={() => handleCopy("kurt.schambach@proton.me")} className="rounded-lg bg-dark-bg text-sm p-1 px-2 cursor-pointer">
+						<span
+							onClick={() => handleCopy("kurt.schambach@proton.me")}
+							className="rounded-lg bg-dark-bg text-sm p-1 px-2 cursor-pointer"
+						>
 							Copy
 						</span>
 					</div>

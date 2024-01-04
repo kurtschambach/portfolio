@@ -3,7 +3,7 @@ import remarkGfm from "remark-gfm";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import fs from 'node:fs';
+import fs from "node:fs";
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {
@@ -74,11 +74,8 @@ export default makeSource({
 				rehypePrettyCode,
 				{
 					theme: JSON.parse(
-						fs.readFileSync(
-						  './themes/andromeda.json',
-						  'utf-8',
-						),
-					  ),
+						fs.readFileSync("./themes/andromeda.json", "utf-8"),
+					),
 					onVisitLine(node) {
 						// Prevent lines from collapsing in `display: grid` mode, and allow empty
 						// lines to be copy/pasted
