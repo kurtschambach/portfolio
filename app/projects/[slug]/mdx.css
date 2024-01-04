@@ -13,7 +13,7 @@
     width: 1rem;
     margin-right: 1rem;
     text-align: right;
-    color: #C061CB;
+    color: #e96e7b;
   }
   [data-rehype-pretty-code-fragment] .line--highlighted {
     @apply bg-zinc-300 bg-opacity-10;
