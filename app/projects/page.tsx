@@ -28,8 +28,9 @@ export default async function ProjectsPage() {
 			<div className="space-y-8 md:space-y-16 pr-4">
 				<div className="max-w-3xl mx-auto lg:mx-0 font-plex px-2 md:px-8 text-hover text-sm">
 					<p className="mt-4">
-						In the detailed project articles, when scrolling down, the background should become darker, 
-						but for even more contrast, you can hover the text.
+						In the detailed project articles, when scrolling down, the
+						background should become darker, but for even more contrast, you can
+						hover the text.
 					</p>
 				</div>
 

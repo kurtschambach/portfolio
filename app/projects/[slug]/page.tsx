@@ -33,7 +33,11 @@ export default async function PostPage({ params }: Props) {
 			<Header project={project} />
 
 			<div className="group w-full h-full bg-bg hover:bg-dark-bg duration-1000 rounded-3xl mt-4">
-				<article className={`px-4 py-12 mx-auto text-text hover:text-hover duration-1000 text-lg font-bold bg-transparent prose prose-quoteless`}>
+				<article
+					className={
+						"px-4 py-12 mx-auto text-text hover:text-hover duration-1000 text-lg font-bold bg-transparent prose prose-quoteless"
+					}
+				>
 					<Mdx code={project.body.code} />
 				</article>
 			</div>
