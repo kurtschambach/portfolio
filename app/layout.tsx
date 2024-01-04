@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 		title: "Kurt Schambach",
 		description:
 			"Hi, my name is Kurt Schambach. I'm a Software engineer at Titanom Technologies, working on some of my own Projects in free time",
-		url: "https://kurtschambach.vercel.app/",
+		url: "https://a3chron.vercel.app/",
 		siteName: "a3chron - Kurt Schambach - Portfolio",
 		locale: "de-DE",
 		type: "website",
@@ -31,6 +31,7 @@ export const metadata: Metadata = {
 	icons: {
 		shortcut: "/favicon.png",
 	},
+	metadataBase: new URL("https://a3chron.vercel.app/"),
 };
 
 export default function RootLayout({
