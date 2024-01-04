@@ -1,5 +1,5 @@
 [data-rehype-pretty-code-fragment] code {
-    @apply grid min-w-full break-words rounded-lg border-0 bg-transparent p-0 text-sm text-hover;
+    @apply grid min-w-full break-words rounded-2xl border-0 bg-transparent p-0 text-sm;
     counter-reset: line;
     box-decoration-break: clone;
   }
@@ -16,13 +16,13 @@
     color: #e96e7b;
   }
   [data-rehype-pretty-code-fragment] .line--highlighted {
-    @apply bg-zinc-300 bg-opacity-10;
+    @apply bg-zinc-300 bg-opacity-10 rounded-lg;
   }
   [data-rehype-pretty-code-fragment] .line-highlighted span {
     @apply relative;
   }
   [data-rehype-pretty-code-fragment] .word--highlighted {
-    @apply rounded-md bg-primary bg-opacity-10 p-1;
+    @apply rounded-lg bg-primary bg-opacity-10 p-1;
   }
   [data-rehype-pretty-code-title] {
     @apply mt-4 py-2 px-4 text-sm font-medium;

@@ -11,7 +11,7 @@ const components = {
 	h1: ({ className, ...props }) => (
 		<h1
 			className={clsx(
-				"mt-2 scroll-m-20 text-4xl font-bold tracking-tight text-primary",
+				"mt-12 scroll-m-20 text-4xl font-bold tracking-tight text-text",
 				className,
 			)}
 			{...props}
@@ -20,7 +20,7 @@ const components = {
 	h2: ({ className, ...props }) => (
 		<h2
 			className={clsx(
-				"mt-10 scroll-m-20 border-b border-b-violet text-violet pb-1 text-3xl font-semibold tracking-tight first:mt-0",
+				"mt-10 scroll-m-20 border-b border-b-text text-text pb-1 text-3xl font-semibold tracking-tight first:mt-0",
 				className,
 			)}
 			{...props}
@@ -29,7 +29,7 @@ const components = {
 	h3: ({ className, ...props }) => (
 		<h3
 			className={clsx(
-				"mt-8 scroll-m-20 text-2xl text-hover font-semibold tracking-tight",
+				"mt-8 scroll-m-20 text-2xl text-text font-semibold tracking-tight",
 				className,
 			)}
 			{...props}
@@ -38,7 +38,7 @@ const components = {
 	h4: ({ className, ...props }) => (
 		<h4
 			className={clsx(
-				"mt-8 scroll-m-20 text-xl text-hover font-semibold tracking-tight",
+				"mt-8 scroll-m-20 text-xl text-text font-semibold tracking-tight",
 				className,
 			)}
 			{...props}
@@ -47,7 +47,7 @@ const components = {
 	h5: ({ className, ...props }) => (
 		<h5
 			className={clsx(
-				"mt-8 scroll-m-20 text-lg text-hover font-semibold tracking-tight",
+				"mt-8 scroll-m-20 text-lg text-text font-semibold tracking-tight",
 				className,
 			)}
 			{...props}
@@ -56,7 +56,7 @@ const components = {
 	h6: ({ className, ...props }) => (
 		<h6
 			className={clsx(
-				"mt-8 scroll-m-20 text-base text-hover font-semibold tracking-tight",
+				"mt-8 scroll-m-20 text-base text-text font-semibold tracking-tight",
 				className,
 			)}
 			{...props}
@@ -73,15 +73,15 @@ const components = {
 	),
 	p: ({ className, ...props }) => (
 		<p
-			className={clsx("leading-7 text-text hover:text-hover duration-1000 [&:not(:first-child)]:mt-6", className)}
+			className={clsx("leading-7 text-text [&:not(:first-child)]:mt-6", className)}
 			{...props}
 		/>
 	),
 	ul: ({ className, ...props }) => (
-		<ul className={clsx("my-6 ml-6 text-text hover:text-hover duration-1000 list-disc", className)} {...props} />
+		<ul className={clsx("my-6 ml-6 text-text list-disc", className)} {...props} />
 	),
 	ol: ({ className, ...props }) => (
-		<ol className={clsx("my-6 ml-6 text-text hover:text-hover duration-1000 list-decimal", className)} {...props} />
+		<ol className={clsx("my-6 ml-6 text-text list-decimal", className)} {...props} />
 	),
 	li: ({ className, ...props }) => (
 		<li className={clsx("mt-2", className)} {...props} />
@@ -136,7 +136,7 @@ const components = {
 	td: ({ className, ...props }) => (
 		<td
 			className={clsx(
-				"border border-text px-4 py-2 text-text bg-dark-bg text-left [&[align=center]]:text-center [&[align=right]]:text-right",
+				"border border-text px-4 py-2 text-text rounded-xl bg-dark-bg text-left [&[align=center]]:text-center [&[align=right]]:text-right",
 				className,
 			)}
 			{...props}
@@ -145,7 +145,7 @@ const components = {
 	pre: ({ className, ...props }) => (
 		<pre
 			className={clsx(
-				"mt-6 mb-4 overflow-x-auto rounded-lg bg-zinc-900 py-4",
+				"mt-6 mb-4 overflow-x-auto rounded-2xl bg-dark-bg py-4",
 				className,
 			)}
 			{...props}
