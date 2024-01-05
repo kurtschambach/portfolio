@@ -29,7 +29,7 @@ module.exports = {
 				},
 			},
 			transitionProperty: {
-				'width': 'width'
+				width: "width",
 			},
 			fontFamily: {
 				sans: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
