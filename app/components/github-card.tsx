@@ -19,7 +19,7 @@ const GithubCard = () => {
 						className="rounded-full"
 					/>
 				</div>
-				<div className="w-[8rem] h-[8rem] sticky -translate-y-1/2 drop-shadow-sm group-hover:-translate-x-12 duration-1000 ease-in-out rounded-full bg-bg border-2 border-text p-10 flex flex-col items-center justify-center">
+				<div className="w-[8rem] h-[8rem] sticky -translate-y-1/2 drop-shadow-lg group-hover:-translate-x-12 duration-1000 ease-in-out rounded-full bg-bg border-2 border-text p-10 flex flex-col items-center justify-center">
 					<Github size={60} className="rounded-full text-text" />
 				</div>
 			</div>
