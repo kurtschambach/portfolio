@@ -28,6 +28,9 @@ module.exports = {
 					},
 				},
 			},
+			transitionProperty: {
+				'width': 'width'
+			},
 			fontFamily: {
 				sans: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
 				display: ["var(--font-calsans)"],
