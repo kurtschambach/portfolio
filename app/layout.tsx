@@ -48,7 +48,7 @@ export default function RootLayout({
 				}`}
 			>
 				<Analytics />
-				<div className="flex flex-col w-screen h-screen overflow-hidden bg-bg p-4 sm:px-10 md:p-10 w-full 2xl:w-[96rem]">
+				<div className="flex flex-col w-full 2xl:w-[96rem] h-screen overflow-hidden bg-bg p-4 sm:px-10 md:p-10">
 					<div className="flex flex-row items-center justify-between mb-12 px-2">
 						<Link
 							href="/"
