@@ -34,13 +34,13 @@ export default function Example() {
 							<Link
 								href={s.href}
 								target="_blank"
-								className="relative flex flex-col items-center gap-4 duration-700 group md:gap-24 lg:pb-32 p-16"
+								className="group relative flex flex-col items-center gap-4 duration-700 group md:gap-24 lg:pb-32 p-16"
 							>
 								<span
-									className="absolute w-px h-2/3 bg-gradient-to-b from-violet via-transparent to-transparent"
+									className="absolute w-[2px] h-10 group-hover:h-2/3 duration-500 bg-gradient-to-b from-violet via-transparent to-transparent"
 									aria-hidden="true"
 								/>
-								<span className="relative z-10 flex items-center justify-center w-12 h-12 text-sm duration-1000 border rounded-full text-violet border-violet bg-zinc-900">
+								<span className="relative z-10 flex items-center justify-center w-12 h-12 text-sm duration-1000 border-2 rounded-full text-violet border-violet bg-zinc-900">
 									{s.icon}
 								</span>{" "}
 								<div className="z-10 flex flex-col items-center">
