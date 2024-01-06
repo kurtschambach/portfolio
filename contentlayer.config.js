@@ -37,6 +37,9 @@ export const Project = defineDocumentType(() => ({
 		date: {
 			type: "date",
 		},
+		image: {
+			type: "string",
+		},
 		url: {
 			type: "string",
 		},

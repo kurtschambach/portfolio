@@ -93,7 +93,7 @@ const components = {
 		/>
 	),
 	li: ({ className, ...props }) => (
-		<li className={clsx("mt-2", className)} {...props} />
+		<li className={clsx("mt-2 text-inherit", className)} {...props} />
 	),
 	blockquote: ({ className, ...props }) => (
 		<blockquote

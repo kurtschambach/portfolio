@@ -14,13 +14,13 @@
 }
 
 ::selection {
-  background-color: #34d399;
+  background-color: #5f8a9f;
   color: #171717;
 }
 
 /* Fallback for older Browsers */
 ::-moz-selection {
-  background-color: #34d399;
+  background-color: #5f8a9f;
   color: #171717;
 }
 
