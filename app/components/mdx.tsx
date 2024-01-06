@@ -104,7 +104,7 @@ const components = {
 	blockquote: ({ className, ...props }) => (
 		<blockquote
 			className={clsx(
-				"mt-6 border-l-2 border-dark-bg pl-6 italic text-inherit bg-dark-bg rounded-lg",
+				"mt-4 border-l-2 border-primary pl-6 my-0 text-inherit bg-dark-bg",
 				className,
 			)}
 			{...props}
@@ -166,7 +166,7 @@ const components = {
 	code: ({ className, ...props }) => (
 		<code
 			className={clsx(
-				"relative rounded border bg-dark-bg bg-opacity-50 py-[0.2rem] px-[0.3rem] font-mono text-sm text-inherit",
+				"relative rounded border-0 border-text bg-dark-bg py-[0.2rem] px-[0.3rem] font-mono text-sm text-primary",
 				className,
 			)}
 			{...props}
