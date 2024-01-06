@@ -10,6 +10,124 @@ type Props = {
 		image?: string;
 	};
 };
+
+const ImageBG: React.FC<{children: React.ReactNode, image: string | undefined}> = ({children, image}) => {
+	switch (image) {
+		case "sunrise": {
+			return (
+				<div className="relative isolate overflow-hidden bg-[url(/alto/sunrise.png)] bg-cover rounded-3xl">
+					{children}
+				</div>
+			)
+		};
+		case "village": {
+			return (
+				<div className="relative isolate overflow-hidden bg-[url(/alto/village.png)] bg-cover rounded-3xl">
+					{children}
+				</div>
+			)
+		};
+		case "ice": {
+			return (
+				<div className="relative isolate overflow-hidden bg-[url(/alto/ice.png)] bg-cover rounded-3xl">
+					{children}
+				</div>
+			)
+		};
+		default: {
+			return (
+				<div className="relative isolate overflow-hidden bg-dark-bg rounded-3xl">
+					{children}
+				</div>
+			)
+		};
+	}
+}
+
+const AltoLink: React.FC<{image: string | undefined}> = ({image}) => {
+	switch (image) {
+		case "sunrise": {
+			return (
+				<Link
+					href="https://altosadventure.com/"
+					target="_blank"
+					className="z-10 text-transparent bg-[url(/alto/sunrise.png)] bg-cover bg-clip-text"
+				>
+					Alto's Adventure
+				</Link>
+			)
+		};
+		case "village": {
+			return (
+				<Link
+					href="https://altosadventure.com/"
+					target="_blank"
+					className="z-10 text-transparent bg-[url(/alto/village.png)] bg-cover bg-clip-text"
+				>
+					Alto's Adventure
+				</Link>
+			)
+		};
+		case "ice": {
+			return (
+				<Link
+					href="https://altosadventure.com/"
+					target="_blank"
+					className="z-10 text-transparent bg-[url(/alto/ice.png)] bg-cover bg-clip-text"
+				>
+					Alto's Adventure
+				</Link>
+			)
+		};
+		default: {
+			return (
+				null
+			)
+		};
+	}
+};
+
+const TextAmb: React.FC<{children: React.ReactNode, image: string | undefined}> = ({children, image}) => {
+	switch (image) {
+		case "sunrise": {
+			return (
+				<span
+					className="text-transparent bg-[url(/alto/sunrise.png)] bg-fit bg-clip-text"
+				>
+					{children}
+				</span>
+			)
+		};
+		case "village": {
+			return (
+				<span
+					className="text-transparent bg-[url(/alto/village.png)] bg-fit bg-clip-text"
+				>
+					{children}
+				</span>
+			)
+		};
+		case "ice": {
+			return (
+				<span
+					className="text-transparent bg-[url(/alto/ice.png)] bg-fit bg-clip-text"
+				>
+					{children}
+				</span>
+			)
+		};
+		default: {
+			return (
+				<span
+					className="text-inherit"
+				>
+					{children}
+				</span>
+			)
+		};
+	}
+}
+
 export const Header: React.FC<Props> = ({ project }) => {
 	const links: { label: string; href: string }[] = [];
 	if (project.repository) {
@@ -24,37 +142,31 @@ export const Header: React.FC<Props> = ({ project }) => {
 			href: project.url,
 		});
 	}
-	let background = "bg-dark-bg";
-	if (project.image) {
-		background = `bg-[url(/alto/${project.image}.png)]`;
-	}
 
 	return (
-		<header
-			className={`relative isolate overflow-hidden ${background} bg-cover rounded-3xl`}
+		<ImageBG
+			image={project.image}
 		>
 			<div className="absolute bottom-4 text-xs left-10 flex flex-row items-center justify-center">
-				<Link
-					href="https://altosadventure.com/"
-					target="_blank"
-					className={`z-10 text-transparent ${background} bg-cover bg-clip-text`}
-				>
-					Alto's Adventure
-				</Link>
+				<AltoLink image={project.image} />
 			</div>
 			<div className="bg-dark-bg/80 w-full h-full">
 				<div className="container mx-auto relative isolate overflow-hidden py-24 sm:py-32">
 					<div className="mx-auto max-w-7xl px-6 lg:px-8 text-center flex flex-col items-center">
 						<div className="mx-auto max-w-2xl lg:mx-0">
 							<h1
-								className={`text-4xl font-bold tracking-tight h-[5rem] text-transparent ${background} bg-cover bg-clip-text sm:text-6xl`}
+								className="text-4xl font-bold tracking-tight h-[5rem] sm:text-6xl text-hover"
 							>
-								{project.title}
+								<TextAmb image={project.image}>
+									{project.title}
+								</TextAmb>
 							</h1>
 							<p
-								className={`mt-6 text-lg leading-8 text-transparent ${background} bg-cover bg-clip-text`}
+								className="mt-6 text-lg leading-8 text-text"
 							>
-								{project.description}
+								<TextAmb image={project.image}>
+									{project.description}
+								</TextAmb>
 							</p>
 						</div>
 
@@ -75,6 +187,6 @@ export const Header: React.FC<Props> = ({ project }) => {
 					</div>
 				</div>
 			</div>
-		</header>
+		</ImageBG>
 	);
 };
