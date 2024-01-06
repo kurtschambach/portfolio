@@ -82,13 +82,13 @@ const components = {
 	),
 	ul: ({ className, ...props }) => (
 		<ul
-			className={clsx("my-6 ml-6 text-inherit list-disc", className)}
+			className={clsx("my-6 ml-6 marker:text-inherit text-inherit list-disc", className)}
 			{...props}
 		/>
 	),
 	ol: ({ className, ...props }) => (
 		<ol
-			className={clsx("my-6 ml-6 text-inherit list-decimal", className)}
+			className={clsx("my-6 ml-6 marker:text-inherit text-inherit list-decimal", className)}
 			{...props}
 		/>
 	),
