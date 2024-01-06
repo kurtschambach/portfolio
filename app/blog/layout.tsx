@@ -15,7 +15,7 @@ export default function BlogLayout({
 					>
 						Blog
 					</Link>
-					<div className="p-10">{children}</div>
+					<div className="p-4 sm:p-10">{children}</div>
 				</div>
 			</div>
 		</div>
