@@ -37,6 +37,20 @@ const ImageBG: React.FC<{
 				</div>
 			);
 		}
+		case "forest": {
+			return (
+				<div className="relative isolate overflow-hidden bg-[url(/alto/forest.png)] bg-cover rounded-3xl">
+					{children}
+				</div>
+			);
+		}
+		case "storm": {
+			return (
+				<div className="relative isolate overflow-hidden bg-[url(/alto/storm.png)] bg-cover rounded-3xl">
+					{children}
+				</div>
+			);
+		}
 		default: {
 			return (
 				<div className="relative isolate overflow-hidden bg-dark-bg rounded-3xl">
@@ -82,6 +96,28 @@ const AltoLink: React.FC<{ image: string | undefined }> = ({ image }) => {
 				</Link>
 			);
 		}
+		case "forest": {
+			return (
+				<Link
+					href="https://altosadventure.com/"
+					target="_blank"
+					className="z-10 text-hover mix-blend-difference p-2 px-3 rounded-xl"
+				>
+					Alto's Adventure
+				</Link>
+			);
+		}
+		case "storm": {
+			return (
+				<Link
+					href="https://altosadventure.com/"
+					target="_blank"
+					className="z-10 text-transparent bg-[url(/alto/storm.png)] bg-cover bg-clip-text"
+				>
+					Alto's Adventure
+				</Link>
+			);
+		}
 		default: {
 			return null;
 		}
@@ -110,6 +146,20 @@ const TextAmb: React.FC<{
 		case "ice": {
 			return (
 				<span className="text-transparent bg-[url(/alto/ice.png)] bg-fit bg-clip-text">
+					{children}
+				</span>
+			);
+		}
+		case "forest": {
+			return (
+				<span className="text-transparent bg-gradient-to-br from-rose-200/40 to-amber-100/60 bg-clip-text">
+					{children}
+				</span>
+			);
+		}
+		case "storm": {
+			return (
+				<span className="text-transparent bg-[#9385a1]/60 bg-clip-text">
 					{children}
 				</span>
 			);
