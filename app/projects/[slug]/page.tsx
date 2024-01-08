@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { allProjects } from "contentlayer/generated";
 import { Mdx } from "@/app/components/mdx";
 import { Header } from "./header";
-import "./mdx.css";
+import "@/style/mdx.css";
 
 export const revalidate = 60;
 
