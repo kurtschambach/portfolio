@@ -3,7 +3,7 @@ import { allArticles } from "contentlayer/generated";
 import { Mdx } from "@/app/components/mdx";
 import "@/style/mdx.css";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Hash } from "lucide-react";
 
 export const revalidate = 60;
 
@@ -45,7 +45,9 @@ export default async function ArticlePage({ params }: Props) {
 						(article.topic === "portfolio" && "text-primary") ||
 						(article.topic === "dev-apps" ? "text-amber-300" : "text-text")
 					}`}
-				>{`${article.title}`}</span>
+				>
+					{article.title}
+				</span>
 			</div>
 			<div className="p-4 sm:p-10">
 				<div className="bg-dark-bg text-text pr-4">
