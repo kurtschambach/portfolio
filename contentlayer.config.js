@@ -129,6 +129,7 @@ export default makeSource({
 						className: ["subheading-anchor"],
 						ariaLabel: "Link to section",
 					},
+					behavior: "wrap",
 				},
 			],
 		],

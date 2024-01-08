@@ -7,6 +7,7 @@ import { useMDXComponent } from "next-contentlayer/hooks";
 export function clsx(...args: any) {
 	return args.filter(Boolean).join(" ");
 }
+
 const components = {
 	h1: ({ className, ...props }) => (
 		<h1
@@ -63,7 +64,7 @@ const components = {
 		/>
 	),
 	a: ({ className, ...props }) => (
-		<Link
+		<a
 			className={clsx(
 				"font-medium text-violet underline underline-offset-4",
 				className,
@@ -126,7 +127,7 @@ const components = {
 		<hr className="my-4 border-2 border-text rounded-full md:my-8" {...props} />
 	),
 	table: ({ className, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
-		<div className="w-full my-6 overflow-y-auto rounded-xl">
+		<div className="w-full my-6 overflow-y-auto">
 			<table className={clsx("w-full", className)} {...props} />
 		</div>
 	),
