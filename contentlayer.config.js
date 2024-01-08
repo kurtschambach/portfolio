@@ -125,12 +125,12 @@ export default makeSource({
 			[
 				rehypeAutolinkHeadings,
 				{
-				   properties: {
-					  className: ["subheading-anchor"],
-					  ariaLabel: "Link to section",
-				   },
+					properties: {
+						className: ["subheading-anchor"],
+						ariaLabel: "Link to section",
+					},
 				},
-			 ],
+			],
 		],
 	},
 });
