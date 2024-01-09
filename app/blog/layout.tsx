@@ -1,3 +1,5 @@
+import { Metadata } from 'next'
+
 export default function BlogLayout({
 	children,
 }: {
@@ -10,4 +12,8 @@ export default function BlogLayout({
 			</div>
 		</div>
 	);
+}
+ 
+export const metadata: Metadata = {
+  title: 'Blog',
 }
