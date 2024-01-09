@@ -5,9 +5,13 @@ import Link from "next/link";
 import Navigation from "./components/navigation";
 
 export const metadata: Metadata = {
-	title: "a3chron - Kurt Schambach",
+	title: {
+		template: '%s | a3chron',
+		default: 'a3chron',
+	  },
 	description:
 		"Hi, my name is Kurt Schambach. I'm a Software Developer at Titanom Technologies, working on some of my own Projects in free time",
+	keywords: ['Kurt', 'Schambach', 'Kurt Schambach', 'Developer', 'Software', 'Portfolio', 'PlantOrg', 'DevApps'],
 	openGraph: {
 		title: "Kurt Schambach",
 		description:
@@ -15,6 +19,20 @@ export const metadata: Metadata = {
 		url: "https://a3chron.vercel.app/",
 		emails: "kurt.schambach@gmail.com",
 		siteName: "a3chron - Kurt Schambach - Portfolio",
+		images: [
+			{
+				url: 'https://a3chron.vercel.app/a3chron.png', // Must be an absolute URL
+				width: 1200,
+				height: 600,
+				alt: 'a3chron logo',
+			},
+			{
+				url: 'https://a3chron.vercel.app/favicon.png',
+				width: 500,
+				height: 500,
+				alt: 'a3chron favicon',
+			},
+		],
 		locale: "de-DE",
 		type: "website",
 	},
