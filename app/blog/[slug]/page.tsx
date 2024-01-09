@@ -3,7 +3,7 @@ import { allArticles } from "contentlayer/generated";
 import { Mdx } from "@/app/components/mdx";
 import "@/style/mdx.css";
 import Link from "next/link";
-import { ArrowLeft, Hash } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 
 export const revalidate = 60;
 
