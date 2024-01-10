@@ -1,12 +1,12 @@
 {
-  "name": "portfolio - kurt schambach",
+  "name": "portfolio-kurt-schambach",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "fmt": "pnpm rome check . --apply-suggested && pnpm rome format . --write"
+    "format": "pnpm rome check . --apply-suggested && pnpm rome format . --write"
   },
   "dependencies": {
     "@next/mdx": "^13.4.3",
