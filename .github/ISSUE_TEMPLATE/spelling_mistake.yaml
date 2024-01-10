@@ -6,7 +6,7 @@ assignees: kurtschambach
 body:
   - type: markdown
     attributes:
-      value: **Thanks for taking the time to fill out this issue!**
+      value: "**Thanks for taking the time to fill out this issue!**"
   - type: textarea
     attributes:
       label: Where did you find the mistake
