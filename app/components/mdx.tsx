@@ -21,7 +21,7 @@ const components = {
 	h2: ({ className, ...props }) => (
 		<h2
 			className={clsx(
-				"mt-10 scroll-m-20 border-b-2 border-b-text text-inherit pb-1 text-3xl font-semibold tracking-tight first:mt-0",
+				"mt-10 scroll-m-20 border-b-2 border-b-bg text-inherit pb-1 text-3xl font-semibold tracking-tight first:mt-0",
 				className,
 			)}
 			{...props}
@@ -159,6 +159,15 @@ const components = {
 		<pre
 			className={clsx(
 				"mt-6 mb-4 duration-1000 overflow-x-auto rounded-2xl bg-dark-bg group-hover:bg-bg scrollbar-thin scrollbar-track-bg group-hover:scrollbar-track-dark-bg scrollbar-thumb-text py-4",
+				className,
+			)}
+			{...props}
+		/>
+	),
+	strong: ({ className, ...props }) => (
+		<strong
+			className={clsx(
+				"text-primary font-bold",
 				className,
 			)}
 			{...props}
