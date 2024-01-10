@@ -6,12 +6,21 @@ import Navigation from "./components/navigation";
 
 export const metadata: Metadata = {
 	title: {
-		template: '%s | a3chron',
-		default: 'a3chron',
-	  },
+		template: "%s | a3chron",
+		default: "a3chron",
+	},
 	description:
 		"Hi, my name is Kurt Schambach. I'm a Software Developer at Titanom Technologies, working on some of my own Projects in free time",
-	keywords: ['Kurt', 'Schambach', 'Kurt Schambach', 'Developer', 'Software', 'Portfolio', 'PlantOrg', 'DevApps'],
+	keywords: [
+		"Kurt",
+		"Schambach",
+		"Kurt Schambach",
+		"Developer",
+		"Software",
+		"Portfolio",
+		"PlantOrg",
+		"DevApps",
+	],
 	openGraph: {
 		title: "Kurt Schambach",
 		description:
@@ -21,16 +30,16 @@ export const metadata: Metadata = {
 		siteName: "a3chron - Kurt Schambach - Portfolio",
 		images: [
 			{
-				url: 'https://a3chron.vercel.app/a3chron.png', // Must be an absolute URL
+				url: "https://a3chron.vercel.app/a3chron.png", // Must be an absolute URL
 				width: 1200,
 				height: 600,
-				alt: 'a3chron logo',
+				alt: "a3chron logo",
 			},
 			{
-				url: 'https://a3chron.vercel.app/favicon.png',
+				url: "https://a3chron.vercel.app/favicon.png",
 				width: 500,
 				height: 500,
-				alt: 'a3chron favicon',
+				alt: "a3chron favicon",
 			},
 		],
 		locale: "de-DE",

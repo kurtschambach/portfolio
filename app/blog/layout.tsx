@@ -1,4 +1,4 @@
-import { Metadata } from 'next'
+import { Metadata } from "next";
 
 export default function BlogLayout({
 	children,
@@ -13,7 +13,7 @@ export default function BlogLayout({
 		</div>
 	);
 }
- 
+
 export const metadata: Metadata = {
-  title: 'Blog',
-}
+	title: "Blog",
+};

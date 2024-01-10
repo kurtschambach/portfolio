@@ -3,8 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-	title: 'Theme',
-  }
+	title: "Theme",
+};
 
 export default function Theme() {
 	return (

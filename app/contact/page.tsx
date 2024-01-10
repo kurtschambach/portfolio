@@ -4,8 +4,8 @@ import { Card } from "../components/card";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-	title: 'Contact',
-  }
+	title: "Contact",
+};
 
 const socials = [
 	{
