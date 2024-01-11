@@ -105,7 +105,7 @@ const components = {
 	blockquote: ({ className, ...props }) => (
 		<blockquote
 			className={clsx(
-				"mt-4 border-l-2 border-primary pl-6 my-0 text-inherit bg-dark-bg",
+				"mt-4 border-l-2 not-italic border-primary pl-6 my-0 text-inherit bg-dark-bg",
 				className,
 			)}
 			{...props}
@@ -165,13 +165,7 @@ const components = {
 		/>
 	),
 	strong: ({ className, ...props }) => (
-		<strong
-			className={clsx(
-				"text-primary font-bold",
-				className,
-			)}
-			{...props}
-		/>
+		<strong className={clsx("text-primary font-bold", className)} {...props} />
 	),
 	code: ({ className, ...props }) => (
 		<code
