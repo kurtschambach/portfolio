@@ -1,8 +1,8 @@
-import "../style/global.css";
+import "@/style/global.css";
 import { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import Link from "next/link";
-import Navigation from "./components/navigation";
+import Navigation from "@/components/navigation";
 
 export const metadata: Metadata = {
 	title: {

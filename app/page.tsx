@@ -1,8 +1,8 @@
 import React from "react";
-import GithubCard from "./components/github-card";
-import InfoCard from "./components/info-card";
-import ProjectsCard from "./components/projects-card";
-import ContactCard from "./components/contact-card";
+import GithubCard from "@/components/github-card";
+import InfoCard from "@/components/info-card";
+import ProjectsCard from "@/components/projects-card";
+import ContactCard from "@/components/contact-card";
 
 export default function Home() {
 	return (
