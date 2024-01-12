@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { allProjects } from "contentlayer/generated";
-import { Card } from "@/components/card";
+import { Card } from "@/app/components/card";
 import { Article } from "./article";
 
 export const revalidate = 60;

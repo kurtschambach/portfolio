@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { allArticles } from "contentlayer/generated";
-import { Mdx } from "@/components/mdx";
+import { Mdx } from "@/app/components/mdx";
 import "@/style/mdx.css";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
