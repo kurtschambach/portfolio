@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import Link from "next/link";
 import Navigation from "@/components/navigation";
+import GithubActions from "@/components/github-actions";
 
 export const metadata: Metadata = {
 	title: {
@@ -87,6 +88,9 @@ export default function RootLayout({
 						<Navigation />
 					</div>
 					<div className="w-full h-full overflow-y-scroll scrollbar-thin scrollbar-track-bg scrollbar-thumb-text">
+						<div className="absolute z-40 right-2 md:right-4 bottom-2 md:bottom-4 rounded-full bg-dark-bg/80 backdrop-blur-xl text-text p-4 md:py-6 hidden md:flex flex-col items-center justify-center border-2 border-text">
+							<GithubActions />
+						</div>
 						{children}
 					</div>
 				</div>
