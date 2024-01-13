@@ -1,18 +1,19 @@
 ---
-title: Basics of Neural Network and Deep Learning 01
+title: Basics of Neural Networks and Deep Learning 01
 description: How is our brain working?
 topic: tech
 date: "2024-01-11"
 published: true
 ---
 
-# Basics of Neural Network and Deep Learning - Part 1
+# Basics of Neural Networks and Deep Learning - Part 1
 
 > Course Overview: [Deep Learning Course - Overview](/blog/deep-learning-course)
 
 In this course, we will learn the basic theory of how our Brain works and how artificial neurons imitate it.
 
 ## Content of the next "block"
+i.e. the next few articles, the **marked** one is the current article.
 
 - **How does our Brain work?**
 - The MNIST Dataset
@@ -38,7 +39,7 @@ Our brain consists of millions of neurons, so it is basically a big biological n
 As the brain is a very complex system, let's look at neurons first:
 
 Neurons take input signals, and give an output signal, 
-if the sum of the input signal crosses a treshold.
+if the sum of the input signal crosses a Threshold.
 
 One single neuron looks something like that:
 ![image of a neuron](/blog-images/neuron.png)
@@ -51,7 +52,7 @@ It consists of three main parts, that are important for us:
 The dendrites take the "input signal". 
 They are connected to other neurons through synapses,
 and when these neurons are firering (= giving an output signal), 
-our neuron recieves these signals over the dendrites.
+our neuron receives these signals over the dendrites.
 
 The axom is the part of the neuron, that transports the "output signal"
 to the dendrites or synapses of other neurons.
@@ -65,30 +66,33 @@ Now that we know how the neurons in our brain work, we gotta write code,
 that imitates neurons. For this we have to look at more abstract models of neurons first.
 
 The probably first model of a neuron was created by McCulloch & Pitts:
+
+![mcculloch & pitts neuron](/blog-images/mcculloch-pitts.png)
+
 The neuron in this model has x₁ ... xₙ stimulating input signals, and
 y₁ ... yₙ suppressing input signals (determined by the problem we try to solve).
-The Soma is represented by the Treshold, a value that determines when the neuron will fire:
+The Soma is represented by the Threshold, a value that determines when the neuron will fire:
 
-- If we have one (or more) suppressing signals, the output is always `0`
-- If the sum of stimulating signals is equal or bigger than the Treshold, the output is `1`
-- If the sum of stimulating signals is lower than the Treshold, the outpur is `0`
+- As soon as we have one (or more) suppressing signals, the output is *always* `0` (i.e. stimulating signals are ignored)
+- If the sum of stimulating signals is equal or bigger than the Threshold, the output is `1`
+- If the sum of stimulating signals is lower than the Threshold, the outpur is `0`
+
+> In the following I'll call stimulating input signals just input signals, becuase most of the input signals are usually stimulating.
 
 Our last component is the output signal.
-In this model, the input and output signals are binary (i.e. either 0 or 1).
+In this model, the input and output signals are binary (i.e. either `0` (=`false`) or `1` (=`true`)).
 
 With this neuron, we can already solve some easy problems.
-As a developer, lets try logical functions:
-> If you dont know what logical functions are, please take a look into it: [Logical Fuctions](https://www.techtarget.com/whatis/definition/logic-gate-AND-OR-XOR-NOT-NAND-NOR-and-XNOR) 
+The following will be the hard part here, i tried to add examples, but if you don't understand something, just read it a few times.
+As a "developer", lets try logic gates:
+> If you dont know what logic gates are, please take a look into it: [Logic Gates](https://www.techtarget.com/whatis/definition/logic-gate-AND-OR-XOR-NOT-NAND-NOR-and-XNOR)
+> The Wikipedia article is quite good too.
 
 ### 1. **AND** (two input signals, one output)
 
 > AND returns `1` (= `true`) when both input signal are `1`, and `0` (= `false`) if one or both of the input signals are `0`.
-
-The AND function is solveable with a neuron. We'll just set the Treshold to `2`. Now we have a few possible constellations:
-
-- both input signals are `0` -> sum = `0` -> our neuron returns `0`
-- one of the input signals is `0`, the other `1` -> sum = `1` -> our neuron returns `0` (the sum `1` is still smaller than our Treshold (`2`))
-- both input signals are `1` -> sum = `2` -> the output is `1` (because sum >= Treshold)
+>
+> Input x₁ **AND** input x₂ are `1`.
 
 In a table, this would look like this: 
 
@@ -99,13 +103,17 @@ In a table, this would look like this:
 | 1       | 0      | **0**  |
 | 1       | 1      | **1**  |
 
+The AND function is solveable with a neuron. We'll just set the Threshold to `2`. Now we have a few possible constellations:
+
+- both input signals are `0` -> sum = `0` -> the output of our neuron is `0`
+- one of the input signals is `0`, the other `1` -> sum = `1` -> our neuron returns `0` (the sum `1` is still smaller than our Threshold (`2`))
+- both input signals are `1` -> sum = `2` -> the output is `1` (because sum >= Threshold)
+
 ### 2. **OR** (two input signals, one output)
 
 > OR returns `1` when one or both of the two input signals is `1`, and `0` if both of the input signals are `0`.
-
-**Treshold: `1`**
-
-If we have one or two `true`/`1` inputs, the sum is bigger or equal to the Treshold, and the output is `1`.
+>
+> Input x₁ **OR** input x₂ is `1`.
 
 | input 1 | input 2| output |
 |---------|--------|--------|
@@ -114,36 +122,47 @@ If we have one or two `true`/`1` inputs, the sum is bigger or equal to the Tresh
 | 1       | 0      | **1**  |
 | 1       | 1      | **1**  |
 
+**Threshold: `1`**
+
+If we have one or two `true`/`1` inputs, the sum is bigger or equal to the Threshold, and the output is `1`.
+
 ### 3. **NOT** (one suppressing input signal, one output)
 
 > NOT returns `1` when the input signal is `0`, and `0` if the input signal is `1`, i.e. always the opposite of the input.
-
-**Treshold: `0`**
-
-As we have a suppressing input signal here, the output is `1` when the input is `0` 
-because in this case we don't have a suppressing signal, and the sum of input signals is equal to the Treshold.
-If the input is `1`, we have a suppressing signal, and because of that, the output has to be `0`.
+>
+> The Input y₁ is **NOT** equal to the Output.
 
 | input | output |
 |-------|--------|
 | 0     | **1**  |
 | 1     | **0**  |
 
+**Threshold: `0`**
+
+The output is `1` when the input is `0` i.e. we don't have a suppressing signal and the sum of input signals is equal to the Threshold.
+If the input is `1`, we have a suppressing signal, and because of that, the output has to be `0`.
+
 ### 3. **XOR - exclusive OR** (two input signals, one output)
 
 > XOR returns `1` when one of the two input signals is `1`, and `0` if both of the input signals are `0` or if both are `1`.
+>
+> **Either** x₁ **OR** input x₂ is `1`.
 
-Here we'll run into a problem. This Problem is not solveable with a neuron. 
-With a treshold of `1`, we'll have the scenario in which both inputs are `0` and in which one is `1` and the other `0` covered, 
-but not the scenario in which both inputs are `1`. You can also try different tresholds if you want, but you won't come to a solution with only one neurons.
+Here we'll run into a problem. This Logic Gate is not solveable with a neuron.
+
+> Some Scenarios:
+>
+> With a Threshold of `1`, we'll have the scenario in which both inputs are `0` / in which one input is `1` and the other `0` covered, 
+> but not the scenario in which both inputs are `1`. You can also try different Thresholds if you want, 
+> but you won't come to a solution with only one neuron.
 
 However, if we take more than one neuron, the XOR problem becomes solveable.
-The thing you should take away from that: every problem, regardless the complexity, 
+What you should take away from that: every problem, regardless the complexity, 
 can be solved with a finite number of neurons.
 
-The next problem is getting the treshold values for every singel neuron right. 
-With bigger NN this is very hard, and that's why NN need to be trained. 
-While training, they adjust these tresholds, to get better and better results.
+As you could see, we have set the thresholds manually in the examples. This is our next problem: getting the Threshold values right for every singel neuron. 
+With bigger NN (a few million/billion neurons) this is very hard (not possible), and that's why NN need to be trained. 
+During the training, they adjust the thresholds, to get better and better results.
 
 > Little side note for those who don't know how an NN is trained:
 >
@@ -153,17 +172,17 @@ While training, they adjust these tresholds, to get better and better results.
 >
 > Now we have to give the NN one data entry, and it gives us it's suggestion.
 > We compare this suggestion with the corresponding label, and tell the NN whether it was right or wrong.
-> Based on this, the NN adjusts the Tresholds (I will explain how it is doing that in the backpropagation section).
+> Based on this, the NN adjusts the Thresholds (I will explain how it is doing that in the backpropagation section).
 > (this all happens automatically, i.e. *we* don't *tell* the NN if it's wrong)
 >
 > In the End, if we wanna do it right, we test the NN with data it has never seen during it's training (we'll see later why).
 
 Now that we know how a NN is learning, let's compare that to our brain real quick:
 
-We are basically doing exactly the same thing (adjust tresholds of neurons), 
+We are basically doing exactly the same thing (adjust Thresholds of neurons), 
 with the little difference, that the brain additionally adjusts the connections between neurons.
 
-## This is the End... (only of this part xD)
+## This is the End... (only of this article xD)
 
 Well, it's already the end of part one. You hopefully learned how our brain works, 
 and how Neural Networks try to imitate neurons, so we can start of with Neural networks and their learning procces soon.

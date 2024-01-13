@@ -30,15 +30,15 @@ const socials = [
 
 export default function Example() {
 	return (
-		<div className="bg-bg h-full pt-96 sm:pt-0 pb-10 sm:pb-10 md:pb-0 lg:pb-20">
+		<div className="bg-bg h-full pt-96 md:pt-0 pb-10 sm:pb-10 md:pb-0 lg:pb-20">
 			<div className="container flex items-center justify-center h-full w-full pr-4 mx-auto">
-				<div className="grid w-full grid-cols-1 gap-8 mx-auto mt-32 sm:mt-0 sm:grid-cols-3 lg:gap-16">
+				<div className="grid w-full grid-cols-1 mx-auto mt-32 md:mt-0 md:grid-cols-3 gap-8 lg:gap-16">
 					{socials.map((s) => (
 						<Card key={s.handle}>
 							<Link
 								href={s.href}
 								target="_blank"
-								className="group relative flex flex-col items-center gap-4 duration-700 group md:gap-24 lg:pb-32 p-16"
+								className="group relative flex flex-col items-center duration-700 group gap-6 md:gap-24 lg:pb-32 p-16"
 							>
 								<span
 									className="absolute w-[2px] h-10 group-hover:h-2/3 duration-500 bg-gradient-to-b from-violet via-transparent to-transparent"
