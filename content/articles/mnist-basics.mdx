@@ -2,7 +2,7 @@
 title: MNIST, and why good data is so important
 description: Basics of Neural Networks and Deep Learning 02
 topic: tech-deep-learning-course
-date: "2024-01-14"
+date: "2024-01-15"
 published: true
 ---
 
@@ -21,16 +21,103 @@ i.e. the next few articles, the **marked** one is the current article.
 - Structure of a Neural Network
 - A Neural Network is learning
 - Backpropagation
-- Further Reading
+- Coding Example + Further Reading
+
+## What exactly do we need the Data for?
+
+In the last article there was a little description on how a NN is trained. 
+Let's make this description a little bit more detailed:
+
+When we want to train a NN, we need a bunch of data. 
+This Data is then seperated in Data used for training the NN (~ 75%), and Data used for testing the NN (~ 25%).
+We need this to make sure, the NN did not "memorize" the Training Data, 
+i.e. it adjusted the Treshold values to solve the exact Problem it was given, but nothing more.
+Such a NN could have an accuracy of nearly 100% on the data it was trained with, 
+but it will fail recognizing anything that was not part of the Training Data.
+(That's definitly not what we want)
+
+Because of this we check the Results with the Test Data, and make sure the NN will work for other Data too.
+
+Little Recap: All the Data that we have must be labeled, so the NN knows which answer would have been right, 
+and can imporve the Tresholds.
+
 
 ## Why is good Data so important?
 
+The Data a NN is trained with is one of the most important factors.
+You can have a wonderfull algorithm, but without the right data, your NN cannot be trained properly.
 
+When you want to develop a NN 
+that for example recognizes if the animal in a picture is a dog or a wolve, 
+but all your training pictures of wolves are taken in the mountains with snow in the background, 
+then the NN will propably classify a dog playing in the snow as a Wolve.
 
+> Fun Fact:
+>
+> A group of students once tried autonomous driving, and recorded hundrets of hours of driving.
+> The AI drove quite good, but after a while the car reached a bridge, where the car suddenly stopped.
+>
+> As the students found out later, in all their training data, there was grass on the side of the road,
+> and so the AI did not know what to do when suddenly the grass disapeared at the bidge.
 
+This may be a small issue when recognizing dogs and wolves (depending on the application), 
+but lets imagine you work for a car company, and develop a self-driving car.
+All your training data is recorded in the summer, the company is testing the car, 
+and everthing works fine. Many people start using the self-driving car, 
+but in winter, it starts snowing, 
+and thousands of customers want to know why their car suddenly stopped (best case, could have crased too).
 
+This is maybe not the most realistic example, but it shows why you should *always* try to use good data.
+Even if you're not doing anything that critical, we want to optimize our NN, 
+and this starts with using good data for the training.
+
+Another problem are biases. It basically means that the content of the data is represented in the responds the NN gives, 
+e.g. the NN will copy certain beliefs that are represented in the data (This is sometimes not really good). 
+There are many forms of biases. An example: 
+
+You get your data by calling people, and asking them questions, for a product where you're not calling people.
+The data you trained the NN is incomplete, because all the people, that hang up quick are not represented in the data.
+However, as the final product is used by many people, also people that would hang up the phone, 
+the NN will generate wrong predictions/responses for them.
+
+There are many more examples, I will add a few here when I come across some.
+
+Some advice when searching for good data:
+
+- Select training data that's appropriately representative and large enough to counteract common types of bias.
+- Test and validate to ensure the results of your NN don't reflect bias due to algorithms or the dataset.
+- Understand the training data used, as the dataset could contain labels that can introduce bias.
 
 
 ## Where can we get good Data?
 
+It's quite hard getting good data, because mayn datasets are not available for free.
+Also they may be not a 100% suitable for your project, and so you maybe have to "clean" the data first.
+
+Here's a link with a few datasets for you in case you want to start your own project: 
+- [Best public datasets](https://www.altexsoft.com/blog/best-public-machine-learning-datasets/)
+- [Awesome public datasets](https://github.com/awesomedata/awesome-public-datasets)
+
+For our first project we are gonna use a free open dataset, the MNIST dataset.
+
+
 ## MNIST
+
+The MNIST dataset is a big collection of handwritten numbers (0 - 9). 
+They are all only 28 x 28 pixel small, i.e. the training speed is bigger, and you don't need a graphic card.
+
+![example of the MNIST dataset](/blog-images/mnist-example.png)
+
+This is a quite good dataset, the labels are good, the numbers are written by children and adults, 
+they are already seperated into training and test data and so on...
+
+Additionally is quite easy to load the data, so we won't need much code for this.
+
+The MNIST dataset is kinda the "Hello World" exmaple for Deep Learning.
+
+## The End
+
+Another article finished. In the next two articles we are going to focus more on neural networks 
+(structur, and learning process), so we can start developing right after the last article (backpropagation).
+
+Next Article: work in progress...
