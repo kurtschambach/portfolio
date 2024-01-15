@@ -16,7 +16,7 @@ const InfoCard = () => {
 				</Link>
 				.
 				<br />
-				In my free time, i work on some of my own projects.
+				In my free time, I work on some of my own projects.
 				<br />
 				Check out{" "}
 				<Link

@@ -31,6 +31,13 @@ const ColorHeader: React.FC<{ children: React.ReactNode; topic: string }> = ({
 				</div>
 			);
 		}
+		case "tech-deep-learning-course": {
+			return (
+				<div className="flex flex-col items-start justify-center h-12 md:h-16 w-full bg-[url(/blog-header/deep-learning-course.png)] bg-cover text-violet border-b-2 border-violet/70 rounded-t-xl px-4 md:px-8">
+					{children}
+				</div>
+			);
+		}
 		default: {
 			return (
 				<div className="flex flex-col items-start justify-center h-16 w-full bg-text/20 text-zinc-400 border-b-2 border-text/70 rounded-t-xl px-4 md:px-8">

@@ -41,9 +41,11 @@ export default async function ArticlePage({ params }: Props) {
 				</Link>
 				<span
 					className={`hidden sm:block cursor-default ${
-						(article.topic === "tech" && "text-violet") ||
-						(article.topic === "portfolio" && "text-primary") ||
-						(article.topic === "dev-apps" ? "text-amber-300" : "text-text")
+						(article.topic.includes("tech") && "text-violet") ||
+						(article.topic.includes("portfolio") && "text-primary") ||
+						(article.topic.includes("dev-apps")
+							? "text-amber-300"
+							: "text-text")
 					}`}
 				>
 					{article.title}
