@@ -20,8 +20,7 @@ i.e. the next few articles, the **marked** one is the current article.
 - **The MNIST Dataset**
 - Structure of a Neural Network
 - A Neural Network is learning
-- Backpropagation
-- Coding Example + Further Reading
+- Backpropagation + Further Reading
 
 ## What exactly do we need the Data for?
 
@@ -54,8 +53,8 @@ then the NN will propably classify a dog playing in the snow as a Wolve.
 
 > Fun Fact:
 >
-> A group of students once tried autonomous driving, and recorded hundrets of hours of driving.
-> The AI drove quite good, but after a while the car reached a bridge, where the car suddenly stopped.
+> A group of students once tried autonomous driving, and recorded hundreds of hours of driving.
+> The AI trained with this data drove quite good, but after a while the car reached a bridge, where the car suddenly stopped.
 >
 > As the students found out later, in all their training data, there was grass on the side of the road,
 > and so the AI did not know what to do when suddenly the grass disapeared at the bidge.
@@ -65,7 +64,7 @@ but lets imagine you work for a car company, and develop a self-driving car.
 All your training data is recorded in the summer, the company is testing the car, 
 and everthing works fine. Many people start using the self-driving car, 
 but in winter, it starts snowing, 
-and thousands of customers want to know why their car suddenly stopped (best case, could have crased too).
+and thousands of customers want to know why their car suddenly stopped (best case, could have crashed too).
 
 This is maybe not the most realistic example, but it shows why you should *always* try to use good data.
 Even if you're not doing anything that critical, we want to optimize our NN, 
@@ -104,12 +103,12 @@ For our first project we are gonna use a free open dataset, the MNIST dataset.
 ## MNIST
 
 The MNIST dataset is a big collection of handwritten numbers (0 - 9). 
-They are all only 28 x 28 pixel small, i.e. the training speed is bigger, and you don't need a graphic card.
+They are all only 28 x 28 pixel small, i.e. increased training speed, and you don't need a graphic card.
 
 ![example of the MNIST dataset](/blog-images/mnist-example.png)
 
 This is a quite good dataset, the labels are good, the numbers are written by children and adults, 
-they are already seperated into training and test data and so on... The perfect dataset.
+they are already seperated into training and test data, there is enough data (60.000 images) and so on... The perfect dataset.
 
 Additionally is quite easy to load the data, so we won't need much code for this.
 
@@ -118,6 +117,7 @@ The MNIST dataset is kinda the "Hello World" exmaple for Deep Learning.
 ## The End
 
 Another article finished. In the next two articles we are going to focus more on neural networks 
-(structur, and learning process), so we can start developing right after the last article (backpropagation).
+(structur, and learning process), so we can start developing right after the last article (backpropagation), 
+i.e. in the next block on computer vision.
 
 Next Article: work in progress...
