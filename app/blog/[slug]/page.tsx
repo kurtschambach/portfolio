@@ -4,6 +4,7 @@ import { Mdx } from "@/app/components/mdx";
 import "@/style/mdx.css";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import FullScreenSwitch from "@/app/components/fullscreen-switch";
 
 export const revalidate = 60;
 
@@ -53,7 +54,10 @@ export default async function ArticlePage({ params }: Props) {
 			</div>
 			<div className="p-4 sm:p-10">
 				<div className="bg-dark-bg text-text pr-4">
-					<div className="group w-full h-full bg-dark-bg rounded-3xl mt-4">
+					<div className="group relative w-full h-full bg-dark-bg rounded-3xl mt-4">
+						<div className="absolute top-2 right-2">
+							<FullScreenSwitch />
+						</div>
 						<article
 							className={
 								"px-0 sm:px-4 py-12 mx-auto text-text hover:text-hover duration-1000 text-lg font-bold bg-inherit prose sm:prose-quoteless"
