@@ -4,10 +4,10 @@ import { Minimize, Maximize } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 const FullScreenSwitch = () => {
-    const [isFullScreen, setIsFullScreen] = useState(false);
+    const [isFullScreen, setIsFullScreen] = useState(!!document.fullscreenElement);
 
     const handleFullScreen = () => {
-        if (!document.fullscreenElement && !isFullScreen) {
+        if (!document.fullscreenElement) {
             document.documentElement.requestFullscreen();
             setIsFullScreen(true);
         } else if (document.exitFullscreen) {
@@ -15,6 +15,22 @@ const FullScreenSwitch = () => {
             setIsFullScreen(false);
         }
     };
+
+    const handleFullScreenChange = () => {
+        if (!document.fullscreenElement) {
+            setIsFullScreen(false);
+        } else {
+            setIsFullScreen(true);
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener('fullscreenchange', handleFullScreenChange);
+
+        return () => {
+            document.removeEventListener('fullscreenchange', handleFullScreenChange);
+        };
+    }, []);
 
     return (
         <button

@@ -55,7 +55,7 @@ export default async function ArticlePage({ params }: Props) {
 			<div className="p-4 sm:p-10">
 				<div className="bg-dark-bg text-text pr-4">
 					<div className="group relative w-full h-full bg-dark-bg rounded-3xl mt-4">
-						<div className="absolute top-2 right-2">
+						<div className="absolute top-2 right-2 flex flex-col gap-2 items-center justify-center">
 							<FullScreenSwitch />
 						</div>
 						<article
