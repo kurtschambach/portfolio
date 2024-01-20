@@ -1,36 +1,48 @@
-'use client'
+'use client';
 
 import { Minimize, Maximize } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 const FullScreenSwitch = () => {
-    const [isFullScreen, setIsFullScreen] = useState(!!document.fullscreenElement);
+    const [isFullScreen, setIsFullScreen] = useState(false);
 
     const handleFullScreen = () => {
-        if (!document.fullscreenElement) {
-            document.documentElement.requestFullscreen();
-            setIsFullScreen(true);
-        } else if (document.exitFullscreen) {
-            document.exitFullscreen();
-            setIsFullScreen(false);
+        if (typeof document !== 'undefined') {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+                setIsFullScreen(true);
+            } else if (document.exitFullscreen) {
+                document.exitFullscreen();
+                setIsFullScreen(false);
+            }
         }
     };
 
     const handleFullScreenChange = () => {
-        if (!document.fullscreenElement) {
-            setIsFullScreen(false);
-        } else {
-            setIsFullScreen(true);
+        if (typeof document !== 'undefined') {
+            if (!document.fullscreenElement) {
+                setIsFullScreen(false);
+            } else {
+                setIsFullScreen(true);
+            }
         }
     };
 
     useEffect(() => {
-        document.addEventListener('fullscreenchange', handleFullScreenChange);
+        if (typeof document !== 'undefined') {
+            document.addEventListener('fullscreenchange', handleFullScreenChange);
 
-        return () => {
-            document.removeEventListener('fullscreenchange', handleFullScreenChange);
-        };
+            return () => {
+                document.removeEventListener('fullscreenchange', handleFullScreenChange);
+            };
+        }
     }, []);
+
+    useEffect(() => {
+        if (typeof document !== 'undefined') {
+            setIsFullScreen(!!document.fullscreenElement);
+        }
+    }, [])
 
     return (
         <button
