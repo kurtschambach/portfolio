@@ -5,6 +5,7 @@ import "@/style/mdx.css";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import FullScreenSwitch from "@/app/components/fullscreen-switch";
+import ModeSwitch from "@/app/components/light-switch";
 
 export const revalidate = 60;
 
@@ -31,7 +32,7 @@ export default async function ArticlePage({ params }: Props) {
 	}
 
 	return (
-		<>
+		<div className="w-full h-full rounded-3xl bg-bg pr-2">
 			<div className="sticky top-0 z-10 w-full h-16 flex flex-row items-center justify-start gap-4 md:gap-8 bg-dark-bg text-text text-xl font-bold border-2 border-text px-8 rounded-t-3xl">
 				<Link
 					href="/blog"
@@ -52,22 +53,21 @@ export default async function ArticlePage({ params }: Props) {
 					{article.title}
 				</span>
 			</div>
-			<div className="p-4 sm:p-10">
-				<div className="bg-dark-bg text-text pr-4">
-					<div className="group relative w-full h-full bg-dark-bg rounded-3xl mt-4">
-						<div className="absolute top-2 right-2 flex flex-col gap-2 items-center justify-center">
-							<FullScreenSwitch />
-						</div>
-						<article
-							className={
-								"px-0 sm:px-4 py-12 mx-auto text-text hover:text-hover duration-1000 text-lg font-bold bg-inherit prose sm:prose-quoteless"
-							}
-						>
-							<Mdx code={article.body.code} />
-						</article>
+			<div className="h-full w-full overflow-y-scroll scrollbar-thin scrollbar-track-bg scrollbar-thumb-text p-4 bg-dark-bg dark:bg-amber-100 rounded-b-3xl">
+				<div className="group relative w-full h-full bg-inherit rounded-3xl mt-4">
+					<div className="lg:absolute top-2 w-full lg:w-fit pl-0 sm:pl-4 lg:pl-0 right-2 flex flex-row lg:flex-col gap-2 items-center lg:justify-center">
+						<FullScreenSwitch />
+						<ModeSwitch />
 					</div>
+					<article
+						className={
+							"px-0 sm:px-4 py-12 mx-auto text-text hover:text-hover dark:text-text dark:hover:text-black text-lg font-bold bg-inherit prose sm:prose-quoteless"
+						}
+					>
+						<Mdx code={article.body.code} />
+					</article>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 }

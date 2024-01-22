@@ -15,36 +15,40 @@ export default async function Blog() {
 
 	if (sorted.length !== 0) {
 		return (
-			<>
+			<div className="w-full h-full overflow-y-scroll scrollbar-thin scrollbar-track-bg scrollbar-thumb-text pr-2 rounded-3xl">
+				<div className="bg-dark-bg rounded-3xl w-full h-fit">
+					<Link
+						href="/blog"
+						className="sticky w-full h-16 flex flex-col items-start justify-center bg-dark-bg text-text text-xl font-bold border-2 border-text cursor-pointer px-8 pl-16 rounded-t-3xl"
+					>
+						Blog
+					</Link>
+					<div className="p-4 sm:p-10">
+						<div className="flex flex-row flex-wrap items-start justify-start gap-10 h-full">
+							{sorted.map((article) => (
+								<Article key={article.slug} article={article} />
+							))}
+						</div>
+					</div>
+				</div>
+			</div>
+		);
+	}
+	return (
+		<div className="w-full h-full overflow-y-scroll scrollbar-thin scrollbar-track-bg scrollbar-thumb-text pr-2 rounded-3xl">
+			<div className="bg-dark-bg rounded-3xl w-full h-fit">
 				<Link
 					href="/blog"
-					className="sticky w-full h-16 flex flex-col items-start justify-center bg-dark-bg text-text text-xl font-bold border-2 border-text cursor-pointer px-8 pl-16 rounded-t-3xl"
+					className="sticky w-full h-16 flex flex-col items-start justify-center bg-dark-bg text-text text-xl font-bold border-2 border-text cursor-pointer px-8 rounded-t-3xl"
 				>
 					Blog
 				</Link>
 				<div className="p-4 sm:p-10">
-					<div className="flex flex-row flex-wrap items-start justify-start gap-10 h-full">
-						{sorted.map((article) => (
-							<Article key={article.slug} article={article} />
-						))}
+					<div className="flex flex-col items-center justify-center">
+						<h2 className="text-text text-3xl">Nothing there yet...</h2>
 					</div>
 				</div>
-			</>
-		);
-	}
-	return (
-		<>
-			<Link
-				href="/blog"
-				className="sticky w-full h-16 flex flex-col items-start justify-center bg-dark-bg text-text text-xl font-bold border-2 border-text cursor-pointer px-8 rounded-t-3xl"
-			>
-				Blog
-			</Link>
-			<div className="p-4 sm:p-10">
-				<div className="flex flex-col items-center justify-center">
-					<h2 className="text-text text-3xl">Nothing there yet...</h2>
-				</div>
 			</div>
-		</>
+		</div>
 	);
 }

@@ -104,7 +104,7 @@ const components = {
 	blockquote: ({ className, ...props }) => (
 		<blockquote
 			className={clsx(
-				"mt-4 border-l-2 not-italic border-primary pl-6 my-0 text-inherit bg-dark-bg",
+				"mt-4 border-l-2 not-italic border-primary pl-6 my-0 py-[1px] text-inherit bg-bg dark:bg-amber-200",
 				className,
 			)}
 			{...props}
@@ -139,7 +139,7 @@ const components = {
 	th: ({ className, ...props }) => (
 		<th
 			className={clsx(
-				"border border-text px-4 py-2 text-dark-bg bg-text font-extrabold text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right",
+				"border border-text px-4 py-2 text-dark-bg dark:text-amber-200 bg-text font-extrabold text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right",
 				className,
 			)}
 			{...props}
@@ -148,7 +148,7 @@ const components = {
 	td: ({ className, ...props }) => (
 		<td
 			className={clsx(
-				"border border-text px-4 py-2 text-text rounded-xl bg-dark-bg text-left [&[align=center]]:text-center [&[align=right]]:text-right",
+				"border border-text px-4 py-2 text-text dark:text-black bg-dark-bg dark:bg-amber-100 text-left [&[align=center]]:text-center [&[align=right]]:text-right",
 				className,
 			)}
 			{...props}
@@ -157,19 +157,25 @@ const components = {
 	pre: ({ className, ...props }) => (
 		<pre
 			className={clsx(
-				"mt-6 mb-4 duration-1000 overflow-x-auto rounded-2xl bg-dark-bg group-hover:bg-bg scrollbar-thin scrollbar-track-bg group-hover:scrollbar-track-dark-bg scrollbar-thumb-text py-4",
+				"mt-6 mb-4 duration-1000 overflow-x-auto rounded-2xl bg-dark-bg dark:bg-neutral-100 group-hover:bg-bg dark:group-hover:bg-neutral-100 scrollbar-thin scrollbar-track-bg group-hover:scrollbar-track-dark-bg scrollbar-thumb-text py-4",
 				className,
 			)}
 			{...props}
 		/>
 	),
 	strong: ({ className, ...props }) => (
-		<strong className={clsx("text-primary font-bold", className)} {...props} />
+		<strong
+			className={clsx(
+				"text-primary dark:text-primary-dark font-bold",
+				className,
+			)}
+			{...props}
+		/>
 	),
 	code: ({ className, ...props }) => (
 		<code
 			className={clsx(
-				"relative rounded border-0 border-text bg-dark-bg py-[0.2rem] px-[0.3rem] font-mono text-sm text-primary",
+				"relative rounded border-0 border-text bg-dark-bg dark:bg-neutral-100 text-hover inline-block dark:text-black py-[0.1rem] px-[0.3rem] font-mono text-sm",
 				className,
 			)}
 			{...props}
