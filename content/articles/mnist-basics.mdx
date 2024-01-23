@@ -28,27 +28,35 @@ In the last article there was a little description on how a NN is trained.
 Let's make this description a little bit more detailed:
 
 When we want to train a NN, we need a bunch of data. 
-This Data is then seperated in Data used for training the NN (~ 75%), and Data used for testing the NN (~ 25%).
-We need this to make sure, the NN did not "memorize" the Training Data, 
-i.e. it adjusted the Treshold values to solve the exact Problem it was given, but nothing more.
-Such a NN could have an accuracy of probably nearly 100% on the data it was trained with, 
+This Data is then seperated in data used for training the NN (~ 75%), and data used for evaluating the NN (~ 25%).
+We need this to make sure, the NN did not "memorize" the training data, 
+i.e. it adjusted the treshold values to solve the exact problem it was given, but nothing more.
+Such a NN could have an good accuracy on the data it was trained with, 
 but it will fail recognizing anything that was not part of the Training Data.
 (That's usually not what we want)
 
-Because of this we check the Results with the Test Data, and make sure the NN will work for other Data too.
+Because of this we check the Results with the evaluation data, and make sure the NN will work for other data too.
 
-Little Recap: All the Data that we have must be labeled, so the NN knows which answer would have been right, 
+Little Recap: All the data we have must be labeled, so the NN knows which answer would have been right, 
 and can imporve the Tresholds.
 
 
 ## Why is good Data so important?
 
-The Data a NN is trained with is one of the most important factors.
-You can have a wonderfull algorithm, but without the right data, your NN cannot be trained properly.
+> "garbage in, garbage out" - Confucius
+
+The Data a NN is trained with is (one of) the most important factor(s).
+You can use wonderful algorithms, but without the right data, your NN cannot be trained properly.
+
+It is sometimes difficult to find a good dataset, and it takes even more time (much more) creating your own data,
+but a good dataset is the first step towards a good NN.
+
+
+## What exactly is bad Data?
 
 When you want to develop a NN 
-that for example recognizes if the animal in a picture is a dog or a wolve, 
-but all your training pictures of wolves are taken in the mountains with snow in the background, 
+which will recognize whether the animal in a picture is a dog or a wolve, 
+but all your training pictures of wolves are taken in the mountains (i.e. probably with snow in the background), 
 then the NN will propably classify a dog playing in the snow as a Wolve.
 
 > Fun Fact:
@@ -60,64 +68,70 @@ then the NN will propably classify a dog playing in the snow as a Wolve.
 > and so the AI did not know what to do when suddenly the grass disapeared at the bidge.
 
 This may be a small issue when recognizing dogs and wolves (depending on the application), 
-but lets imagine you work for a car company, and develop a self-driving car.
-All your training data is recorded in the summer, the company is testing the car, 
-and everthing works fine. Many people start using the self-driving car, 
-but in winter, it starts snowing, 
-and thousands of customers want to know why their car suddenly stopped (best case, could have crashed too).
+but let's imagine a scenario where your code is actually important.
+In the best case, you're left alone with some pissed customers, 
+but you could be also resposible for much worse (self-driving cars, etc.).
 
-This is maybe not the most realistic example, but it shows why you should *always* try to use good data.
-Even if you're not doing anything that critical, we want to optimize our NN, 
+Anyway, we should *always* try to use good data, 
+as our ziel is to optimize our NN, 
 and this starts with using good data for the training.
 
+---
+
 Another problem are biases. It basically means that the content of the data is represented in the responds the NN gives, 
-e.g. the NN will copy certain beliefs that are represented in the data (This is sometimes not really good). 
-There are many forms of biases. An example: 
+e.g. the NN will copy certain beliefs that are represented in the data (that's usually not really good, depeding on the application). 
+There are many forms of biases. 
+They can be introduced by incomplete data (e.g. you ignore one group of users),
+wrong data (i.e. you data is just wrong, not representing the reality), etc.
 
-You get your data by calling people, and asking them questions, for a product where you're not calling people.
-The data you trained the NN is incomplete, because all the people, that hang up quick are not represented in the data.
-However, as the final product is used by many people, also people that would hang up the phone, 
-the NN will generate wrong predictions/responses for them.
-
-There are many more examples, I will add a few here when I come across some.
+> Example: 
+>
+> You get your data by calling people, and asking them questions, for a product where you're not calling people.
+> The data you trained the NN is incomplete, because all the people, that hang up quick are not represented in the data.
+> However, as the final product is used by many people - also people that would hang up the phone - 
+> the NN will generate wrong responses for them.
+>
+> Something that i heard actually happened:
+> An AI was used in court, to predict whether a suspect is innocent or not.
+> As the data it was trained on was incomplete/ not balanced, the AI started to favor quys that were white.
 
 Some advice when searching for good data:
 
-- Select training data that's appropriately representative and large enough to counteract common types of bias.
+- Select training data that's appropriately representative and large enough for your application.
 - Test and validate to ensure the results of your NN don't reflect bias due to algorithms or the dataset.
 - Understand the training data used, as the dataset could contain labels that can introduce bias.
 
 
 ## Where can we get good Data?
 
-It's quite hard getting good data, because mayn datasets are not available for free.
-Also they may be not a 100% suitable for your project, and so you maybe have to "clean" the data first.
+It's quite hard getting good data, because many good/complete/normalized datasets are not available for free.
+Also they may be not 100% suitable for your project, and so you maybe have to "clean" the data first.
 
 Here's a link with a few datasets for you in case you want to start your own project: 
 - [Best public datasets](https://www.altexsoft.com/blog/best-public-machine-learning-datasets/)
 - [Awesome public datasets](https://github.com/awesomedata/awesome-public-datasets)
 
-For our first project we are gonna use a free open dataset, the MNIST dataset.
+For our first project we are gonna use a free dataset, the MNIST dataset.
 
 
 ## MNIST
 
 The MNIST dataset is a big collection of handwritten numbers (0 - 9). 
-They are all only 28 x 28 pixel small, i.e. increased training speed, and you don't need a graphic card.
+They are all only 28 x 28 pixel small, i.e. increased training speed, and you don't need a graphic card for the training.
 
 ![example of the MNIST dataset](/blog-images/mnist-example.png)
 
 This is a quite good dataset, the labels are good, the numbers are written by children and adults, 
-they are already seperated into training and test data, there is enough data (60.000 images) and so on... The perfect dataset.
+they are already seperated into training and evaluation data, there is enough data (60.000 images) and so on... The perfect dataset.
 
-Additionally is quite easy to load the data, so we won't need much code for this.
+Additionally it's quite easy to load the data, so we won't need much code for this.
 
 The MNIST dataset is kinda the "Hello World" example for Deep Learning.
 
 ## The End
 
 Another article finished. In the next two articles we are going to focus more on neural networks 
-(structur, and learning process), so we can start developing right after the last article (backpropagation), 
+(structure and learning process), so we can start developing right after the last article (backpropagation), 
 i.e. in the next block on computer vision.
 
 Next Article: work in progress...
