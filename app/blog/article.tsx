@@ -19,7 +19,9 @@ const ColorHeader: React.FC<{ children: React.ReactNode; topic: string }> = ({
 		}
 		case "devapps": {
 			return (
-				<div className="flex flex-col items-start justify-center h-16 w-full bg-amber-300/20 text-amber-300 border-b-2 border-amber-300/70 rounded-t-xl px-4 md:px-8"></div>
+				<div className="flex flex-col items-start justify-center h-16 w-full bg-amber-300/20 text-amber-300 border-b-2 border-amber-300/70 rounded-t-xl px-4 md:px-8">
+					{children}
+				</div>
 			);
 		}
 		case "tech": {
