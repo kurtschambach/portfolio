@@ -31,19 +31,33 @@ When we want to train a NN, we need a bunch of data.
 This Data is then seperated in data used for training the NN (~ 75%), and data used for evaluating the NN (~ 25%).
 We need this to make sure, the NN did not "memorize" the training data, 
 i.e. it adjusted the treshold values to solve the exact problem it was given, but nothing more.
-Such a NN could have an good accuracy on the data it was trained with, 
+Such a NN could have an accuracy of probably nearly 100% on the data it was trained with, 
 but it will fail recognizing anything that was not part of the Training Data.
-(That's usually not what we want)
+That's usually (always) not what we want.
 
-Because of this we check the Results with the evaluation data, and make sure the NN will work for other data too.
+> Maybe think about why we don't want a NN that is specialized on the data it's trained on for a moment...
+> ...
+> ...
+
+> Well, if we would want to assign every data-point to some label, 
+> you would just take a normal program, some switch case, or many if elses, 
+> but the use of Neural Networks is to recognize *new* data correctly.
+> (a program is quicker to write, not as complex as a NN, and you have no room for errors)
+
+> This would by the way be an extreme example for **overfitting**, e.g. the NN get's used to the data it is trained with, 
+> but it won't get better on unknown data. (That's also why you more training is not equal to better accuracy)
+> ![overfitting image](/blog-images/overfitting.png)
+
+Because of this we check the Results with the evaluation data, 
+and make sure the NN will work for data it has never seen before too.
 
 Little Recap: All the data we have must be labeled, so the NN knows which answer would have been right, 
-and can imporve the Tresholds.
+and can improve the Tresholds.
 
 
 ## Why is good Data so important?
 
-> "garbage in, garbage out" - Confucius
+> "garbage in, garbage out" - ancient chinese proverb [¹]
 
 The Data a NN is trained with is (one of) the most important factor(s).
 You can use wonderful algorithms, but without the right data, your NN cannot be trained properly.
@@ -135,3 +149,8 @@ Another article finished. In the next two articles we are going to focus more on
 i.e. in the next block on computer vision.
 
 Next Article: work in progress...
+
+---
+
+[¹] i actually stole this idea from [mikhail berkovs](https://github.com/uhasker/) [book on NextJS](https://uhasker.github.io/getting-things-done-in-next-js/).
+Maybe try to read some of his articles, he has definitley more experience in writing them ;)

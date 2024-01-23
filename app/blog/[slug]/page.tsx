@@ -61,7 +61,7 @@ export default async function ArticlePage({ params }: Props) {
 					</div>
 					<article
 						className={
-							"px-0 sm:px-4 py-12 mx-auto text-text hover:text-hover dark:text-text dark:hover:text-black text-lg font-bold bg-inherit prose sm:prose-quoteless"
+							"px-0 sm:px-4 py-12 mx-auto text-text hover:text-hover dark:text-text dark:hover:text-black text-lg duration-1000 transition-[color] font-bold bg-inherit prose sm:prose-quoteless"
 						}
 					>
 						<Mdx code={article.body.code} />
