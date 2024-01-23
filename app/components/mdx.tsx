@@ -123,7 +123,7 @@ const components = {
 		/>
 	),
 	hr: ({ ...props }) => (
-		<hr className="my-4 border-2 border-text rounded-full md:my-8" {...props} />
+		<hr className="my-4 md:my-8 border-1 border-text w-full" {...props} />
 	),
 	table: ({ className, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
 		<div className="w-full my-6 overflow-y-auto">
