@@ -148,7 +148,7 @@ const components = {
 	td: ({ className, ...props }) => (
 		<td
 			className={clsx(
-				"border border-text px-4 py-2 text-text dark:text-black bg-dark-bg dark:bg-amber-100 text-left [&[align=center]]:text-center [&[align=right]]:text-right",
+				"border border-text px-4 py-2 text-text group-hover:text-hover dark:text-black dark:group-hover:text-black duration-1000 bg-dark-bg dark:bg-amber-100 text-left [&[align=center]]:text-center [&[align=right]]:text-right",
 				className,
 			)}
 			{...props}
