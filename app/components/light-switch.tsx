@@ -3,22 +3,24 @@
 import { Sun, Moon } from "lucide-react";
 import { useState, useEffect } from "react";
 
-// This code is a little bit cringe, as the dark useState (and every other dark) means, that the theme is dark, 
+// This code is a little bit cringe, as the dark useState (and every other dark) means, that the theme is dark,
 // but when the theme is dark we'll remove "dark" from the classList, and on light mode, we'll add "dark",
-// This is because I want to have dark as the default mode, and when you use bg-light dark:bg-dark in your tailwind,
-// tailwind sometimes needs some time to get to the dark mode when rendering the page. 
-// Because of this we are using bg-dark dark:bg-light, even if it's a little bit unintuitive
+// This is because we want to have dark as the default mode, and when you use `bg-light dark:bg-dark` in your tailwind,
+// tailwind sometimes needs some time to get to the dark mode when rendering the page.
+// Because of this we are using `bg-dark dark:bg-light`, even if it's a little bit unintuitive
 
 const ModeSwitch = () => {
-	let prefersDarkMode = true;		
+	let prefersDarkMode = true;
 	let storedTheme: string | null = null;
-	
+
 	useEffect(() => {
 		if (typeof window !== "undefined") {
-			prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+			prefersDarkMode = window.matchMedia(
+				"(prefers-color-scheme: dark)",
+			).matches;
 			storedTheme = localStorage.getItem("theme");
 		}
-	}, [])
+	}, []);
 
 	const [isDark, setIsDark] = useState<boolean>(
 		storedTheme === "dark" || (!storedTheme && prefersDarkMode),
