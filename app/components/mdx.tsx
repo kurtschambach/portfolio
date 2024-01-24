@@ -11,7 +11,7 @@ const components = {
 	h1: ({ className, ...props }) => (
 		<h1
 			className={clsx(
-				"[&:not(:first-child)]:mt-16 scroll-m-20 text-4xl font-bold tracking-tight text-inherit",
+				"[&:not(:first-child)]:mt-16 scroll-m-20 text-4xl font-bold tracking-tight text-hover dark:text-black",
 				className,
 			)}
 			{...props}
@@ -20,7 +20,7 @@ const components = {
 	h2: ({ className, ...props }) => (
 		<h2
 			className={clsx(
-				"mt-10 scroll-m-20 border-b-2 border-b-bg text-inherit pb-1 text-3xl font-semibold tracking-tight first:mt-0",
+				"mt-12 scroll-m-20 border-b-2 border-b-bg dark:border-b-amber-200 text-hover dark:text-black pb-1 text-3xl font-semibold tracking-tight first:mt-0",
 				className,
 			)}
 			{...props}
@@ -29,7 +29,7 @@ const components = {
 	h3: ({ className, ...props }) => (
 		<h3
 			className={clsx(
-				"mt-8 scroll-m-20 text-2xl text-inherit font-semibold tracking-tight",
+				"mt-8 scroll-m-20 text-2xl text-hover dark:text-black font-semibold tracking-tight",
 				className,
 			)}
 			{...props}
@@ -38,7 +38,7 @@ const components = {
 	h4: ({ className, ...props }) => (
 		<h4
 			className={clsx(
-				"mt-8 scroll-m-20 text-xl text-inherit font-semibold tracking-tight",
+				"mt-8 scroll-m-20 text-xl text-hover dark:text-black font-semibold tracking-tight",
 				className,
 			)}
 			{...props}
@@ -47,7 +47,7 @@ const components = {
 	h5: ({ className, ...props }) => (
 		<h5
 			className={clsx(
-				"mt-8 scroll-m-20 text-lg text-inherit font-semibold tracking-tight",
+				"mt-8 scroll-m-20 text-lg text-hover dark:text-black font-semibold tracking-tight",
 				className,
 			)}
 			{...props}
@@ -56,7 +56,7 @@ const components = {
 	h6: ({ className, ...props }) => (
 		<h6
 			className={clsx(
-				"mt-8 scroll-m-20 text-base text-inherit font-semibold tracking-tight",
+				"mt-8 scroll-m-20 text-base text-hover dark:text-black font-semibold tracking-tight",
 				className,
 			)}
 			{...props}
