@@ -69,7 +69,7 @@ export const Article: React.FC<Props> = ({ article }) => {
 							<span>SOON</span>
 						)}
 					</span>
-					<span className="text-xs duration-300 text-hover bg-dark-bg/60 group-hover:bg-dark-bg rounded-md p-1 px-3">
+					<span className="text-xs duration-300 text-hover bg-dark-bg/70 group-hover:bg-dark-bg rounded-md p-1 px-3">
 						{readingTime(`${article.body.code}`).text}
 					</span>
 				</ColorHeader>
