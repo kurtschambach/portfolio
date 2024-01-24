@@ -13,6 +13,10 @@
   src: url('../fonts/ibm_plex/IBM-Plex-Mono/fonts/complete/otf/IBMPlexMono-Regular.otf') format('opentype');
 }
 
+*:focus-visible {
+  @apply outline-none ring-2 ring-primary ring-offset-4 rounded-lg ring-offset-dark-bg;
+}
+
 ::selection {
   background-color: #5f8a9f;
   color: #171717;
