@@ -117,7 +117,7 @@ const components = {
 	}: React.ImgHTMLAttributes<HTMLImageElement>) => (
 		// eslint-disable-next-line @next/next/no-img-element
 		<img
-			className={clsx("rounded-xl border-2 border-dark-bg", className)}
+			className={clsx("rounded-xl invert-0 dark:invert border-2 border-dark-bg dark:border-amber-100", className)}
 			alt={alt}
 			{...props}
 		/>
