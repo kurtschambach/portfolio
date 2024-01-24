@@ -33,31 +33,30 @@ We need this to make sure, the NN did not "memorize" the training data,
 i.e. it adjusted the treshold values to solve the exact problem it was given, but nothing more.
 Such a NN could have an accuracy of probably nearly 100% on the data it was trained with, 
 but it will fail recognizing anything that was not part of the Training Data.
-That's usually (always) not what we want.
+That's usually (=always) not what we want.
 
 > Maybe think about why we don't want a NN that is specialized on the data it's trained on for a moment...
+>
 > ...
+>
 > ...
 
 > Well, if we would want to assign every data-point to some label, 
 > you would just take a normal program, some switch case, or many if elses, 
 > but the use of Neural Networks is to recognize *new* data correctly.
-> (a program is quicker to write, not as complex as a NN, and you have no room for errors)
+> (a standard program is quicker to write, not as complex as a NN, and you have no room for errors)
 
 > This would by the way be an extreme example for **overfitting**, e.g. the NN get's used to the data it is trained with, 
-> but it won't get better on unknown data. (That's also why you more training is not equal to better accuracy)
+> but it won't get better on unknown data. (That's also why more training is not equal to better accuracy)
 > ![overfitting image](/blog-images/overfitting.png)
 
 Because of this we check the Results with the evaluation data, 
 and make sure the NN will work for data it has never seen before too.
 
-Little Recap: All the data we have must be labeled, so the NN knows which answer would have been right, 
-and can improve the Tresholds.
-
 
 ## Why is good Data so important?
 
-> "garbage in, garbage out" - ancient chinese proverb [¹]
+> "garbage in, garbage out" - ancient chinese proverb A note[^1]
 
 The Data a NN is trained with is (one of) the most important factor(s).
 You can use wonderful algorithms, but without the right data, your NN cannot be trained properly.
@@ -73,6 +72,19 @@ which will recognize whether the animal in a picture is a dog or a wolve,
 but all your training pictures of wolves are taken in the mountains (i.e. probably with snow in the background), 
 then the NN will propably classify a dog playing in the snow as a Wolve.
 
+Let's imagine this with a little kid learning. We would say: 
+*look, this and this and this are wolves, and the other ones are dogs*, 
+and the kid will think *"If there is snow, it's a wolve, and without snow, it has to be a dog, easy"*.
+
+It's the same for NN. If we label images with snow and something dog-alike as wolve, and all other images as dogs,
+the NN will learn to classify images based on the amount of snow. 
+Because of this we will need many data, and data for every possible situation, to represent the reality.
+(because in reality, there are also dogs and not only wolves in the snow. 
+If you'd be sure, that all wolves will have snow in the background, while no dog will ever be seen together with snow,
+it would be absolutely fine to let the NN decide based on snow.)
+
+This is by the way why you should always try to understand your data.
+
 > Fun Fact:
 >
 > A group of students once tried autonomous driving, and recorded hundreds of hours of driving.
@@ -84,19 +96,19 @@ then the NN will propably classify a dog playing in the snow as a Wolve.
 This may be a small issue when recognizing dogs and wolves (depending on the application), 
 but let's imagine a scenario where your code is actually important.
 In the best case, you're left alone with some pissed customers, 
-but you could be also resposible for much worse (self-driving cars, etc.).
+but you could be also resposible for much worse (self-driving cars crashing into each other, etc.).
 
 Anyway, we should *always* try to use good data, 
-as our ziel is to optimize our NN, 
+as our goal is to optimize our NN, 
 and this starts with using good data for the training.
 
 ---
 
-Another problem are biases. It basically means that the content of the data is represented in the responds the NN gives, 
-e.g. the NN will copy certain beliefs that are represented in the data (that's usually not really good, depeding on the application). 
+This problem is one specific kind of biases. It basically means that the content of the data is represented in the responds the NN gives, 
+e.g. the NN will also copy certain beliefs that are represented in the data (that's usually not really good, depeding on the application). 
 There are many forms of biases. 
 They can be introduced by incomplete data (e.g. you ignore one group of users),
-wrong data (i.e. you data is just wrong, not representing the reality), etc.
+wrong data (some of your data entries are wrong) or your data is not representing the reality (dogs are playing in the snow too), etc.
 
 > Example: 
 >
@@ -105,7 +117,7 @@ wrong data (i.e. you data is just wrong, not representing the reality), etc.
 > However, as the final product is used by many people - also people that would hang up the phone - 
 > the NN will generate wrong responses for them.
 >
-> Something that i heard actually happened:
+> Something that - as i heard - actually happened:
 > An AI was used in court, to predict whether a suspect is innocent or not.
 > As the data it was trained on was incomplete/ not balanced, the AI started to favor quys that were white.
 
@@ -152,5 +164,5 @@ Next Article: work in progress...
 
 ---
 
-[¹] i actually stole this idea from [mikhail berkovs](https://github.com/uhasker/) [book on NextJS](https://uhasker.github.io/getting-things-done-in-next-js/).
-Maybe try to read some of his articles, he has definitley more experience in writing them ;)
+
+[^1]: I actually stole this idea from [mikhail berkovs](https://github.com/uhasker/) book on [NextJS](https://uhasker.github.io/getting-things-done-in-next-js/) Maybe try to read some of his articles, he has definitley more experience in writing them ;)

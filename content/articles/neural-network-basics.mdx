@@ -43,10 +43,13 @@ if the sum of the input signal crosses a Threshold.
 One single neuron looks something like that:
 ![image of a neuron](/blog-images/neuron.png)
 
-It consists of three main parts, that are important for us:
+It consists of three (or four) main parts, that are important for us:
 - Dendrites
 - Axom
 - Soma
+- (Synapses)
+
+The synapses are basically just the connection of one neurons axom to another neurons dendrites
 
 The dendrites take the "input signal". 
 They are connected to other neurons through synapses,
@@ -69,30 +72,31 @@ The probably first model of a neuron was created by McCulloch & Pitts:
 ![mcculloch & pitts neuron](/blog-images/mcculloch-pitts.png)
 
 The neuron in this model has x₁ ... xₙ stimulating input signals, and
-y₁ ... yₙ suppressing input signals (determined by the problem we try to solve).
+y₁ ... yₙ suppressing input signals (the exact amount is determined by the problem we try to solve).
+
 The Soma is represented by the Threshold, a value that determines when the neuron will fire:
 
 - As soon as we have one (or more) suppressing signals, the output is *always* `0` (i.e. stimulating signals are ignored)
 - If the sum of stimulating signals is equal or bigger than the Threshold, the output is `1`
-- If the sum of stimulating signals is lower than the Threshold, the outpur is `0`
+- If the sum of stimulating signals is less than the Threshold, the outpur is `0`
 
-> In the following I'll call stimulating input signals just input signals, becuase most of the input signals are usually stimulating.
+> In the following I'll call stimulating input signals just input signals, becuase usually most of the input signals are stimulating.
 
-Our last component is the output signal.
+Our last component in the model is the output signal.
 In this model, the input and output signals are binary (i.e. either `0` (=`false`) 
 or `1` (=`true`)).
 
 With this neuron, we can already solve some easy problems.
 The following will be the hard part here, I tried to add examples, but if you don't understand something, just read it a few times.
 As a "developer", lets try logic gates:
-> If you dont know what logic gates are, please take a look into it: [Logic Gates](https://www.techtarget.com/whatis/definition/logic-gate-AND-OR-XOR-NOT-NAND-NOR-and-XNOR)
+> If you dont know what logic gates are, please take a look into it: [Logic Gates](https://www.techtarget.com/whatis/definition/logic-gate-AND-OR-XOR-NOT-NAND-NOR-and-XNOR).
 > The Wikipedia article is quite good too.
 
 ### 1. **AND** (two input signals, one output)
 
 > AND returns `1` (= `true`) when both input signal are `1`, and `0` (= `false`) if one or both of the input signals are `0`.
 >
-> Input x₁ **AND** input x₂ are `1`.
+> Input x₁ **AND** input x₂ have to be `true` (`1`) to return `true` (`1`)
 
 In a table, this would look like this: 
 
@@ -124,13 +128,13 @@ The AND function is solveable with a neuron. We'll just set the Threshold to `2`
 
 **Threshold: `1`**
 
-If we have one or two `true`/`1` inputs, the sum is bigger or equal to the Threshold, and the output is `1`.
+If we have one or two stimulating (=`true` or `1`) inputs, the sum is bigger or equal to the Threshold, and the output is `1`.
 
 ### 3. **NOT** (one suppressing input signal, one output)
 
 > NOT returns `1` when the input signal is `0`, and `0` if the input signal is `1`, i.e. always the opposite of the input.
 >
-> The Input y₁ is **NOT** equal to the Output.
+> The Input y₁ is **NOT** (equal to) the Output.
 
 | input | output |
 |-------|--------|
@@ -146,13 +150,13 @@ If the input is `1`, we have a suppressing signal, and because of that, the outp
 
 > XOR returns `1` when one of the two input signals is `1`, and `0` if both of the input signals are `0` or if both are `1`.
 >
-> **Either** x₁ **OR** input x₂ is `1`.
+> **Either** input x₁ **OR** input x₂ is `1`.
 
 Here we'll run into a problem. This Logic Gate is not solveable with a neuron.
 
 > Some Scenarios:
 >
-> With a Threshold of `1`, we'll have the scenario in which both inputs are `0` / in which one input is `1` and the other `0` covered, 
+> With a Threshold of `1`, we'll have the scenario in which both inputs are `0` / in which a input is `1` and the other `0` covered, 
 > but not the scenario in which both inputs are `1`. You can also try different Thresholds if you want, 
 > but you won't come to a solution with only one neuron.
 
@@ -161,8 +165,8 @@ What you should take away from that: every problem, regardless the complexity,
 can be solved with a finite number of neurons.
 
 As you could see, we have set the thresholds manually in the examples. This is our next problem: getting the Threshold values right for every singel neuron. 
-With bigger NN (a few million/billion neurons) this is very hard (not possible), and that's why NN need to be trained. 
-During the training, they adjust the thresholds, to get better and better results.
+With bigger NN (a few million/billion neurons) this is very hard (=not possible), and that's why NNs need to be trained. 
+During the training, they adjust the thresholds (i.e. we don't do this manually anymore), to get better and better results.
 
 > Little side note for those who don't know how an NN is trained:
 >
@@ -170,17 +174,18 @@ During the training, they adjust the thresholds, to get better and better result
 > As we need much of this data, our only hope is that someone else has already done this 
 > (more about this when we come to MNIST). 
 >
-> Now we have to give the NN one data entry, and it gives us it's suggestion.
+> Now we'll give the NN one data entry, and it will will generate probabilities for all possbile solutions.
+> It will suggest the most **probable** solution as the correct one.
 > We compare this suggestion with the corresponding label, and tell the NN whether it was right or wrong.
-> Based on this, the NN adjusts the Thresholds (I will explain how it is doing that in the backpropagation section).
-> (this all happens automatically, i.e. *we* don't *tell* the NN if it's wrong)
+> Based on this, the NN adjusts the thresholds (using backpropagation, we will learn about this in a extra article).
+> (this all happens automatically, i.e. *we* don't really *tell* the NN if it's wrong)
 >
-> In the End, if we wanna do it right, we test the NN with data it has never seen during it's training (we'll see later why).
+> In the End, if we wanna do it right (yes we want), we evaluate the NN with data it has never seen during it's training (we'll see later why).
 
 Now that we know how a NN is learning, let's compare that to our brain real quick:
 
-We are basically doing exactly the same thing (adjust Thresholds of neurons), 
-with the little difference, that the brain additionally adjusts the connections between neurons.
+We are basically doing exactly the same thing (adjust thresholds of neurons), 
+with the little difference, that the brain additionally adjusts the connections between neurons (=topology).
 
 ## This is the End... (only of this article xD)
 
