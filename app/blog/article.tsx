@@ -52,7 +52,7 @@ export const Article: React.FC<Props> = ({ article }) => {
 	return (
 		<Link
 			href={`/blog/${article.slug}`}
-			className="w-[402px] h-72 bg-dark-bg rounded-2xl"
+			className="w-[400px] h-72 bg-dark-bg rounded-2xl"
 		>
 			<article className="h-72 w-full">
 				<ColorHeader topic={article.topic}>

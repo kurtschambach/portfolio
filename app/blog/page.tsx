@@ -24,7 +24,7 @@ export default async function Blog() {
 						Blog
 					</Link>
 					<div className="p-4 sm:p-10">
-						<div className="flex flex-row flex-wrap items-start justify-start gap-10 h-full">
+						<div className="flex flex-row flex-wrap items-start justify-center gap-8 h-full">
 							{sorted.map((article) => (
 								<Article key={article.slug} article={article} />
 							))}
