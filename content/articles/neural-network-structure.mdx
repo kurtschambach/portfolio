@@ -26,8 +26,40 @@ The **marked** article is the current one.
 
 ![input, hidden and output layer](/blog-images/neural-network-structure.png)
 
+Ok, so this is how an deep neural network looks like. 
+We have an input layer, where all our information is feeded to the NN, 
+then a hidden layer.
+In the image we have only a few layers, but in reality there are usually more than three, 
+depending on the colmplexity of the problem. 
+(for our first NN we are gonna only need a few layers, but big LLM for example need much much more)
+
+At the end there is the output layer, where we get the probabilities for the possible solutions.
+This will look something like that:
+
+![image of a NN recognizing a dog](/blog-images/workflow-neural-net.png)
+
+### Output Layer
+
+I'm just starting with the detailed expl. of the output because it's easier to explain.
+
+We have two output neurons, which can return a number between 0 and 1. 
+(Note that the in and outputs are not binary anymore)
+Every neuron is standing for one possible solution.
+
+> You can change this, e.g. only one output neuron,
+> and in another example with more outputs maybe something like
+> 0 for dog, 1 for cat, 2 for turtle, 3 for octopus, and so on.
+>
+> In our example in the picture we could also use only one output neuron,
+> but as we will use one for every solution in our first project I did it here too.
+>
+> [Further reading](https://ai.stackexchange.com/questions/13944/one-vs-multiple-output-neurons), 
+> but we'll talk about this later too.
+
+### Input Layer
+
 ## The End
 
-Well, this was only a small article, so let's jump to the next article on NNs learning. (I'll add the link when done)
+Well, this was only a small article, so let's jump right into the next article on NNs learning. (I'll add the link when done)
 
 Next Article: work in progress...

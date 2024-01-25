@@ -30,12 +30,18 @@ We can for example distinguish quite good between a dog and a cat (usually).
 On the other side, we are really bad in for exmaple maths, 
 because we never had the need to develop math skills in our evolution.
 
+If we want computers to be superior in recognizing dogs/cats, 
+we have to "imitate" our brain.
+For this we need to know how it looks and works first.
+
+---
+
 Our brain consists of millions of neurons, so it is basically a big biological neuronal network.
 
 > The network of neurons in our brain is called "Neuronal" Network, while
 > artificial networks are called "Neural" Networks.
 
-As the brain is a very complex system, let's look at neurons first:
+As the whole brain is a very complex system, let's look at neurons first:
 
 Neurons take input signals, and give an output signal, 
 if the sum of the input signal crosses a Threshold.
@@ -74,7 +80,21 @@ One of the first models of a neuron was created by McCulloch & Pitts:
 The neuron in this model has x₁ ... xₙ stimulating input signals, and
 y₁ ... yₙ suppressing input signals (the exact amount is determined by the problem we try to solve).
 
-> TODO: expl binary 1 = true etc
+> Binary system
+> 
+> We'll use the binary system here. Just in case you don't know it, i'll explain it real quick.
+> In the binary system (originally used for computers), we have only zeros and ones.
+> This is because when trying to send data, we are using electricity.
+> The easiest transportable format we can convert the data to is the binary system: 
+> we have only zeros and ones, representing no electricity (0) versus electricity (1).
+> 
+> In our case (and many others too):
+> `1` = `true`
+> `0` = `false`
+>
+> This should be everything we need for this course, 
+> but I'll maybe add an little article about the binary and hexadecimal system, 
+> and add the link here when done, if you're interested and want to know more.
 
 The Soma is represented by the Threshold, a value that determines when the neuron will fire:
 
@@ -99,9 +119,7 @@ As a "developer", lets try logic gates:
 
 ### 1. **AND** (two input signals, one output)
 
-TODO write 1 as true as it's easier to understand
-
-> AND returns `1` (= `true`) when both input signal are `1`, and `0` (= `false`) if one or both of the input signals are `0`.
+> AND returns `true` (= `1`) when both input signal are `true`, and `false` (= `0`) if one or both of the input signals are `false`.
 >
 > Input x₁ **AND** input x₂ have to be `true` (`1`) to return `true` (`1`)
 
@@ -122,9 +140,9 @@ The AND function is solveable with a neuron. We'll just set the Threshold to `2`
 
 ### 2. **OR** (two input signals, one output)
 
-> OR returns `1` when one or both of the two input signals is `1`, and `0` if both of the input signals are `0`.
+> OR returns `true` when one or both of the two input signals is `true`, and `false` if both of the input signals are `false`.
 >
-> Input x₁ **OR** input x₂ is `1`.
+> Input x₁ **OR** input x₂ is `true`.
 
 | input 1 | input 2| output |
 |---------|--------|--------|
@@ -135,11 +153,11 @@ The AND function is solveable with a neuron. We'll just set the Threshold to `2`
 
 **Threshold: `1`**
 
-If we have one or two stimulating (=`true` or `1`) inputs, the sum is bigger or equal to the Threshold, and the output is `1`.
+If we have one or two stimulating (=`true` or `1`) inputs, the sum is bigger or equal to the Threshold, and the output is `true` (`1`).
 
 ### 3. **NOT** (one *suppressing* input signal, one output)
 
-> NOT returns `1` when the input signal is `0`, and `0` if the input signal is `1`, i.e. always the opposite of the input.
+> NOT returns `true` when the input signal is `false`, and `false` if the input signal is `true`, i.e. always the opposite of the input.
 >
 > The Input y₁ is **NOT** (equal to) the Output.
 
@@ -155,9 +173,9 @@ If the input is `1`, we have a suppressing signal, and because of that, the outp
 
 ### 3. **XOR - exclusive OR** (two input signals, one output)
 
-> XOR returns `1` when one of the two input signals is `1`, and `0` if both of the input signals are `0` or if both are `1`.
+> XOR returns `true` when one of the two input signals is `true`, and `false` if both of the input signals are `false` or if both are `true`.
 >
-> **Either** input x₁ **OR** input x₂ is `1`.
+> **Either** input x₁ **OR** input x₂ is `true`.
 
 Here we'll run into a problem. This Logic Gate is not solveable with a neuron.
 
@@ -182,7 +200,7 @@ During the training, they adjust the thresholds (i.e. we don't do this manually 
 > (more about this when we come to MNIST). 
 >
 > Now we'll give the NN one data entry, and it will generate probabilities for all possbile solutions.
-> It will suggest the most **probable** solution as the correct one.
+> It will suggest the most probable solution as the correct one.
 > We compare this suggestion with the corresponding label, and tell the NN whether it was right or wrong.
 > Based on this, the NN adjusts the thresholds (using backpropagation, we will learn about this in a extra article).
 > All this happens automatically, i.e. *we* don't really *tell* the NN if it's wrong, not manually.
