@@ -78,15 +78,15 @@ It is called perceptron or McCulloch-Pitts neuron.
 
 ![mcculloch & pitts neuron](/blog-images/mcculloch-pitts.png)
 
-The neuron in this model has x₁ ... xₙ stimulating input signals, and
+The perceptron in this model has x₁ ... xₙ stimulating input signals, and
 y₁ ... yₙ suppressing input signals (the exact amount is determined by the problem we try to solve).
 
 > Binary system
 > 
 > We'll use the binary system here. Just in case you don't know it, i'll explain it real quick.
 > In the binary system (originally used for computers), we have only zeros and ones.
-> This is because when trying to send data, we are using electricity.
-> The easiest transportable format we can convert the data to is the binary system: 
+> This is because communication in and between computers, is using electricity.
+> The easiest transmittable format we can convert the data to is the binary system: 
 > we have only zeros and ones, representing no electricity (0) versus electricity (1).
 > 
 > In our case (and many others too):
@@ -97,7 +97,7 @@ y₁ ... yₙ suppressing input signals (the exact amount is determined by the p
 > but I'll maybe add an little article about the binary and hexadecimal system, 
 > and add the link here when done, if you're interested and want to know more.
 
-The Soma is represented by the Threshold, a value that determines when the neuron will fire:
+In our perceptron, the soma is represented by a threshold, a value that determines when the neuron will fire:
 
 - As soon as we have one (or more) suppressing signals, the output is *always* `0` (i.e. stimulating signals are ignored)
 - If the sum of stimulating signals is equal or bigger than the Threshold, the output is `1`
@@ -136,7 +136,7 @@ In a table, this would look like this:
 | 1       | 0      | **0**  |
 | 1       | 1      | **1**  |
 
-The AND function is solveable with a neuron. We'll just set the Threshold to `2`. Now we have a few possible constellations:
+The AND function is solveable with a perceptron. We'll just set the threshold to `2`. Now we have a few possible constellations:
 
 - both input signals are `0` -> sum = `0` -> the output of our neuron is `0`
 - one of the input signals is `0`, the other `1` -> sum = `1` -> our neuron returns `0` (the sum `1` is still smaller than our Threshold (`2`))
@@ -157,7 +157,7 @@ The AND function is solveable with a neuron. We'll just set the Threshold to `2`
 
 **Threshold: `1`**
 
-If we have one or two stimulating (=`true` or `1`) inputs, the sum is bigger or equal to the Threshold, and the output is `true` (`1`).
+If we have one or two stimulating (=`true` or `1`) inputs, the sum is bigger or equal to the threshold, and the output is `true` (`1`).
 
 ### 3. **NOT** (one *suppressing* input signal, one output)
 
@@ -172,7 +172,7 @@ If we have one or two stimulating (=`true` or `1`) inputs, the sum is bigger or 
 
 **Threshold: `0`**
 
-The output is `1` when the input is `0` i.e. we don't have a suppressing signal and the sum of input signals is equal to the Threshold.
+The output is `1` when the input is `0` i.e. we don't have a suppressing signal and the sum of input signals is equal to the threshold.
 If the input is `1`, we have a suppressing signal, and because of that, the output has to be `0`.
 
 ### 3. **XOR - exclusive OR** (two input signals, one output)
@@ -181,7 +181,7 @@ If the input is `1`, we have a suppressing signal, and because of that, the outp
 >
 > **Either** input x₁ **OR** input x₂ is `true`.
 
-Here we'll run into a problem. This Logic Gate is not solveable with a neuron.
+Here we'll run into a problem. This logic gate is not solveable with a perceptron.
 
 > Some Scenarios:
 >
@@ -189,11 +189,14 @@ Here we'll run into a problem. This Logic Gate is not solveable with a neuron.
 > but not the scenario in which both inputs are `1`. You can also try different Thresholds if you want, 
 > but you won't come to a solution with only one neuron.
 
-However, if we take more than one neuron, the XOR problem becomes solveable.
+However, if we take more than one perceptron, the XOR problem becomes solveable.
 What you should take away from that: every problem, regardless the complexity, 
-can be solved with a finite number of neurons.
+can be solved with a finite number of perceptron.
 
-As you could see, we have set the thresholds manually in the examples. This is our next problem: getting the Threshold values right for every singel neuron. 
+As you could see, we have set the thresholds manually in the examples. 
+This is our next problem: getting the threshold values right for every singel perceptron.
+(usually they aditionally have weights, and an activation function, see the link at the beggining).
+
 With bigger NN (a few million/billion neurons) this is very hard (=not possible), and that's why NNs need to be trained. 
 During the training, they adjust the thresholds (i.e. we don't do this manually anymore), to get better and better results.
 
