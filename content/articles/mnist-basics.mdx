@@ -29,6 +29,7 @@ Let's make this description a little bit more detailed:
 
 When we want to train a NN, we need a bunch of data. 
 This Data is then seperated in data used for training the NN (~ 75%), and data used for evaluating the NN (~ 25%).
+
 We need this to make sure, the NN did not "memorize" the training data, 
 i.e. it adjusted the treshold values to solve the exact problem it was given, but nothing more.
 Such a NN could have an accuracy of probably nearly 100% on the data it was trained with, 
@@ -40,7 +41,7 @@ That's usually (=always) not what we want.
 > ...
 >
 > ...
-
+>
 > Well, if we would want to assign every data-point to some label, 
 > you would just take a normal program, some switch case, or many if elses, 
 > but the use of Neural Networks is to recognize *new* data correctly.
@@ -56,7 +57,7 @@ and make sure the NN will work for data it has never seen before too.
 
 ## Why is good Data so important?
 
-> "garbage in, garbage out" - ancient chinese proverb[^1]
+> "garbage in, garbage out" - ancient chinese proverb [^1]
 
 The Data a NN is trained with is (one of) the most important factor(s).
 You can use wonderful algorithms, but without the right data, your NN cannot be trained properly.
@@ -78,12 +79,14 @@ and the kid will think *"If there is snow, it's a wolve, and without snow, it ha
 
 It's the same for NN. If we label images with snow and something dog-alike as wolve, and all other images as dogs,
 the NN will learn to classify images based on the amount of snow. 
-Because of this we will need many data, and data for every possible situation, to represent the reality.
-(because in reality, there are also dogs and not only wolves in the snow. 
-If you'd be sure, that all wolves will have snow in the background, while no dog will ever be seen together with snow,
-it would be absolutely fine to let the NN decide based on snow.)
 
-This is by the way why you should always try to understand your data.
+Because of this we will need a lot data, and data for every possible situation, to represent the reality.
+(because in reality, there are also dogs and not only wolves in the snow.)
+
+If you'd be sure, that all wolves will have snow in the background, while no dog will ever be seen together with snow,
+it would be absolutely fine to let the NN decide based on snow.
+
+This is by the way why you should always try to *understand* your data.
 
 > Fun Fact:
 >
@@ -106,6 +109,7 @@ and this starts with using good data for the training.
 
 This problem is one specific kind of biases. It basically means that the content of the data is represented in the responds the NN gives, 
 e.g. the NN will also copy certain beliefs that are represented in the data (that's usually not really good, depeding on the application). 
+
 There are many forms of biases. 
 They can be introduced by incomplete data (e.g. you ignore one group of users),
 wrong data (some of your data entries are wrong) or your data is not representing the reality (dogs are playing in the snow too), etc.
