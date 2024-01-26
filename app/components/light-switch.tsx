@@ -10,7 +10,7 @@ import { useState, useEffect } from "react";
 // Because of this we are using `bg-dark dark:bg-light`, even if it's a little bit unintuitive
 
 const ModeSwitch = () => {
-	let prefersDarkMode = false;
+	let prefersDarkMode = true;
 	let storedTheme: string | null = null;
 
 	useEffect(() => {
@@ -42,7 +42,11 @@ const ModeSwitch = () => {
 		if (typeof window !== "undefined") {
 			if (storedTheme === "dark" || (!storedTheme && prefersDarkMode)) {
 				document.documentElement.classList.add("dark"); // i.e. switch to light mode
+				localStorage.setItem("theme", "light");
+				setIsDark(false);
 			} else {
+				setIsDark(true);
+				localStorage.setItem("theme", "dark");
 				document.documentElement.classList.remove("dark"); // i.e. switch to dark mode
 			}
 		}
