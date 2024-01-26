@@ -3,14 +3,14 @@
 import { Sun, Moon } from "lucide-react";
 import { useState, useEffect } from "react";
 
-// This code is a little bit cringe, as the dark useState (and every other dark) means, that the theme is dark,
+// This code is a little bit hard to undetstand, as the dark useState (and every other dark) means, that the theme is dark,
 // but when the theme is dark we'll remove "dark" from the classList, and on light mode, we'll add "dark",
 // This is because we want to have dark as the default mode, and when you use `bg-light dark:bg-dark` in your tailwind,
 // tailwind sometimes needs some time to get to the dark mode when rendering the page.
 // Because of this we are using `bg-dark dark:bg-light`, even if it's a little bit unintuitive
 
 const ModeSwitch = () => {
-	let prefersDarkMode = true;
+	let prefersDarkMode = false;
 	let storedTheme: string | null = null;
 
 	useEffect(() => {
@@ -41,9 +41,9 @@ const ModeSwitch = () => {
 	useEffect(() => {
 		if (typeof window !== "undefined") {
 			if (storedTheme === "dark" || (!storedTheme && prefersDarkMode)) {
-				document.documentElement.classList.remove("dark");
+				document.documentElement.classList.add("dark"); // i.e. switch to light mode
 			} else {
-				document.documentElement.classList.add("dark");
+				document.documentElement.classList.remove("dark"); // i.e. switch to dark mode
 			}
 		}
 	}, [storedTheme, prefersDarkMode]);
