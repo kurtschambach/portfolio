@@ -23,8 +23,8 @@ export default async function Blog() {
 					>
 						Blog
 					</Link>
-					<div className="p-4 sm:p-10">
-						<div className="flex flex-row flex-wrap items-start justify-start gap-8 h-full">
+					<div className="w-full h-full flex flex-col items-center justify-center p-4 sm:p-10">
+						<div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-8 w-fit h-full">
 							{sorted.map((article) => (
 								<Article key={article.slug} article={article} />
 							))}
