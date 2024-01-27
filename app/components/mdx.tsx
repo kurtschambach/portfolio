@@ -64,7 +64,6 @@ const components = {
 	),
 	a: ({ className, ...props }) => (
 		<a
-			target="_blank"
 			className={clsx(
 				"font-medium text-violet underline underline-offset-4",
 				className,

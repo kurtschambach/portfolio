@@ -47,12 +47,35 @@ That's usually (=always) not what we want.
 > but the use of Neural Networks is to recognize *new* data correctly.
 > (a standard program is quicker to write, not as complex as a NN, and you have no room for errors)
 
-> This would by the way be an extreme example for **overfitting**, e.g. the NN get's used to the data it is trained with, 
+> This would by the way be an extreme example for **overfitting**, i.e. the NN get's used to the data it is trained with, 
 > but it won't get better on unknown data. (That's also why more training is not equal to better accuracy)
+>
 > ![overfitting image](/blog-images/overfitting.png)
+>
+> In this picture, we can see three datasets.
+> Let's say, the red points are images of dogs, while the green one are cats.
+> (for the light mode ppl cyan and pink).  
+> These points are our training data.  
+> The line is where our NN is seperating the images.
+>
+> In the left image, we can see the result of a NN, 
+> that was probably not trained enough (or has not enough layers etc.).  
+> => **Underfitting**
+>
+> In the middle one, there is an **overfitted** NN,
+> the NN was probably trained too much. 
+> Because of this, the "function" it developed to seperate dogs and cats
+> is perfect for the data it was trained for, 
+> but it is much too specialiced to fit any other data.
+>
+> The image on the right side shows a balanced NN.
+> This NN was trained exactly right, it's not extremely specialized,
+> but also not just a straight line through the data: It kinda "sees" the "big image",
+> i.e. it will hopefully perform wonderful on new data.
 
-Because of this we check the Results with the evaluation data, 
-and make sure the NN will work for data it has never seen before too.
+Because of this we check the results with the evaluation data, 
+and make sure the NN will work for data it has never seen before,
+i.e. is not overfitted.
 
 
 ## Why is good Data so important?
@@ -88,18 +111,18 @@ it would be absolutely fine to let the NN decide based on snow.
 
 This is by the way why you should always try to *understand* your data.
 
-> Fun Fact:
+> Little story:
 >
 > A group of students once tried autonomous driving, and recorded hundreds of hours of driving.
 > The AI trained with this data drove quite good, but after a while the car reached a bridge, where the car suddenly stopped.
 >
 > As the students found out later, in all their training data, there was grass on the side of the road,
-> and so the AI did not know what to do when suddenly the grass disapeared at the bidge.
+> and so the AI did not know what to do when suddenly the grass disappeared at the bidge.
 
 This may be a small issue when recognizing dogs and wolves (depending on the application), 
 but let's imagine a scenario where your code is actually important.
 In the best case, you're left alone with some pissed customers, 
-but you could be also resposible for much worse (self-driving cars crashing into each other, etc.).
+but you could also be responsible for much worse (self-driving cars crashing into each other, etc.).
 
 Anyway, we should *always* try to use good data, 
 as our goal is to optimize our NN, 
@@ -107,11 +130,11 @@ and this starts with using good data for the training.
 
 ---
 
-This problem is one specific kind of biases. It basically means that the content of the data is represented in the responds the NN gives, 
-e.g. the NN will also copy certain beliefs that are represented in the data (that's usually not really good, depeding on the application). 
+That problem is one specific kind of biases. A NN with a bias basically means that the content of your data is represented in the responds the NN gives, 
+e.g. the NN copies certain beliefs that are represented in the data. 
 
 There are many forms of biases. 
-They can be introduced by incomplete data (e.g. you ignore one group of users),
+They can be introduced by incomplete data (e.g. you ignore for example one group of users),
 wrong data (some of your data entries are wrong) or your data is not representing the reality (dogs are playing in the snow too), etc.
 
 > Example: 
@@ -123,7 +146,9 @@ wrong data (some of your data entries are wrong) or your data is not representin
 >
 > Something that - as i heard - actually happened:
 > An AI was used in court, to predict whether a suspect is innocent or not.
-> As the data it was trained on was incomplete/ not balanced, the AI started to favor quys that were white.
+> As the data it was trained on was incomplete/ not balanced, the AI started to favor quys that were white :/.
+>
+> TL;DR: When your data is racist, your NN will be too.
 
 Some advice when searching for good data:
 
