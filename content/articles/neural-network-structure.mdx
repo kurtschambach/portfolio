@@ -2,8 +2,8 @@
 title: Structure of a Neural Network
 description: Basics of Neural Networks and Deep Learning 03
 topic: tech-deep-learning-course
-date: "2024-01-30"
-published: false
+date: "2024-01-28"
+published: true
 ---
 
 # Basics of Neural Networks and Deep Learning - Part 3
@@ -40,7 +40,7 @@ This will look something like that:
 
 ### Output Layer
 
-I'm just starting with the detailed expl. of the output because it's easier to explain.
+*(I'm just starting with the detailed expl. of the output because it's easier to explain.)*
 
 We have two output neurons, which can return a number between 0 and 1. 
 (Note that the in and outputs are not binary anymore)
@@ -58,13 +58,56 @@ Every neuron is standing for one possible solution.
 
 ### Input Layer
 
-How do we get data into our NN?
+How we get data into our NN depends on the application.
+If you're planning on coding a LLM, you'll definitly need an other input layer than for computer vision.
+Regarding our first project, we will look at computer vision here.
 
-Well, this is dependant on the application.
-If you're planning on coding a LLM, you'll
+We will have one neuron for every pixel of the image we want to feed to the NN, 
+i.e. 28 x 28 = 784 (the image has 28x28 px) input neurons.
+As the MNIST images of our first project are B&W, we have only one value between 0 and 255 for every pixel.
+
+Before giving all our data to the NN, we will normalize it.
+This means we will take every input, and give it a value between 0 and 1.
+
+This is not too important right now, 
+but if we have different types of input, it will become important.
+
+A quick explanation I copied from StackOverflow:
+
+*"
+In a nutshell, normalization reduces the complexity of the problem your network is trying to solve. 
+This can potentially increase the accuracy of your model and speed up the training. 
+You bring the data on the same scale and reduce variance. 
+None of the weights in the network are wasted on doing a normalization for you, 
+meaning that they can be used more efficiently to solve the actual task at hand.
+"*
+
+> Example:
+>
+> A NN should decide whether a elephant is male or female.
+> Inputs are height in kilometers, and weight in milligrams,
+> e.g. we will have sth like `height: 0.0043km; weight: 100000000mg`.
+>
+> This makes it very hard for the NN to balance the importance of the height/weight.
+> If we divide both values through the average value, 
+> the NN won't have to use neurons for balancing the weight of the two inputs.
+
+In our first project it's going to be easier, 
+as we know a minimal (`0`) and maximal (`255`) value.
+
+Because of this, we'll just divide all our inputs by 255.
+
+### Hidden Layer
+
+This is the layer where all the magic happens, 
+and also the layer we know the least about. (The name has a reason)  
+
+Even if it's a BlackBox, we know that there are many neurons, 
+with changing thresholds and weights, 
+that adjust parameters while training to fit the data.
 
 ## The End
 
-Well, this was only a small article, so let's jump right into the next article on NNs learning. (I'll add the link when done)
+Well, this was only a small article, so let's jump right into the next one on NNs learning. (I'll add the link when done)
 
 Next Article: work in progress...
