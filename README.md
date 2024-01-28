@@ -1,7 +1,7 @@
 <div align="center">
     <a href="https://a3chron.vercel.app/"><h1 align="center">a3chron.vercel.app</h1></a>
     
-My portfolio website, built with [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/), [Upstash](https://upstash.com?ref=chronark.com), [Contentlayer](https://www.contentlayer.dev/) and deployed to [Vercel](https://vercel.com/).
+My portfolio website, built with [Next.js](https://nextjs.org/) and [Tailwind CSS](https://tailwindcss.com/), deployed to [Vercel](https://vercel.com/).
 
 I will refactor this soon, don't have the time now, so don't expect the code to be good (but it's working)
 
