@@ -172,8 +172,12 @@ If we have one or two stimulating (=`true` or `1`) inputs, the sum is bigger or 
 
 **Threshold: `0`**
 
-The output is `1` when the input is `0` i.e. we don't have a suppressing signal and the sum of input signals is equal to the threshold.
-If the input is `1`, we have a suppressing signal, and because of that, the output has to be `0`.
+Note that we have a supressing input signal here, i.e. when the input is `1`,
+the output has to be `0`, because we have a supressing signal.
+
+On the other hand, if the input signal is `0`, i.e. we don't have a supressing signal,
+the output will be `1`, because aditionally to no supressing signal, 
+the number of input signals (`0`) is bigger or equal to the treshold (`0`).
 
 ### 3. **XOR - exclusive OR** (two input signals, one output)
 
