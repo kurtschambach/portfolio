@@ -54,9 +54,9 @@ export const Article: React.FC<Props> = ({ article }) => {
 	return (
 		<Link
 			href={`/blog/${article.slug}`}
-			className="group w-[396px] h-72 bg-dark-bg rounded-2xl"
+			className="group w-full sm:w-[396px] h-fit sm: h-72 bg-dark-bg rounded-2xl"
 		>
-			<article className="h-72 w-full">
+			<article className="h-fit sm:h-72 w-full">
 				<ColorHeader topic={article.topic}>
 					<span className="text-xs duration-300 text-inherit">
 						{article.date ? (
@@ -69,11 +69,14 @@ export const Article: React.FC<Props> = ({ article }) => {
 							<span>SOON</span>
 						)}
 					</span>
-					<span className="text-xs duration-300 text-hover bg-dark-bg/70 group-hover:bg-dark-bg rounded-md p-1 px-3">
+					<span className="hidden sm:block text-xs duration-300 text-hover bg-dark-bg/70 group-hover:bg-dark-bg rounded-md p-1 px-3">
 						{readingTime(`${article.body.code}`).text}
 					</span>
+					<span className="block sm:hidden text-xs duration-300 text-hover bg-dark-bg/70 group-hover:bg-dark-bg rounded-md p-1 px-3">
+						{parseInt(readingTime(`${article.body.code}`).minutes)}m
+					</span>
 				</ColorHeader>
-				<div className="p-8 border-2 border-t-0 border-text h-56 rounded-b-2xl">
+				<div className="p-8 border-2 border-t-0 border-text h-fit sm:h-56 rounded-b-2xl">
 					<h2 className="z-20 text-xl font-medium duration-300 lg:text-3xl text-hover font-display">
 						{article.title}
 					</h2>
