@@ -27,7 +27,7 @@ The first question here is, why is our brain even worth looking at?
 
 Well, it is evolutionary optimized for solving specific problems.
 We can for example distinguish quite good between a dog and a cat (usually).
-On the other side, we are really bad in for exmaple maths, 
+On the other side, we are really bad in for example maths, 
 because we never had the need to develop math skills in our evolution.
 
 If we want computers to be superior in recognizing dogs/cats, 
@@ -73,8 +73,8 @@ and where the output signal starts, when the input signals crosses a specific va
 Now that we know how the neurons in our brain work, we gotta write code, 
 that imitates neurons. For this we have to look at more abstract models of neurons first.
 
-One of the first models of a neuron was created by McCulloch & Pitts.
-It is called perceptron or McCulloch-Pitts neuron.
+The perceptron is such a model, developed by Frank Rosenblatt in 1958.
+It was heavily based on the McCulloch-Pitts neuron.
 
 ![mcculloch & pitts neuron](/blog-images/mcculloch-pitts.png)
 
@@ -83,15 +83,15 @@ y₁ ... yₙ suppressing input signals (the exact amount is determined by the p
 
 > Binary system
 > 
-> We'll use the binary system here. Just in case you don't know it, i'll explain it real quick.
+> We'll use the binary system here. Just in case you don't know it, I'll explain it real quick.
 > In the binary system (originally used for computers), we have only zeros and ones.
-> This is because communication in and between computers, is using electricity.
+> This is because communication in and between computers is using electricity.
 > The easiest transmittable format we can convert the data to is the binary system: 
 > we have only zeros and ones, representing no electricity (0) versus electricity (1).
 > 
-> In our case (and many others too):
-> `1` = `true`
-> `0` = `false`
+> In our case (and many others too):  
+> `1` = `true`  
+> `0` = `false`  
 >
 > This should be everything we need for this course, 
 > but I'll maybe add an little article about the binary and hexadecimal system, 
@@ -103,7 +103,7 @@ In our perceptron, the soma is represented by a threshold, a value that determin
 - If the sum of stimulating signals is equal or bigger than the Threshold, the output is `1`
 - If the sum of stimulating signals is less than the Threshold, the output is `0`
 
-> In the following I'll call stimulating input signals just input signals, becuase usually most of the input signals are stimulating.
+> In the following I'll call stimulating input signals just input signals, because usually most of the input signals are stimulating.
 
 Our last component in the model is the output signal.
 In this model, the input and output signals are binary (i.e. either `0` (=`false`) 
@@ -144,7 +144,7 @@ The AND function is solveable with a perceptron. We'll just set the threshold to
 
 ### 2. **OR** (two input signals, one output)
 
-> OR returns `true` when one or both of the two input signals is `true`, and `false` if both of the input signals are `false`.
+> OR returns `true` when one or both of the two input signals are `true`, and `false` if both of the input signals are `false`.
 >
 > Input x₁ **OR** input x₂ is `true`.
 
@@ -187,15 +187,17 @@ the number of input signals (`0`) is bigger or equal to the threshold (`0`).
 
 Here we'll run into a problem. This logic gate is not solveable with a perceptron.
 
-> Some Scenarios:
->
-> With a Threshold of `1`, we'll have the scenario in which both inputs are `0` / in which a input is `1` and the other `0` covered, 
-> but not the scenario in which both inputs are `1`. You can also try different Thresholds if you want, 
-> but you won't come to a solution with only one neuron.
+Actually, this can be shown graphically.  
+*(green (pink) dot -> return `true`; red (cyan) -> `false`)*
 
-However, if we take more than one perceptron, the XOR problem becomes solveable.
+![perceptron graphical logic gates](/blog-images/perceptron-graphical.png)
+
+Here we can see, that XOR is not linearly separable, 
+i.e. one single perceptron can't solve it.
+
+However, if we take more than one perceptron / more layers, the XOR problem becomes solveable.
 What you should take away from that: every problem, regardless the complexity, 
-can be solved with a finite number of perceptron.
+can be solved with a finite number of perceptrons.
 
 As you could see, we have set the thresholds manually in the examples. 
 This is our next problem: getting the threshold values right for every singel perceptron.
