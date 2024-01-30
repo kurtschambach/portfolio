@@ -20,7 +20,6 @@ const InfoCard = () => {
 				<br />
 				Check out{" "}
 				<Link
-					target="_blank"
 					href="/projects"
 					className="underline text-violet"
 				>
