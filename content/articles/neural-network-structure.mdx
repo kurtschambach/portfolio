@@ -106,6 +106,25 @@ Even if it's a BlackBox, we know that there are many neurons,
 with changing thresholds and weights, 
 that adjust parameters while training to fit the data.
 
+One of the things we can control in the hidden layers are the types of layers we use.
+We can for example connect every neuron of one layer with every neuron of the next layer,
+or maybe only a few ones.  
+Also we can take 50 neurons in the first layer and maybe 250 in the enxt one...
+
+This will look something like this later:
+```python
+model.add(Conv2D(32, kernel_size=(3, 3), activation='relu', input_shape=(28, 28, 1)))
+model.add(Conv2D(64, kernel_size=(3, 3), activation='relu'))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Dropout(0.25))
+model.add(Flatten())
+model.add(Dense(128, activation='relu'))
+model.add(Dropout(0.5))
+model.add(Dense(10, activation='softmax'))
+```
+
+We'll talk more about this in the next *block* when introducing keras etc.
+
 ## The End
 
 Well, this was only a small article, so let's jump right into the next one on NNs learning. (I'll add the link when done)
