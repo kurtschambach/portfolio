@@ -3,9 +3,10 @@ import { allArticles } from "contentlayer/generated";
 import { Mdx } from "@/app/components/mdx";
 import "@/style/mdx.css";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ThumbsDown, ThumbsUp } from "lucide-react";
 import FullScreenSwitch from "@/app/components/fullscreen-switch";
 import ModeSwitch from "@/app/components/light-switch";
+import ThumbsUpDown from "@/app/components/thumbs-up-down";
 
 export const revalidate = 60;
 
@@ -53,8 +54,8 @@ export default async function ArticlePage({ params }: Props) {
 					{article.title}
 				</span>
 			</div>
-			<div className="h-full w-full overflow-y-scroll scrollbar-thin scrollbar-track-bg scrollbar-thumb-text p-4 bg-dark-bg dark:bg-amber-100 rounded-b-3xl">
-				<div className="group relative w-full h-full bg-inherit rounded-3xl mt-4">
+			<div className="h-[calc(100vh-20rem)] w-full overflow-y-scroll scrollbar-thin scrollbar-track-bg scrollbar-thumb-text p-4 bg-dark-bg dark:bg-amber-100 rounded-b-3xl">
+				<div className="group relative w-full h-full bg-inherit rounded-3xl m-0">
 					<div className="lg:absolute top-2 w-full lg:w-fit pl-0 sm:pl-4 lg:pl-0 right-2 flex flex-row lg:flex-col gap-2 items-center lg:justify-center">
 						<FullScreenSwitch />
 						<ModeSwitch />
@@ -66,6 +67,9 @@ export default async function ArticlePage({ params }: Props) {
 					>
 						<Mdx code={article.body.code} />
 					</article>
+					{/*<div className="h-24 w-full bg-transparent flex flex-col items-center justify-center">
+						<ThumbsUpDown blogId={article._id} />
+					</div>*/}
 				</div>
 			</div>
 		</div>
