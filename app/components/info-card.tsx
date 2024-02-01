@@ -19,10 +19,7 @@ const InfoCard = () => {
 				In my free time, I work on some of my own projects.
 				<br />
 				Check out{" "}
-				<Link
-					href="/projects"
-					className="underline text-violet"
-				>
+				<Link href="/projects" className="underline text-violet">
 					Projects
 				</Link>{" "}
 				for more.
