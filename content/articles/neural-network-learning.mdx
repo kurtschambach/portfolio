@@ -56,4 +56,96 @@ by squaring the result, errors are punished more severely
 > Example:
 > 
 
-## Gradient Decend
+
+How do we calculate the minimum?
+
+wanna do this with the errorfunction
+
+minimum would be derivation for normal function
+
+link derivation?
+
+with the derivation we can get the extreme points of a function
+
+insert into function -> minimum or maximum
+
+## gradient decend
+
+with our weights / biases and threshold we have many variables.
+as an example we'll take two variables, i.e. in the three-dimensional space
+
+as an example
+
+we need gradiendt
+
+the gradient is a vektor which components are the values of the partial derivation of the function *f*.
+
+instead of derivation of the function we need the partial derivation for every variable
+
+*I will explain this detailed in the backpropagation article (the next one)*
+
+we need to know:
+
+when a funtion has many variables und wird nach einer derivated, it's a partial derivation.
+
+the gradient gives us the greatest increase in the function.
+
+TODO: image
+
+which change will impove the errorfunction the most
+
+negative gradient
+
+woth the gradient we can get to the minimum of the errorfunction
+
+the gradient is the way of the quick increase, i.e. negative gradient way of quickest decrease.
+
+example: vektor = [
+    0.1
+    0.5 could be bigger
+    1.35 has to be bigger
+    -0.2
+    -2.5 could get smaller
+    0.23
+    ...
+]
+
+= which weights/biases/thresholds are most important, make the greatest change.
+
+adjusting the variables with the gradient is called **gradient descend**
+
+w' = w - n (learning rate) * gradient
+
+important small steps image TODO
+
+we make gradient descend until we get to a minimum
+
+problem local vs globale minimum
+
+when stuck in a lokal minimum, we won't find the global minimum, because the gradient descend routes us to the local minimum.
+
+no solution, not to big of a problem.
+
+## initialisation
+
+optimal point would be great, but we don't know how so:
+
+-> random values, in some specific range (so we don't have some extrme randow values)
+
+oc no good result with this, but after training hopefully
+
+### why not all the same
+
+when the starting variables are the same, we don#t know which to change with the gradient descend, because alle are the same
+
+## random info (i will move this to MNIST article probably)
+
+one time through all training data = "epoch"
+
+
+## classification
+TODO: accuracy, loss explanation
+
+accuracy = correct classification / all classifications
+
+we can use small parts of the test data whhile training, to get acc/loss between epochs.
