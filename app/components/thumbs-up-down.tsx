@@ -3,13 +3,14 @@
 import { ThumbsDown, ThumbsUp } from "lucide-react";
 import { useEffect, useState } from "react";
 
-const ThumbsUpDown = ({ blogId }: { blogId: string }) => {
-	const [likes, setLikes] = useState<number>(0);
-	const [dislikes, setDislikes] = useState<number>(0);
+const ThumbsUpDown = ({ articleSlug }: { articleSlug: string }) => {
+	const [likes, setLikes] = useState(0);
+	const [dislikes, setDislikes] = useState(0);
+	const [alreadyVoted, setAlreadyVoted] = useState(true);
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const response = await fetch(`/api/get-likes/${blogId}`);
+			const response = await fetch(`/api/get-likes/${articleSlug}`);
 			if (!response.ok) {
 				console.error("failed to fetch likes");
 			} else {
@@ -22,13 +23,36 @@ const ThumbsUpDown = ({ blogId }: { blogId: string }) => {
 		fetchData();
 	}, []);
 
-	// TODO: fetch for update likes / dislikes
+	useEffect(() => {
+		const votedStorage = localStorage.getItem(`voted-${articleSlug}`);
+		if (!votedStorage) {
+			setAlreadyVoted(false);
+		}
+	}, []);
+
+	const like = async () => {
+		if (!alreadyVoted) {
+			await fetch(`/api/like/${articleSlug}`);
+			setLikes((prevNumber) => prevNumber + 1);
+			localStorage.setItem(`voted-${articleSlug}`, "true");
+			setAlreadyVoted(true);
+		}
+	};
+
+	const dislike = async () => {
+		if (!alreadyVoted) {
+			await fetch(`/api/dislike/${articleSlug}`);
+			setDislikes((prevNumber) => prevNumber + 1);
+			localStorage.setItem(`voted-${articleSlug}`, "true");
+			setAlreadyVoted(true);
+		}
+	};
 
 	return (
 		<div className="w-fit h-fit flex flex-row items-center justify-center gap-4 pb-12">
 			<div className="w-fit h-fit flex flex-col items-end justify-center gap-2">
 				<button
-					onClick={() => setLikes((prevNumber) => prevNumber + 1)}
+					onClick={like}
 					className="bg-transparent border-2 border-primary/60 hover:border-primary dark:border-text dark:hover:border-dark-bg text-primary/60 hover:text-primary dark:text-text dark:hover:text-dark-bg font-bold p-2 rounded-lg duration-500"
 				>
 					<ThumbsUp />
@@ -37,7 +61,7 @@ const ThumbsUpDown = ({ blogId }: { blogId: string }) => {
 			</div>
 			<div className="w-fit h-fit flex flex-col items-start justify-center gap-2">
 				<button
-					onClick={() => setDislikes((prevNumber) => prevNumber + 1)}
+					onClick={dislike}
 					className="bg-transparent border-2 border-violet/60 hover:border-violet dark:border-text dark:hover:border-dark-bg text-violet/60 hover:text-violet dark:text-text dark:hover:text-dark-bg font-bold p-2 rounded-lg duration-500"
 				>
 					<ThumbsDown />

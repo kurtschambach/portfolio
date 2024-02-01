@@ -17,7 +17,15 @@ pnpm install
 pnpm dev
 ```
 
+create a .env with the following information:
+```
+SUPABASE_URL=your-db-url
+SUPABASE_API_KEY=your-secret-key
+```
+
+or any other DB, but I'm currently using Supabase
+
 
 ## Cloning / Forking
 
-Please remove all of my personal information (projects, images, etc.) before deploying your own version of this site.
+Please remove all of my personal information (projects, images, articles, etc.) before deploying your own version of this site.

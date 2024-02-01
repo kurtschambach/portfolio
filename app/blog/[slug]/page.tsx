@@ -67,9 +67,9 @@ export default async function ArticlePage({ params }: Props) {
 					>
 						<Mdx code={article.body.code} />
 					</article>
-					{/*<div className="h-24 w-full bg-transparent flex flex-col items-center justify-center">
-						<ThumbsUpDown blogId={article._id} />
-					</div>*/}
+					<div className="h-24 w-full bg-transparent flex flex-col items-center justify-center">
+						<ThumbsUpDown articleSlug={article.slug} />
+					</div>
 				</div>
 			</div>
 		</div>
