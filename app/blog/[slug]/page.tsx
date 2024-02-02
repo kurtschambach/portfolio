@@ -39,7 +39,7 @@ export default async function ArticlePage({ params }: Props) {
 					href="/blog"
 					className="flex flex-row gap-2 items-center justify-center text-text hover:text-hover duration-500"
 				>
-					<ArrowLeft className="hidden md:block" />
+					<ArrowLeft />
 					Blog
 				</Link>
 				<span
