@@ -33,8 +33,6 @@ export async function GET(
 		.limit(1)
 		.single();
 
-	console.log(data, error);
-
 	if (!data || error) {
 		return NextResponse.json(
 			{
