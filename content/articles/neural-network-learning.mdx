@@ -10,7 +10,7 @@ published: false
 
 > Course Overview: [Deep Learning Course - Overview](/blog/deep-learning-course)
 
-We will *learn* how Neural Networks are *learning*.
+We will learn how Neural Networks are learning (gradient descent etc.).
 
 ## Content of this "block"
 The **marked** article is the current one.
@@ -23,112 +23,131 @@ The **marked** article is the current one.
 
 ## How is a Neural Network learning?
 
-Well, there are a few possible ways.
-We'll look at a few of them:
+There are a few ways for a NN to learn:
+ - Supervised Learning
+ - Unsupervised Learning
+ - Reinforcement Learning
+
+Let's take a look at them.
 
 ### Supervised Learning
 
-*used in our first project*
+This method is usually used for classification tasks, 
+e.g. our first project, where we will let the NN clasify images of numbers.  
+Another example is spam detection.
 
-For classification.
+This is basically what we have been talking about previously regarding training.
 
-The NN gets data entry, and the corrseponding label.
+The NN gets the data and the corresponding label.
 
 ### Unsupervised Learning
 
-NN gets data. Structure and Cluster/Muster in the data finding, and get rule.
+With this method we usually try to detect pattern in data 
+and get a rule for this pattern.  
+Used in for example recommendation systems.
 
-### Reinforecement Learning
+Here the NN only gets the data.
 
-No data, but all tries in a simulated environment are rated.
+### Reinforcement Learning
+
+Reinforcement learning is used to get a NN to work in a real or simulated environment,
+for example warehouse robots.
+The NN gets no data, but everything the NN does in a simulated environment is rated.
 
 
 ## How are we rating out Neural Network
 
-We want to calculate the error.
+To tell the NN if  it's on the right way, we need to somehow calculate the loss.
+For this we will use an error-function or loss function, which is quite an important component when developing a NN.
 
-Costfuction/errorfunction
+The easiest errorfunction is the following:
 
-e.g. `<calculated solution> - <right solution>`
+e.g. `loss = | <right solution> - <calculated solution> |`
 
-by squaring the result, errors are punished more severely
+We will never use this, as it is easy.
+
+We can change this to a more complicated function when for eample squaring the result.
+This would punish errors more.
 
 > Example:
 > 
+> TODO
 
+---
 
-How do we calculate the minimum?
+Our goal is minimizing the errorfunction, i.e. get a small error.
+For a normal function this would be the derivation.
 
-wanna do this with the errorfunction
+> TODO If you need to revive derivation: link derivation
 
-minimum would be derivation for normal function
+With the derivation we can get the extreme points of a function, 
+i.e. the minima and maxima.
 
-link derivation?
+When we insert the x-values into the errorfunction we get the point,
+i.e. we know if the extreme point is a maximum or minimum.
 
-with the derivation we can get the extreme points of a function
+## Gradient Descent
 
-insert into function -> minimum or maximum
+With all our weights, biases and thresholds, we have much more variables than in a normal function.
+To make all this more related to the learning process, 
+we'll take two variables for our example-error-function, 
+i.e. three-dimensional space.
 
-## gradient decend
+To find the minimum, we will use the gradient.  
+The gradient is a vektor which components are the values 
+of the partial derivation of the function *f*.
 
-with our weights / biases and threshold we have many variables.
-as an example we'll take two variables, i.e. in the three-dimensional space
-
-as an example
-
-we need gradiendt
-
-the gradient is a vektor which components are the values of the partial derivation of the function *f*.
-
-instead of derivation of the function we need the partial derivation for every variable
+Instead of the derivation of the function we need the partial derivation for every variable,
+so we know which variable makes the greatest change.
 
 *I will explain this detailed in the backpropagation article (the next one)*
 
-we need to know:
+What we need to know:
 
-when a funtion has many variables und wird nach einer derivated, it's a partial derivation.
+When a funtion has many variables and is derivated to one variable, it's a partial derivation.
 
-the gradient gives us the greatest increase in the function.
+---
+
+The gradient will give us the greatest incrase of the function, starting of in one point.
 
 TODO: image
 
-which change will impove the errorfunction the most
+As we want to find the minimum of the function, we can use the negative gradient,
+i.e. always go into the opposite direct of the gradient.
 
-negative gradient
+As the gradient is the way of the quick increase, the negative gradient is the way of quickest decrease.
 
-woth the gradient we can get to the minimum of the errorfunction
+```python
+# Example gradient vector
 
-the gradient is the way of the quick increase, i.e. negative gradient way of quickest decrease.
-
-example: vektor = [
-    0.1
-    0.5 could be bigger
-    1.35 has to be bigger
-    -0.2
-    -2.5 could get smaller
-    0.23
-    ...
+vector = [
+    0.2,
+    0.15,
+    3.14,
+    -0.5,
+    0.1,
 ]
+```
 
-= which weights/biases/thresholds are most important, make the greatest change.
+The gradient tells us which variables are most important / make the greatest change.
 
-adjusting the variables with the gradient is called **gradient descend**
+Adjusting the variables with the gradient is called **gradient descent**
 
 w' = w - n (learning rate) * gradient
 
 important small steps image TODO
 
-we make gradient descend until we get to a minimum
+we make gradient descent until we get to a minimum
 
 problem local vs globale minimum
 
-when stuck in a lokal minimum, we won't find the global minimum, because the gradient descend routes us to the local minimum.
+when stuck in a lokal minimum, we won't find the global minimum, because the gradient descent routes us to the local minimum.
 
-no solution, not to big of a problem.
+no solution, not too big of a problem.
 
 ## initialisation
 
-optimal point would be great, but we don't know how so:
+optimal point would be great, but we don't know how, so:
 
 -> random values, in some specific range (so we don't have some extrme randow values)
 
@@ -136,7 +155,7 @@ oc no good result with this, but after training hopefully
 
 ### why not all the same
 
-when the starting variables are the same, we don#t know which to change with the gradient descend, because alle are the same
+when the starting variables are the same, we don#t know which to change with the gradient descent, because alle are the same
 
 ## random info (i will move this to MNIST article probably)
 
