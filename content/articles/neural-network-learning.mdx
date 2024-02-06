@@ -119,25 +119,43 @@ As the gradient is the way of the quick increase, the negative gradient is the w
 
 ```python
 # Example gradient vector
-
 vector = [
     0.2,
     0.15,
-    3.14,
-    -0.5,
+    3.14, # we need to make the corresponding variable much bigger
+    -0.5, # and this a little bit smaller
     0.1,
 ]
 ```
 
 The gradient tells us which variables are most important / make the greatest change.
 
-Adjusting the variables with the gradient is called **gradient descent**
+Adjusting the variables with the gradient is called **gradient descent**.
 
-w' = w - n (learning rate) * gradient
+`w' = w - n (learning rate) * gradient`  
+with `w`/`w'` being the variable / new variable.
 
-important small steps image TODO
 
-we make gradient descent until we get to a minimum
+### Problems
+
+There are a few important things concerning the gradient descent.  
+One of them is a good learning rate.
+If we set it too low, we will have a very long training time.  
+On the other hand we can't set it too high, because this will lead to random behaviour, 
+as we would be jumping from one point to another, 
+maybe without coming closer to the minimum.
+
+![learning-rate graphical](/blog-images/learning-rate.png)
+
+Another Problem are lokal minima.
+As we want to find the absolute minimum of the errorfunction we need the global minimum.
+
+When we hav some randow startting point, it can happen, that the way of quickest decrease, 
+i.e. gradient decent leads us to a local minima instaed of the global one.
+
+<div className="invert opacity-80">
+![local minima](/blog-images/local-minima.jpeg)
+</div>
 
 problem local vs globale minimum
 
@@ -145,15 +163,15 @@ when stuck in a lokal minimum, we won't find the global minimum, because the gra
 
 no solution, not too big of a problem.
 
-## initialisation
+## Initialisation
 
 optimal point would be great, but we don't know how, so:
 
--> random values, in some specific range (so we don't have some extrme randow values)
+-> random values, in some specific range (so we don't have some extreme random values)
 
 oc no good result with this, but after training hopefully
 
-### why not all the same
+**why not all the same**
 
 when the starting variables are the same, we don#t know which to change with the gradient descent, because alle are the same
 
