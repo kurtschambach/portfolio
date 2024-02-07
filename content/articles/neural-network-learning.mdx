@@ -157,23 +157,29 @@ i.e. gradient decent leads us to a local minima instaed of the global one.
 ![local minima](/blog-images/local-minima.jpeg)
 </div>
 
-problem local vs globale minimum
+In this case the gradient actually can't help us, 
+because in a local minima you don't have any way decrease near you current point,
+i.e. the gradient descent always routes us back to the local minimum.
 
-when stuck in a lokal minimum, we won't find the global minimum, because the gradient descent routes us to the local minimum.
+There is no actual solution to this problem, but it's also not an really big problem,
+because an local minimum is usually quite good to.
 
-no solution, not too big of a problem.
+If not, just try it another time, and the result should be better.
 
-## Initialisation
+If not, it's probably your fault :/
 
-optimal point would be great, but we don't know how, so:
+---
 
--> random values, in some specific range (so we don't have some extreme random values)
+Some of you may be asking now: 
+"why is something changing when we start in once again?"  
+With this question we come to the topic of initialisation.
 
-oc no good result with this, but after training hopefully
+An optimal point for the initialisation would be great, 
+i.e. in our three-dimensional example a point that is already near to a (global) minimum.
+Sadly, we don't actually know how to do this either, 
+i.e. we gotta take random values and hope the training helps.
 
-**why not all the same**
-
-when the starting variables are the same, we don#t know which to change with the gradient descent, because alle are the same
+The random values should be in some specific range so we don't have some extreme random values.
 
 ## random info (i will move this to MNIST article probably)
 
