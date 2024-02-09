@@ -2,17 +2,18 @@
 title: A Neural Network is learning
 description: Basics of Neural Networks and Deep Learning 04
 topic: tech-deep-learning-course
-date: "2024-02-08"
-published: false
+date: "2024-02-09"
+published: true
 ---
 
 # Basics of Neural Networks and Deep Learning - Part 4
 
 > Course Overview: [Deep Learning Course - Overview](/blog/deep-learning-course)
 
-We will learn how Neural Networks are learning (gradient descent etc.).
+We will learn how neural networks are learning (gradient descent),
+and how neural networks are rated.
 
-## Content of this "block"
+## Content of this block
 The **marked** article is the current one.
 
 - Our Brain and the Perceptron
@@ -23,62 +24,69 @@ The **marked** article is the current one.
 
 ## How is a Neural Network learning?
 
-There are a few ways for a NN to learn:
+There are a few ways for a NN to learn.
  - Supervised Learning
  - Unsupervised Learning
  - Reinforcement Learning
 
-Let's take a look at them.
+We will focus on the supervised learning first, 
+as we will use it in our first project, 
+but we'll also need the other ones later.
 
 ### Supervised Learning
 
 This method is usually used for classification tasks, 
-e.g. our first project, where we will let the NN clasify images of numbers.  
-Another example is spam detection.
+e.g. spam detection or our first project, 
+where we will let the NN clasify images of numbers.
 
-This is basically what we have been talking about previously regarding training.
+> Classification can be separated into binary and multiclass classification.
+>
+> **Binary classification** is for example separating images of dogs and cats, 
+> i.e. there are always two labels.  
+> **Multiclass classification** would be assigning images one of three or more labels,
+> e.g. for images of animals assigning them on of the labels dog, cat, octopus, etc.
 
-The NN gets the data and the corresponding label.
+Supervised learning is basically what we've been talking about previously regarding training.
+
+*-> The NN gets the data and the corresponding label.*
 
 ### Unsupervised Learning
 
 With this method we usually try to detect pattern in data 
 and get a rule for this pattern.  
-Used in for example recommendation systems.
+Used in for example recommendation systems. 
 
-Here the NN only gets the data.
+*-> The NN gets only the data.*
 
 ### Reinforcement Learning
 
 Reinforcement learning is used to get a NN to work in a real or simulated environment,
 for example warehouse robots.
-The NN gets no data, but everything the NN does in a simulated environment is rated.
 
+*-> The NN gets no data, but everything the NN does in a simulated environment is rated.*
 
-## How are we rating out Neural Network
+## Rating our Neural Network
 
-To tell the NN if  it's on the right way, we need to somehow calculate the loss.
-For this we will use an error-function or loss function, which is quite an important component when developing a NN.
+When training our NN it needs some kind of feedback 
+to know which variables (thresholds, weights, etc.) it has to improve. 
+
+To tell the NN if it's on the right way, we need to somehow calculate the loss,
+i.e. how much the calculated result is away from the right solution.
+For this we will use an **error function** or *cost function* (or *loss function*).
 
 The easiest errorfunction is the following:
 
-e.g. `loss = | <right solution> - <calculated solution> |`
+`loss = <right solution> - <calculated solution>`
 
-We will never use this, as it is easy.
+We usually won't use this, as it is not complicated enough for us ;)
 
-We can change this to a more complicated function when for eample squaring the result.
+We can change this to a more interesting function when for example squaring the result.
 This would punish errors more.
-
-> Example:
-> 
-> TODO
 
 ---
 
 Our goal is minimizing the errorfunction, i.e. get a small error.
-For a normal function this would be the derivation.
-
-> TODO If you need to revive derivation: link derivation
+For a normal function we could do so with the derivation.
 
 With the derivation we can get the extreme points of a function, 
 i.e. the minima and maxima.
@@ -86,96 +94,83 @@ i.e. the minima and maxima.
 When we insert the x-values into the errorfunction we get the point,
 i.e. we know if the extreme point is a maximum or minimum.
 
-## Gradient Descent
+### Gradient Descent
 
 With all our weights, biases and thresholds, we have much more variables than in a normal function.
-To make all this more related to the learning process, 
-we'll take two variables for our example-error-function, 
-i.e. three-dimensional space.
+To make all this more related to the real learning process of a NN, 
+we'll take two variables for our example errorfunction (i.e. three-dimensional space)
+instead of only one.  
+*Yes that's not much more, but I'm sure you don't want to try to understand all the examples in the 300000-dimensional space ;)*
 
 To find the minimum, we will use the gradient.  
-The gradient is a vektor which components are the values 
-of the partial derivation of the function *f*.
+The gradient gives us the way/direction of the steepest ascent.
+That may sound cringe and unintuitive first, 
+because why do we need the direction of the steepest ascend when we want to get down?
 
-Instead of the derivation of the function we need the partial derivation for every variable,
-so we know which variable makes the greatest change.
+Well, we'll just 'walk' in the opposite direction, 
+i.e. we can use the negative gradient.  
+As the gradient is the way of the quick increase, the negative gradient is usually the way of quickest decrease.
 
-*I will explain this detailed in the backpropagation article (the next one)*
-
-What we need to know:
-
-When a funtion has many variables and is derivated to one variable, it's a partial derivation.
-
----
-
-The gradient will give us the greatest incrase of the function, starting of in one point.
-
-TODO: image
-
-As we want to find the minimum of the function, we can use the negative gradient,
-i.e. always go into the opposite direct of the gradient.
-
-As the gradient is the way of the quick increase, the negative gradient is the way of quickest decrease.
-
-```python
-# Example gradient vector
-vector = [
-    0.2,
-    0.15,
-    3.14, # we need to make the corresponding variable much bigger
-    -0.5, # and this a little bit smaller
-    0.1,
-]
-```
+> For the gradient we'll need the partial derivation for every variable instead of the derivation of the function.
+>
+> *I will explain this detailed in the backpropagation article (the next one)*
+>
+> What we need to know:
+>
+> When a funtion has many variables and is derivated to one variable, that's a partial derivation.
 
 The gradient tells us which variables are most important / make the greatest change.
 
 Adjusting the variables with the gradient is called **gradient descent**.
 
-`w' = w - n (learning rate) * gradient`  
-with `w`/`w'` being the variable / new variable.
+`w' = w - n * gradient`  
+with `w`/`w'` being the variable / new variable ans `n` the learning rate, 
+i.e. how big the steps of our NN are when improving the variables.
 
 
 ### Problems
 
-There are a few important things concerning the gradient descent.  
-One of them is a good learning rate.
-If we set it too low, we will have a very long training time.  
+There are a few important things regarding the gradient descent.  
+One of them is the right learning rate.
+If we set it too low, we will have a very long training time 
+because our NN will improve the variables only a little bit every time.  
 On the other hand we can't set it too high, because this will lead to random behaviour, 
 as we would be jumping from one point to another, 
 maybe without coming closer to the minimum.
 
 ![learning-rate graphical](/blog-images/learning-rate.png)
 
-Another Problem are lokal minima.
-As we want to find the absolute minimum of the errorfunction we need the global minimum.
+Another Problem are local minima.
+As we want to find the minimal point of the full errorfunction we want to find the global minimum.
 
-When we hav some randow startting point, it can happen, that the way of quickest decrease, 
-i.e. gradient decent leads us to a local minima instaed of the global one.
+When we take some random starting point, it can happen that the way of quickest decrease, 
+i.e. gradient decent leads us to a local minimum instead of the global one.
 
 <div className="invert opacity-80">
 ![local minima](/blog-images/local-minima.jpeg)
 </div>
+In the picture the left valley is a local minimum, and the right one a global one.
 
 In this case the gradient actually can't help us, 
-because in a local minima you don't have any way decrease near you current point,
+because in a local minimum there is no way of decrease near your current point,
 i.e. the gradient descent always routes us back to the local minimum.
 
 There is no actual solution to this problem, but it's also not an really big problem,
 because an local minimum is usually quite good to.
 
-If not, just try it another time, and the result should be better.
+If not, just train your NN another time, and the result should be better.
 
-If not, it's probably your fault :/
+If not, it's probably somehow your fault (or my) :/ 
+but I test all the examples in this course, i.e. they should work.
 
 ---
 
 Some of you may be asking now: 
 "why is something changing when we start in once again?"  
-With this question we come to the topic of initialisation.
+This leads us to the initialisation.
 
 An optimal point for the initialisation would be great, 
-i.e. in our three-dimensional example a point that is already near to a (global) minimum.
+i.e. a point that is already near to a global minimum.
 Sadly, we don't actually know how to do this either, 
 i.e. we gotta take random values and hope the training helps.
 
@@ -183,12 +178,18 @@ The random values should be in some specific range so we don't have some extreme
 
 ## Classification of Neural Networks
 
-To classify a NN we usually take the **accuracy**, and additionally the **loss**.
+To classify a NN after training it, 
+and compare it to other neural networks we usually take the **accuracy** and the **loss**.
+
 Accuracy is quite self-explainatory:
 
-`accuracy = correct classifications / all classifications`
+`accuracy = correct classifications / all classifications`  
+i.e. the percentage of correctly classified data.
 
-TODO: loss explanation
+I've already mentioned the loss somewhere, but for a clear definition:  
+The "loss" measures how far off the network's predictions are from the actual correct answers. 
+The goal during training is to minimize (just like everything ig?) this loss.
 
-For more information we can use small parts of the test data while training, 
+
+For some information while training the NN we can use small parts of the test data 
 to get an accuracy / loss between epochs.
