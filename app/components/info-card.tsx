@@ -1,9 +1,10 @@
 import Link from "next/link";
+import { Block } from "./block";
 
 const InfoCard = () => {
 	return (
-		<div className="text-start z-10 bg-dark-bg p-4 px-6 rounded-xl w-72 h-full text-text hover:text-hover duration-500">
-			<h2 className="text-md font-bold font-plex">
+		<Block>
+			<p className="text-md font-bold font-plex w-full h-fit">
 				Hi, my name is Kurt Schambach. <br />
 				<br />
 				I am a Software Developer working at{" "}
@@ -16,15 +17,18 @@ const InfoCard = () => {
 				</Link>
 				.
 				<br />
-				In my free time, I work on some of my own projects.
 				<br />
-				Check out{" "}
+				In my free time, I work on some of my own{" "}
 				<Link href="/projects" className="underline text-violet">
 					Projects
 				</Link>{" "}
-				for more.
-			</h2>
-		</div>
+				or I write on articles for my{" "}
+				<Link href="/projects" className="underline text-violet">
+					Blog
+				</Link>
+				.
+			</p>
+		</Block>
 	);
 };
 

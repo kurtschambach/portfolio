@@ -3,6 +3,7 @@
 import { ArrowRight, Linkedin, Mail, X } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
+import { Block } from "./block";
 
 const ContactCard = () => {
 	const [notifyCopy, setNotifyCopy] = useState(false);
@@ -31,7 +32,7 @@ const ContactCard = () => {
 					</div>
 				</div>
 			)}
-			<div className="font-bold bg-dark-bg z-10 p-6 py-12 rounded-xl w-72 h-full duration-500 flex flex-col items-center justify-center gap-6 text-text hover:text-hover">
+			<Block gap>
 				<h2 className="text-lg">Contact</h2>
 				<div className="w-52 flex flex-col gap-6 items-center justify-center text-violet bg-violet/10 p-4 rounded-3xl border-2 border-violet">
 					<div className="flex flex-row gap-2 items-center justify-between w-full px-2">
@@ -68,7 +69,7 @@ const ContactCard = () => {
 					<span>LinkedIn</span>
 					<ArrowRight size={22} />
 				</Link>
-			</div>
+			</Block>
 		</>
 	);
 };

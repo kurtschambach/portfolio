@@ -3,6 +3,8 @@ import GithubCard from "@/app/components/github-card";
 import InfoCard from "@/app/components/info-card";
 import ProjectsCard from "@/app/components/projects-card";
 import ContactCard from "@/app/components/contact-card";
+import BlogCard from "./components/blog-card";
+import DLCourseCard from "./components/deep-learning-course-card";
 
 export default function Home() {
 	return (
@@ -12,6 +14,8 @@ export default function Home() {
 				<GithubCard />
 				<ProjectsCard />
 				<ContactCard />
+				<BlogCard />
+				<DLCourseCard />
 			</div>
 		</>
 	);
