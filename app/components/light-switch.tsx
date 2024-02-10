@@ -3,7 +3,7 @@
 import { Sun, Moon } from "lucide-react";
 import { useState, useEffect } from "react";
 
-// This code is a little bit hard to undetstand, as the dark useState (and every other dark) means, that the theme is dark,
+// This code is a little bit hard to understand, as the dark useState (and every other dark) means, that the theme is dark,
 // but when the theme is dark we'll remove "dark" from the classList, and on light mode, we'll add "dark",
 // This is because we want to have dark as the default mode, and when you use `bg-light dark:bg-dark` in your tailwind,
 // tailwind sometimes needs some time to get to the dark mode when rendering the page.

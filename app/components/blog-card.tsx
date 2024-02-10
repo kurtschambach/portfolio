@@ -25,7 +25,7 @@ const BlogCard = () => {
 	return (
 		<Block gap>
 			<Link href="/blog" className="text-lg">
-				Blog
+				Blog - Latest Articles
 			</Link>
 			{latestArticles.map((article) => (
 				<Link

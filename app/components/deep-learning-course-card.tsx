@@ -6,9 +6,10 @@ const DLCourseCard = () => {
 		<Block gap>
 			<h2 className="text-lg">Deep Learning Course</h2>
 			<p className="text-center">
-				I am writing a <br />
-				course on deep learning. <br />
-				You don't need any programming knowledge for the beginning.
+				I am writing <br />
+				on a course <br/> 
+				about deep learning. <br />
+				No programming knowledge needed to start...
 			</p>
 			<Link
 				href="/blog/deep-learning-course"

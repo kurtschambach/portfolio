@@ -35,46 +35,46 @@ but we'll also need the other ones later.
 
 ### Supervised Learning
 
+*-> The NN gets the data and the corresponding label.*
+
 This method is usually used for classification tasks, 
 e.g. spam detection or our first project, 
 where we will let the NN clasify images of numbers.
 
 > Classification can be separated into binary and multiclass classification.
 >
-> **Binary classification** is for example separating images of dogs and cats, 
-> i.e. there are always two labels.  
-> **Multiclass classification** would be assigning images one of three or more labels,
-> e.g. for images of animals assigning them on of the labels dog, cat, octopus, etc.
+> **Binary classification** is for example recognizing images of dogs:
+> it's a dog (-> `true`) or not (-> `false`).
+>
+> **Multiclass classification** would be assigning one of three or more labels,
+> e.g. for images of animals assigning them one of the labels dog, cat, octopus, etc.
 
-Supervised learning is basically what we've been talking about previously regarding training.
-
-*-> The NN gets the data and the corresponding label.*
+Supervised learning is basically what we've been talking about all the time when talking about training.
 
 ### Unsupervised Learning
+
+*-> The NN gets only the data.*
 
 With this method we usually try to detect pattern in data 
 and get a rule for this pattern.  
 Used in for example recommendation systems. 
 
-*-> The NN gets only the data.*
-
 ### Reinforcement Learning
+
+*-> The NN gets no data, but everything the NN does in a simulated environment is rated.*
 
 Reinforcement learning is used to get a NN to work in a real or simulated environment,
 for example warehouse robots.
 
-*-> The NN gets no data, but everything the NN does in a simulated environment is rated.*
-
 ## Rating our Neural Network
 
-When training our NN it needs some kind of feedback 
-to know which variables (thresholds, weights, etc.) it has to improve. 
-
-To tell the NN if it's on the right way, we need to somehow calculate the loss,
+While training the NN, it needs to somehow know which variables it has to improve, 
+and if it has to improve something.
+For this we are going to calculate the loss,
 i.e. how much the calculated result is away from the right solution.
-For this we will use an **error function**, also called *cost function* (or *loss function*).
+We will use an **error function**, also called *cost function* (or *loss function*).
 
-The easiest errorfunction is the following:
+The simplest errorfunction is the following:
 
 `loss = <right solution> - <calculated solution>`
 
@@ -82,6 +82,8 @@ We usually won't use this, as it is not complicated enough for us ;)
 
 We can change this to a more interesting function when for example squaring the result.
 This would punish errors more.
+
+> In reality, it is the sum of the loss calculated with the errorfunction for every variable.
 
 ---
 
