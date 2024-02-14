@@ -9,7 +9,7 @@ import DLCourseCard from "./components/deep-learning-course-card";
 export default function Home() {
 	return (
 		<>
-			<div className="flex flex-row flex-wrap items-start justify-center gap-6 h-80 w-full">
+			<div className="flex flex-row flex-wrap items-center justify-center gap-6 h-fit w-full">
 				<InfoCard />
 				<GithubCard />
 				<ProjectsCard />
