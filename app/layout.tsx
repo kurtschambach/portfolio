@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 		siteName: "a3chron - Kurt Schambach - Portfolio",
 		images: [
 			{
-				url: "https://a3chron.vercel.app/a3chron.png", // Must be an absolute URL
+				url: "https://a3chron.vercel.app/a3chron.png",
 				width: 1200,
 				height: 600,
 				alt: "a3chron logo",
