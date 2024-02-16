@@ -26,15 +26,15 @@ export default async function ProjectsPage() {
 	return (
 		<div className="relative">
 			<div className="space-y-8 md:space-y-16 pr-4">
-				<div className="max-w-3xl mx-auto lg:mx-0 font-plex px-2 md:px-8 text-hover text-sm">
+				{/* <div className="max-w-3xl mx-auto lg:mx-0 font-plex px-2 md:px-8 text-hover text-sm">
 					<p className="mt-4">
 						In the detailed project articles, when scrolling down, the
 						background should become darker, but for even more contrast, you can
 						hover the text.
 					</p>
-				</div>
+				</div> */}
 
-				<div className="grid grid-cols-1 gap-8 lg:grid-cols-2 ">
+				<div className="grid grid-cols-1 gap-8 lg:grid-cols-2 xl:mt-8">
 					<Card>
 						<Link href={`/projects/${featured.slug}`}>
 							<article className="relative w-full h-full p-4 md:p-8">
@@ -51,12 +51,6 @@ export default async function ProjectsPage() {
 										)}
 									</div>
 									{/**TODO: mybe here wie bei vercel das icon, um die website zu sehen */}
-									{/*<span className="flex items-center gap-1 text-xs text-emerald-500">
-										<Eye className="w-4 h-4" />{" "}
-										{Intl.NumberFormat("de-DE", { notation: "compact" }).format(
-											views[featured.slug] ?? 0,
-										)}
-									</span>*/}
 								</div>
 
 								<h2
@@ -85,7 +79,8 @@ export default async function ProjectsPage() {
 						))}
 					</div>
 				</div>
-				<div className="w-full h-px bg-gradient-to-l from-bg/0 via-violet to-bg/0" />
+
+				<div className="w-full h-px bg-gradient-to-l from-bg/0 via-text to-bg/0" />
 
 				<div className="grid grid-cols-1 gap-4 mx-auto lg:mx-0 md:grid-cols-3">
 					<div className="grid grid-cols-1 gap-4">

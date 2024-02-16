@@ -76,7 +76,7 @@ export const Article: React.FC<Props> = ({ article }) => {
 						{parseInt(readingTime(`${article.body.code}`).minutes)}m
 					</span>
 				</ColorHeader>
-				<div className="p-8 border-2 border-t-0 border-text h-fit sm:h-56 rounded-b-2xl">
+				<div className="p-8 border-2 border-t-0 border-dark-bg h-fit sm:h-56 rounded-b-2xl">
 					<h2 className="z-20 text-xl font-medium duration-300 lg:text-3xl text-hover font-display">
 						{article.title}
 					</h2>

@@ -16,13 +16,7 @@ export default async function Blog() {
 	if (sorted.length !== 0) {
 		return (
 			<div className="w-full h-full overflow-y-scroll scrollbar-thin scrollbar-track-bg scrollbar-thumb-text pr-2 rounded-3xl">
-				<div className="bg-dark-bg rounded-3xl w-full h-fit">
-					<Link
-						href="/blog"
-						className="sticky w-full h-16 flex flex-col items-start justify-center bg-dark-bg text-text text-xl font-bold border-2 border-text cursor-pointer px-8 pl-16 rounded-t-3xl"
-					>
-						Blog
-					</Link>
+				<div className="bg-bg rounded-3xl w-full h-fit">
 					<div className="w-full h-full flex flex-col items-center justify-center p-4 sm:p-10">
 						<div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-8 w-full sm:w-fit h-full">
 							{sorted.map((article) => (
