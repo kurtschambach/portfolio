@@ -17,7 +17,7 @@ export default async function Blog() {
 		return (
 			<div className="w-full h-full overflow-y-scroll scrollbar-thin scrollbar-track-bg scrollbar-thumb-text pr-2 rounded-3xl">
 				<div className="bg-bg rounded-3xl w-full h-fit">
-					<div className="w-full h-full flex flex-col items-center justify-center p-4 sm:p-10">
+					<div className="w-full h-full flex flex-col items-center justify-center py-4">
 						<div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-8 w-full sm:w-fit h-full">
 							{sorted.map((article) => (
 								<Article key={article.slug} article={article} />
