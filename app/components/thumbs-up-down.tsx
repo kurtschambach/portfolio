@@ -32,8 +32,8 @@ const ThumbsUpDown = ({ articleSlug }: { articleSlug: string }) => {
 
 	const like = async () => {
 		if (!alreadyVoted) {
-			await fetch(`/api/like/${articleSlug}`);
 			setLikes((prevNumber) => prevNumber + 1);
+			await fetch(`/api/like/${articleSlug}`);
 			localStorage.setItem(`voted-${articleSlug}`, "true");
 			setAlreadyVoted(true);
 		}
@@ -41,8 +41,8 @@ const ThumbsUpDown = ({ articleSlug }: { articleSlug: string }) => {
 
 	const dislike = async () => {
 		if (!alreadyVoted) {
-			await fetch(`/api/dislike/${articleSlug}`);
 			setDislikes((prevNumber) => prevNumber + 1);
+			await fetch(`/api/dislike/${articleSlug}`);
 			localStorage.setItem(`voted-${articleSlug}`, "true");
 			setAlreadyVoted(true);
 		}
