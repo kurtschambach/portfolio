@@ -57,7 +57,7 @@ Supervised learning is basically what we've been talking about all the time when
 
 With this method we usually try to detect pattern in data 
 and get a rule for this pattern.  
-Used in for example recommendation systems. 
+This is used in for example recommendation systems. 
 
 ### Reinforcement Learning
 
@@ -68,7 +68,7 @@ for example warehouse robots.
 
 ## Rating our Neural Network
 
-While training the NN, it needs to somehow know which variables it has to improve, 
+While training the NN, it needs to somehow know which variables (i.e. thresholds, weigths, etc.) it has to improve, 
 and if it has to improve something.
 For this we are going to calculate the loss,
 i.e. how much the calculated result is away from the right solution.
@@ -91,10 +91,8 @@ Our goal is minimizing the errorfunction, i.e. get a small error.
 For a normal function we could do so with the derivation.
 
 With the derivation we can get the extreme points of a function, 
-i.e. the minima and maxima.
-
-When we insert the x-values into the errorfunction we get the point,
-i.e. we know if the extreme point is a maximum or minimum.
+i.e. the minima and maxima.  
+(To know whether it's a minimum or a maximum we could just insert the x-values into the function...)
 
 ### Gradient Descent
 
@@ -143,7 +141,7 @@ maybe without coming closer to the minimum.
 ![learning-rate graphical](/blog-images/learning-rate.png)
 
 Another Problem are local minima.
-As we want to find the minimal point of the full errorfunction we want to find the global minimum.
+We want to find the minimal point of the whole errorfunction, i.e. the global minimum.
 
 When we take some random starting point, it can happen that the way of quickest decrease, 
 i.e. gradient decent leads us to a local minimum instead of the global one.
@@ -162,14 +160,12 @@ because an local minimum is usually quite good to.
 
 If not, just train your NN another time, and the result should be better.
 
-If not, it's probably somehow your fault (or my) :/ 
-but I test all the examples in this course, i.e. they should work.
+If not, it's probably somehow your fault (or my) :/  
+But I test all the examples in this course, i.e. they should work.
 
 ---
 
-Some of you may be asking now: 
-"why is something changing when we start in once again?"  
-This leads us to the initialisation.
+Another point we want to take a look into is the initialisation.
 
 An optimal point for the initialisation would be great, 
 i.e. a point that is already near to a global minimum.
