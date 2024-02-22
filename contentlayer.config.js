@@ -43,6 +43,9 @@ export const Project = defineDocumentType(() => ({
 		url: {
 			type: "string",
 		},
+		appLogoUrl: {
+			type: "string",
+		},
 		repository: {
 			type: "string",
 		},
@@ -68,7 +71,7 @@ export const Article = defineDocumentType(() => ({
 			required: true,
 		},
 		topic: {
-			type: "string", // possible topics: portfolio, devapps, personal, tech
+			type: "string", // portfolio || devapps || personal || tech
 			required: true,
 		},
 		date: {
