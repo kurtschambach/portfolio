@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/react";
 import Link from "next/link";
 import Navigation from "@/app/components/navigation";
 import GithubActions from "@/app/components/github-actions";
+import ToggleFavicon from "./components/toggle-favicon";
 
 export const metadata: Metadata = {
 	title: {
@@ -58,7 +59,7 @@ export const metadata: Metadata = {
 		},
 	},
 	icons: {
-		shortcut: "/favicon.png",
+		shortcut: "/a3-active.png",
 	},
 	metadataBase: new URL("https://a3chron.vercel.app/"),
 };
@@ -76,6 +77,7 @@ export default function RootLayout({
 				}`}
 			>
 				<Analytics />
+				<ToggleFavicon />
 				<div className="flex flex-col w-full 2xl:w-[96rem] h-screen bg-bg p-4 sm:px-10 md:p-10">
 					<div className="flex flex-row items-center justify-between mb-12 px-2">
 						<Link
