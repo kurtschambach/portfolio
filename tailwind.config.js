@@ -61,6 +61,7 @@ module.exports = {
 			},
 			colors: {
 				black: "#222",
+				"real-black": "#000",
 				bg: "#262a33",
 				"dark-bg": "#1F232C",
 				text: "#526777",
