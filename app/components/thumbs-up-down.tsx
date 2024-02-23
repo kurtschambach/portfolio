@@ -53,7 +53,7 @@ const ThumbsUpDown = ({ articleSlug }: { articleSlug: string }) => {
 			<div className="w-fit h-fit flex flex-col items-end justify-center gap-2">
 				<button
 					onClick={like}
-					className={`${alreadyVoted ? "opacity-0 cursor-default" : "h-fit"} origin-bottom bg-transparent border-2 border-primary/60 hover:border-primary dark:border-text dark:hover:border-dark-bg text-primary/60 hover:text-primary dark:text-text dark:hover:text-dark-bg font-bold p-2 rounded-lg duration-500`}
+					className={`${alreadyVoted ? "opacity-50 cursor-default scale-75 origin-bottom-right border-none px-0" : "h-fit"} origin-bottom bg-transparent border-2 border-primary/60 hover:border-primary dark:border-text dark:hover:border-dark-bg text-primary/60 hover:text-primary dark:text-text dark:hover:text-dark-bg font-bold p-2 rounded-lg duration-500`}
 				>
 					<ThumbsUp />
 				</button>
@@ -62,7 +62,7 @@ const ThumbsUpDown = ({ articleSlug }: { articleSlug: string }) => {
 			<div className="w-fit h-fit flex flex-col items-start justify-center gap-2">
 				<button
 					onClick={dislike}
-					className={`${alreadyVoted ? "opacity-0 cursor-default" : "h-fit"} origin-bottom bg-transparent border-2 border-violet/60 hover:border-violet dark:border-text dark:hover:border-dark-bg text-violet/60 hover:text-violet dark:text-text dark:hover:text-dark-bg font-bold p-2 rounded-lg duration-500`}
+					className={`${alreadyVoted ? "opacity-50 cursor-default scale-75 origin-bottom-left border-none px-0" : "h-fit"} origin-bottom bg-transparent border-2 border-violet/60 hover:border-violet dark:border-text dark:hover:border-dark-bg text-violet/60 hover:text-violet dark:text-text dark:hover:text-dark-bg font-bold p-2 rounded-lg duration-500`}
 				>
 					<ThumbsDown />
 				</button>
