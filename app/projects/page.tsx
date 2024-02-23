@@ -50,7 +50,7 @@ export default async function ProjectsPage() {
 											<span>SOON</span>
 										)}
 									</div>
-									{/**TODO: mybe here wie bei vercel das icon, um die website zu sehen */}
+									{/**TODO: mybe here wie bei vercel der screenshot, um die website zu sehen */}
 								</div>
 
 								<h2
