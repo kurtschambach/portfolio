@@ -1,6 +1,6 @@
 "use client";
 
-import { Bug, GitPullRequest, BookOpenCheck } from "lucide-react";
+import { Bug, GitPullRequest, BookOpenCheck, Github } from "lucide-react";
 import Link from "next/link";
 
 const GithubActions = () => {
@@ -12,7 +12,7 @@ const GithubActions = () => {
 				href="https://github.com/kurtschambach/portfolio/"
 				target="_blank"
 			>
-				<GitPullRequest />
+				<Github />
 			</Link>
 			<Link
 				title="Report Bug"
