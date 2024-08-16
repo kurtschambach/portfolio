@@ -32,7 +32,13 @@ export const Article: React.FC<Props> = ({ project }) => {
 							<div className="h-[2px] w-0 bg-gradient-to-r from-text/40 to-transparent group-hover:w-full group-hover:to-text duration-700" />
 						</div>
 						<div className="rounded-full h-fit w-fit ring-2 ring-dark-bg group-hover:ring-text shadow-md shadow-black group-hover:shadow-text duration-150 delay-300 ring-offset-2 ring-offset-real-black">
-							<Image width={36} height={36} alt={project.title + " logo"} src={project.appLogo} className="rounded-full object-scale-down"/>
+							<Image
+								width={36}
+								height={36}
+								alt={`${project.title} logo`}
+								src={project.appLogo}
+								className="rounded-full object-scale-down"
+							/>
 						</div>
 					</div>
 				) : (

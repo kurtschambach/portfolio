@@ -7,7 +7,7 @@ const DLCourseCard = () => {
 			<h2 className="text-lg">Deep Learning Course</h2>
 			<p className="text-center">
 				I am writing <br />
-				on a course <br/> 
+				on a course <br />
 				about deep learning. <br />
 				No programming knowledge needed to start...
 			</p>

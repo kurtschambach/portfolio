@@ -57,19 +57,29 @@ export default async function ProjectsPage() {
 								{featured.appLogo ? (
 									<div className="flex flex-row items-center justify-between gap-0 mt-4">
 										<div className="flex flex-row items-center justify-start w-full gap-4">
-											<h2 id="featured-post"
-												className="text-3xl duration-300 font-bold text-hover sm:text-4xl font-plex text-nowrap">
+											<h2
+												id="featured-post"
+												className="text-3xl duration-300 font-bold text-hover sm:text-4xl font-plex text-nowrap"
+											>
 												{featured.title}
 											</h2>
 											<div className="h-[2px] w-0 bg-gradient-to-r from-text/40 to-transparent group-hover:w-full group-hover:to-text duration-700" />
 										</div>
 										<div className="rounded-full h-fit w-fit ring-2 ring-dark-bg group-hover:ring-text shadow-md shadow-black group-hover:shadow-text duration-150 delay-300 ring-offset-2 ring-offset-real-black">
-											<Image width={36} height={36} alt={featured.title + " logo"} src={featured.appLogo} className="rounded-full object-scale-down"/>
+											<Image
+												width={36}
+												height={36}
+												alt={`${featured.title} logo`}
+												src={featured.appLogo}
+												className="rounded-full object-scale-down"
+											/>
 										</div>
 									</div>
 								) : (
-									<h2 id="featured-post"
-									className="mt-4 text-3xl duration-300 font-bold text-hover sm:text-4xl font-plex">
+									<h2
+										id="featured-post"
+										className="mt-4 text-3xl duration-300 font-bold text-hover sm:text-4xl font-plex"
+									>
 										{featured.title}
 									</h2>
 								)}
