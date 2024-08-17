@@ -7,7 +7,7 @@ import { Article } from "./article";
 
 export const revalidate = 60;
 export default async function ProjectsPage() {
-	const featured = allProjects.find((project) => project.slug === "plant-org")!;
+	const featured = allProjects.find((project) => project.slug === "voyagr")!;
 	const top2 = allProjects.find((project) => project.slug === "py-shop")!;
 	const top3 = allProjects.find((project) => project.slug === "portfolio")!;
 	const sorted = allProjects
@@ -59,7 +59,7 @@ export default async function ProjectsPage() {
 										<div className="flex flex-row items-center justify-start w-full gap-4">
 											<h2
 												id="featured-post"
-												className="text-3xl duration-300 font-bold text-hover sm:text-4xl font-plex text-nowrap"
+												className="text-3xl duration-300 font-bold text-hover sm:text-4xl font-plex text-nowrap w-full"
 											>
 												{featured.title}
 											</h2>

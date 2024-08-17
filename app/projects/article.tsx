@@ -26,7 +26,7 @@ export const Article: React.FC<Props> = ({ project }) => {
 				{project.appLogo ? (
 					<div className="flex flex-row items-center justify-between gap-0">
 						<div className="flex flex-row items-center justify-start w-full gap-4">
-							<h2 className="z-20 text-xl font-medium duration-300 lg:text-3xl text-hover font-display">
+							<h2 className="z-20 text-xl font-medium duration-300 lg:text-3xl no-wrap min-w-max text-hover font-display">
 								{project.title}
 							</h2>
 							<div className="h-[2px] w-0 bg-gradient-to-r from-text/40 to-transparent group-hover:w-full group-hover:to-text duration-700" />
