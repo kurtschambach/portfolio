@@ -3,7 +3,7 @@
     
 My portfolio website, built with [Next.js](https://nextjs.org/) and [Tailwind CSS](https://tailwindcss.com/), deployed to [Vercel](https://vercel.com/).
 
-I will refactor this soon, don't have the time now, so don't expect the code to be good (but it's working)
+I will (maybe) refactor this some day, don't have the time now, so don't expect the code to be good (it's working)
 
 </div>
 
