@@ -37,12 +37,6 @@ export const metadata: Metadata = {
 				height: 600,
 				alt: "a3chron logo",
 			},
-			{
-				url: "https://a3chron.vercel.app/favicon.png",
-				width: 500,
-				height: 500,
-				alt: "a3chron favicon",
-			},
 		],
 		locale: "de-DE",
 		type: "website",
