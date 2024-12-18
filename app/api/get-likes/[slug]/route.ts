@@ -34,6 +34,7 @@ export async function GET(
 		.single();
 
 	if (!data || error) {
+		console.error(error);
 		return NextResponse.json(
 			{
 				likes: 0,
