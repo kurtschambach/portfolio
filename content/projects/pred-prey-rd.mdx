@@ -1,0 +1,34 @@
+---
+title: Reinforcement Learning Experiment
+description: Predator - Prey Simulation
+repository: kurtschambach/RL-pred-prey-sim
+image: ice
+date: "2025-02-25"
+published: true
+---
+
+
+# Simple Predator-Prey Simulation
+
+I wanted to get some experience with this kind of things (Reinforcement Learning),
+and I once sam some sililar exeriment somewhere, so I tried it too.
+
+## Setup
+
+In the simulation there are two prey agents (green & blue circles),
+trying to get more XP. 
+In the arena there are also randomly distributed red an greend dots.
+The prey will get 1 xp for "eating" a green dot, and lose 0.5 for a red one.
+Both have their own NN that is trained during the simulation.
+
+There is additionally an slow predator (red dot), 
+always trying to get to the closest prey.
+On collision the prey loses some XP.
+
+## Goal
+
+First of all, I want to learn more about RL, of course.
+But I am also interested in the behaviour the prey agents will develop.
+They could potentially develop team-strategies, to escape the predator agent.
+
+![](https://github.com/kurtschambach/RL-pred-prey-sim/blob/master/images/pred-prey-sim.png)
