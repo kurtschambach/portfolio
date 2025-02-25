@@ -13,5 +13,8 @@ export default function BlogLayout({
 }
 
 export const metadata: Metadata = {
-	title: "Blog",
+	title: {
+		template: '%s | Blog',
+		default: 'Blog',
+	}
 };

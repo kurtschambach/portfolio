@@ -3,10 +3,11 @@ import { allArticles } from "contentlayer/generated";
 import { Mdx } from "@/app/components/mdx";
 import "@/style/mdx.css";
 import Link from "next/link";
-import { ArrowLeft, ThumbsDown, ThumbsUp } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import FullScreenSwitch from "@/app/components/fullscreen-switch";
 import ModeSwitch from "@/app/components/light-switch";
 import ThumbsUpDown from "@/app/components/thumbs-up-down";
+import { Metadata } from "next";
 
 export const revalidate = 60;
 
@@ -15,6 +16,25 @@ type Props = {
 		slug: string;
 	};
 };
+
+export async function generateMetadata(
+	{ params }: {
+		params: Promise<{ slug: string }>
+	},
+): Promise<Metadata> {
+	const slug = (await params).slug
+   
+	const article = allArticles.find((article) => article.slug === slug);
+
+	if (article) {
+		return {
+			title: article.title,
+		}
+	}
+	return {
+		title: "Untitled" // should not happen
+	}
+}
 
 export async function generateStaticParams(): Promise<Props["params"][]> {
 	return allArticles

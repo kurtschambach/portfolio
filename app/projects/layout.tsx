@@ -7,5 +7,8 @@ export default function ProjectsLayout({
 }
 
 export const metadata: Metadata = {
-	title: "Projects",
+	title: {
+		template: '%s | Project',
+		default: 'Projects',
+	},
 };

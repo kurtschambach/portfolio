@@ -3,6 +3,7 @@ import { allProjects } from "contentlayer/generated";
 import { Mdx } from "@/app/components/mdx";
 import { Header } from "./header";
 import "@/style/mdx.css";
+import type { Metadata } from 'next'
 
 export const revalidate = 60;
 
@@ -11,6 +12,25 @@ type Props = {
 		slug: string;
 	};
 };
+
+export async function generateMetadata(
+	{ params }: {
+		params: Promise<{ slug: string }>
+	},
+): Promise<Metadata> {
+	const slug = (await params).slug
+   
+	const project = allProjects.find((project) => project.slug === slug);
+
+	if (project) {
+		return {
+			title: project.title,
+		}
+	}
+	return {
+		title: "Untitled" // should not happen
+	}
+}
 
 export async function generateStaticParams(): Promise<Props["params"][]> {
 	return allProjects
