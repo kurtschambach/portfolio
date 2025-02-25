@@ -17,23 +17,23 @@ type Props = {
 	};
 };
 
-export async function generateMetadata(
-	{ params }: {
-		params: Promise<{ slug: string }>
-	},
-): Promise<Metadata> {
-	const slug = (await params).slug
-   
+export async function generateMetadata({
+	params,
+}: {
+	params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+	const slug = (await params).slug;
+
 	const article = allArticles.find((article) => article.slug === slug);
 
 	if (article) {
 		return {
 			title: article.title,
-		}
+		};
 	}
 	return {
-		title: "Untitled" // should not happen
-	}
+		title: "Untitled", // should not happen
+	};
 }
 
 export async function generateStaticParams(): Promise<Props["params"][]> {
