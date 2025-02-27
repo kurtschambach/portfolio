@@ -1,0 +1,134 @@
+---
+title: A Reinforcement Learning Experiment
+description: I tried a predator-prey simulation with RL
+topic: tech-deep-learning-course
+date: "2025-02-27"
+published: true
+---
+
+# A Reinforcement Learning Experiment
+
+As I was studying for my endterm at university, 
+I obviously searched for a lot of things to do instead of learning.
+One of them happened to be Reinforcement Learning (RL).  
+I remembered an example by some university student group, 
+where an agent was searching for food in a simulated environment.
+
+Now I wanted to build up on that, with zero to no expirience with RL...
+
+The results were obviously not really good, but anyways,
+I think I learned a little bit during improving my chatGPT boilerplate, 
+and I want to share the story (mostly for my amusement in a few years), 
+among with maybe later on some actually useful improvementes I made.
+
+> The code is in my repo: [RL-pred-prey-sim](https://github.com/kurtschambach/RL-pred-prey-sim)
+
+
+## Setup
+
+The simulated Environment was quite simple:
+
+![](https://raw.githubusercontent.com/kurtschambach/RL-pred-prey-sim/refs/heads/master/images/pred-prey-sim.png)
+
+There where two prey agents (green and blue circles), 
+searching for food (green dots, +1 XP) while avoiding 
+"poisonous food" or something like that (red dots, -0.5 XP).
+
+I also added an slower predator (red circle), 
+to make it a little bit harder for the prey agents, 
+as I was interested in whether they would develop teaming abilities...
+
+The simulation would run for an fixed amount of frames, 
+and then update the agents NNs, and start over again, 
+with each run beeing an "episode".
+
+It was possible to watch the simulation in realtime, 10 fps, or speed it up, 
+and I also added indicator for the predator agent, which prey he is following, 
+and for the prey agents, which dot is the currently nearest to them.  
+Additionally I plotted a graph with MatPlotLib with the XP of both prey agents in each episode, 
+later on I added TensorBoard statistics, as it was easier to compare different runs, 
+and TensorBoard also added a feature to easily smooth the graph, 
+which was quite neccassary, because the XP per episode was heavily fluctuating.
+
+The predator was simply always going after the closest prey agent,
+as I didn't want to make it too complicated for the beginning 
+(as I found out later, I made it too complicated).
+
+The prey agents both had their own Neural Net, 
+with for the beginning just two Linear Layers, and a ReLu layer in between.
+
+## First Problems
+
+Now, in the beginning, I was just watching the simulation,  
+and realised, the agents are not really learning.
+
+So, first I thought, they may need more time, 
+so I worked at speeding the simulation up.  
+I experimented with the max speedup of frames per second, 
+that would still change something at the simulation speed,
+then I realised, that's too slow, the simulation is slowing everything down,
+and I didn't really need the simulation all the time, 
+I just wanted to check in on the agents once in a while, 
+to analyse strategies...
+
+So I made the simulation pausable, which heavily reduced 
+the time per episode.
+
+But the agents were still not learning.  
+The `EPISODE_LENGTH` was about `3000` frames at this time, 
+which was apparently way too much.  
+The agents were running straight into one direction, 
+they ended up in some corner in maybe 20-50 frames, 
+and stayed there for the following 2900 frames.
+
+Obviously they didn't learn a lot from that, 
+so I reduced `EPISODE_LENGTH` to about `100`.
+
+This showed some results, as the prey agents were learning quicker, 
+and the focus was more on just going straight into the 
+direction of the next green dot, and then maybe on more...
+
+At this time I thought about maybe increasing the episode length 
+during training, so that the agents would first quickly learn 
+to search for the nearest greend dot, and then after some time, 
+with longer episodes, learn to search for more.  
+But I left this idea for later, as the agents were still 
+not really learning in the amount that I would have liked, 
+their behaviour was still quite random.
+
+So I thought, I will make this as easy as it could be:
+I first removed the predator agent's ability to move,
+then I fully removed him, or at least the Xp loss 
+for the prey agents if they acidentially went right through him.
+
+I also removed all red dots, and fixed the position of the dots, 
+so that they would not be randomly spread across the map after each episode.
+
+In the end, to really be sure, that it was theoretically possible 
+for them to learn, I also removed the "eating" effect, 
+so if a prey agent ate a dot, the dot didn't get removed 
+(and respawned somewhere else on the map), 
+but instead it just stayed there.  
+The agents now only had to find a dot, and just stay on it, 
+they would get xp every single frame.
+
+And wow, this actually worked (Yippieh!).
+So I started searching for good parameters with this settings, 
+as it was easy to compare different runs with different setting in TensorBoard.
+
+First I found a good number of neurons in the Linear Layers, 
+afterwards an good `EPISODE_LENGTH`, and number of dots.
+
+After this I slowly started making it harder for the prey agents again.
+Dots would dissapear again, and get random positions every episode.
+
+This is my current state, it is less than I expected, 
+but it's useable, and I can keep improving it.
+
+I think that the next change will be adding batches,
+and updates of the NN only after batches, so a few episodes, 
+because this should lead to better learning, and less fluctuating.
+
+With this said, I hope you will prepare better before wildly 
+experimenting like this, but I can promise you, if you are studying
+for your endterms, it is a really fun way to loose time ;)
