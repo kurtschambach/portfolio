@@ -33,6 +33,13 @@ const ColorHeader: React.FC<{ children: React.ReactNode; topic: string }> = ({
 				</div>
 			);
 		}
+		case "NN": {
+			return (
+				<div className="flex flex-row items-center justify-between h-16 w-full bg-gradient-to-r from-violet/20 to-red-400/30 text-violet border-b-2 border-violet/70 rounded-t-xl px-8">
+					{children}
+				</div>
+			);
+		}
 		case "tech-deep-learning-course": {
 			return (
 				<div className="flex flex-row items-center justify-between h-16 w-full bg-[url(/blog-header/deep-learning-course.png)] bg-cover bg-clip-padding text-violet border-b-2 border-violet/70 rounded-t-xl px-8">

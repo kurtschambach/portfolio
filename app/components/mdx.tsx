@@ -168,17 +168,14 @@ const components = {
 	),
 	strong: ({ className, ...props }) => (
 		<strong
-			className={clsx(
-				"text-primary dark:text-primary-dark font-bold",
-				className,
-			)}
+			className={clsx("text-hover dark:text-black font-bold", className)}
 			{...props}
 		/>
 	),
 	code: ({ className, ...props }) => (
 		<code
 			className={clsx(
-				"relative rounded border-0 border-text bg-dark-bg dark:bg-neutral-100 text-hover inline-block dark:text-black py-[0.1rem] px-[0.3rem] font-mono text-sm",
+				"relative rounded border-0 border-text bg-slate-700 dark:bg-neutral-100 text-primary dark:text-slate-800 inline-block py-[0.1rem] px-[0.3rem] font-mono text-sm",
 				className,
 			)}
 			{...props}
