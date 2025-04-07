@@ -194,7 +194,7 @@ export const Header: React.FC<Props> = ({ project }) => {
 				<div className="container mx-auto relative isolate overflow-hidden py-24 sm:py-32">
 					<div className="mx-auto max-w-7xl px-6 lg:px-8 text-center flex flex-col items-center">
 						<div className="mx-auto max-w-2xl lg:mx-0">
-							<h1 className="text-4xl font-bold tracking-tight h-[5rem] sm:text-6xl text-hover">
+							<h1 className="text-4xl font-bold tracking-tight h-fit sm:text-6xl text-hover">
 								<TextAmb image={project.image}>{project.title}</TextAmb>
 							</h1>
 							<p className="mt-6 text-lg leading-8 text-text">
