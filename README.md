@@ -29,3 +29,5 @@ or any other DB, but I'm currently using Supabase
 ## Cloning / Forking
 
 Please remove all of my personal information (projects, images, articles, etc.) before deploying your own version of this site.
+
+<p align="center"><a href="https://github.com/kurtschambach/portfolio/blob/main/LICENSE"><img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&logoColor=d9e0ee&colorA=363a4f&colorB=b7bdf8"/></a></p>
