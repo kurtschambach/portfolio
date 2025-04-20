@@ -16,7 +16,8 @@ export async function GET() {
 				message: "No Posts",
 				color: "#f38ba8",
 				labelColor: "#313244",
-				link: "https://a3chron.vercel.app/blog",
+				link: ["https://a3chron.vercel.app/blog"],
+				isError: true,
 			},
 			{ status: 404 },
 		);
@@ -32,7 +33,7 @@ export async function GET() {
 			message: latestArticle.title,
 			color: "#fab387",
 			labelColor: "#313244",
-			link: `https://a3chron.vercel.app/blog/${latestArticle.slug}`,
+			link: [`https://a3chron.vercel.app/blog/${latestArticle.slug}`],
 		},
 		{ status: 200 },
 	);
