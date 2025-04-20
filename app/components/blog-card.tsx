@@ -1,20 +1,10 @@
 import { Article, allArticles } from "@/.contentlayer/generated";
 import Link from "next/link";
 import { Block } from "./block";
+import { getSortedArticlesbyDate } from "@/util/utils";
 
 function getTwoLatestArticles(articles: Article[]): Article[] {
-	const sortedArticles = articles.sort((a, b) => {
-		if (a.date && b.date) {
-			return new Date(b.date).getTime() - new Date(a.date).getTime();
-		} else if (a.date && !b.date) {
-			return -1;
-		} else if (!a.date && b.date) {
-			return 1;
-		} else {
-			return 0;
-		}
-	});
-
+	const sortedArticles = getSortedArticlesbyDate(articles);
 	return sortedArticles.slice(0, 2);
 }
 
