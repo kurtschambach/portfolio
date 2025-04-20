@@ -6,17 +6,12 @@ export async function GET() {
 	const sortedArticles = getSortedArticlesbyDate(
 		allArticles.filter((article) => article.published),
 	);
+
 	if (sortedArticles.length < 1) {
 		console.error("Failed to get sorted articles");
 		return NextResponse.json(
 			{
-				schemaVersion: 1,
-				style: "for-the-badge",
-				label: "Latest Blog Post",
-				message: "No Posts",
-				color: "#f38ba8",
-				labelColor: "#313244",
-				isError: true,
+				link: "https://a3chron.vercel.app/blog",
 			},
 			{ status: 404 },
 		);
@@ -26,12 +21,7 @@ export async function GET() {
 
 	return NextResponse.json(
 		{
-			schemaVersion: 1,
-			style: "for-the-badge",
-			label: "Latest Blog Post",
-			message: latestArticle.title,
-			color: "#fab387",
-			labelColor: "#313244",
+			link: `https://a3chron.vercel.app/blog/${latestArticle.slug}`,
 		},
 		{ status: 200 },
 	);
