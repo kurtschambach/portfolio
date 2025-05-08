@@ -7,14 +7,14 @@ import BlogCard from "./components/blog-card";
 import DLCourseCard from "./components/deep-learning-course-card";
 
 export default function Home() {
-	return (
-		<div className="flex flex-row flex-wrap items-center justify-center gap-6 h-fit w-full">
-			<InfoCard />
-			<GithubCard />
-			<ProjectsCard />
-			<ContactCard />
-			<BlogCard />
-			<DLCourseCard />
-		</div>
-	);
+  return (
+    <div className="flex flex-row flex-wrap items-center justify-center gap-6 h-fit w-full">
+      <InfoCard />
+      <GithubCard />
+      <ProjectsCard />
+      <ContactCard />
+      <BlogCard />
+      <DLCourseCard />
+    </div>
+  );
 }
