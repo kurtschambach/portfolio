@@ -1,20 +1,23 @@
 import React from "react";
-import GithubCard from "@/app/components/github-card";
-import InfoCard from "@/app/components/info-card";
-import ProjectsCard from "@/app/components/projects-card";
-import ContactCard from "@/app/components/contact-card";
-import BlogCard from "./components/blog-card";
-import DLCourseCard from "./components/deep-learning-course-card";
+import GithubSection from "@/app/components/sections/github-section";
+import InfoSection from "@/app/components/info-section";
+import ContactSection from "@/app/components/sections/contact-section";
+import BlogSection from "./components/sections/blog-section";
+import Navigation from "./components/navigation";
+import SnapScrollContainer from "./components/snap-scroll-container";
+import ProjectsSection from "./components/sections/projects-section";
 
 export default function Home() {
   return (
-    <div className="flex flex-row flex-wrap items-center justify-center gap-6 h-fit w-full">
-      <InfoCard />
-      <GithubCard />
-      <ProjectsCard />
-      <ContactCard />
-      <BlogCard />
-      <DLCourseCard />
+    <div className="w-[100dvw] h-[100dvh] flex items-center justify-center">
+      <Navigation />
+      <SnapScrollContainer>
+        <InfoSection />
+        <GithubSection />
+        <BlogSection />
+        <ProjectsSection />
+        <ContactSection />
+      </SnapScrollContainer>
     </div>
   );
 }

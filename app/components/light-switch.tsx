@@ -10,56 +10,56 @@ import { useState, useEffect } from "react";
 // Because of this we are using `bg-dark dark:bg-light`, even if it's a little bit unintuitive
 
 const ModeSwitch = () => {
-	let prefersDarkMode = true;
-	let storedTheme: string | null = null;
+  let prefersDarkMode = true;
+  let storedTheme: string | null = null;
 
-	useEffect(() => {
-		if (typeof window !== "undefined") {
-			prefersDarkMode = window.matchMedia(
-				"(prefers-color-scheme: dark)",
-			).matches;
-			storedTheme = localStorage.getItem("theme");
-		}
-	}, []);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      prefersDarkMode = window.matchMedia(
+        "(prefers-color-scheme: dark)",
+      ).matches;
+      storedTheme = localStorage.getItem("theme");
+    }
+  }, []);
 
-	const [isDark, setIsDark] = useState<boolean>(
-		storedTheme === "dark" || (!storedTheme && prefersDarkMode),
-	);
+  const [isDark, setIsDark] = useState<boolean>(
+    storedTheme === "dark" || (!storedTheme && prefersDarkMode),
+  );
 
-	const handleMode = () => {
-		if (isDark) {
-			setIsDark(false);
-			localStorage.setItem("theme", "light");
-			document.documentElement.classList.add("dark");
-		} else {
-			setIsDark(true);
-			localStorage.setItem("theme", "dark");
-			document.documentElement.classList.remove("dark");
-		}
-	};
+  const handleMode = () => {
+    if (isDark) {
+      setIsDark(false);
+      localStorage.setItem("theme", "light");
+      document.documentElement.classList.add("dark");
+    } else {
+      setIsDark(true);
+      localStorage.setItem("theme", "dark");
+      document.documentElement.classList.remove("dark");
+    }
+  };
 
-	useEffect(() => {
-		if (typeof window !== "undefined") {
-			if (storedTheme === "dark" || (!storedTheme && prefersDarkMode)) {
-				document.documentElement.classList.add("dark"); // i.e. switch to light mode
-				localStorage.setItem("theme", "light");
-				setIsDark(false);
-			} else {
-				setIsDark(true);
-				localStorage.setItem("theme", "dark");
-				document.documentElement.classList.remove("dark"); // i.e. switch to dark mode
-			}
-		}
-	}, [storedTheme, prefersDarkMode]);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      if (storedTheme === "dark" || (!storedTheme && prefersDarkMode)) {
+        document.documentElement.classList.add("dark"); // i.e. switch to light mode
+        localStorage.setItem("theme", "light");
+        setIsDark(false);
+      } else {
+        setIsDark(true);
+        localStorage.setItem("theme", "dark");
+        document.documentElement.classList.remove("dark"); // i.e. switch to dark mode
+      }
+    }
+  }, [storedTheme, prefersDarkMode]);
 
-	return (
-		<button
-			onClick={handleMode}
-			className="bg-transparent border-2 border-orange/60 hover:border-orange dark:border-text dark:hover:border-dark-bg text-orange/60 hover:text-orange dark:text-text dark:hover:text-dark-bg font-bold p-2 rounded-lg duration-500"
-		>
-			{isDark ? <Sun /> : <Moon />}
-		</button>
-	);
+  return (
+    <button
+      onClick={handleMode}
+      className="bg-transparent border-2 border-orange/60 hover:border-orange dark:border-text dark:hover:border-mantle text-orange/60 hover:text-orange dark:text-text dark:hover:text-mantle font-bold p-2 rounded-lg duration-500"
+    >
+      {isDark ? <Sun /> : <Moon />}
+    </button>
+  );
 };
 
 export default ModeSwitch;

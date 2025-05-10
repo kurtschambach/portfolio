@@ -3,32 +3,62 @@
 @tailwind utilities;
 
 @layer base {
-  .text-edge-outline {
-    -webkit-text-stroke: 1px rgba(255,255,255,0.3);
+  :root {
+    --color-accent: #fab387;
+    --color-text: #1e1e2e;
+    --color-subtext: #45475a;
+    --color-base: #f5e0dc;
+    --color-mantle: #fab387;
+    --color-crust: #fab387;
+    --color-mauve: #cba6f7;
+    --color-blue: #89b4fa;
+    --color-teal: #94e2d5;
+    --color-green: #a6e3a1;
+    --color-yellow: #f9e2af;
   }
-} 
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-text: #cdd6f4;
+      --color-subtext: #a6adc8;
+      --color-base: #1e1e2e;
+      --color-mantle: #181825;
+      --color-crust: #11111b;
+    }
+  }
+
+  .text-edge-outline {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+  }
+}
+
+a:hover {
+  @apply underline;
+}
 
 @font-face {
-  font-family: 'IBM Plex';
-  src: url('../fonts/ibm_plex/IBM-Plex-Mono/fonts/complete/otf/IBMPlexMono-Regular.otf') format('opentype');
+  font-family: "IBM Plex";
+  src: url("../fonts/ibm_plex/IBM-Plex-Mono/fonts/complete/otf/IBMPlexMono-Regular.otf")
+    format("opentype");
 }
 
 *:focus-visible {
-  @apply outline-none ring-2 ring-primary ring-offset-4 rounded-lg ring-offset-dark-bg;
+  @apply outline-none ring-2 ring-accent ring-offset-4 rounded-lg ring-offset-mantle;
 }
 
 ::selection {
-  background-color: #5f8a9f;
-  color: #171717;
+  color: var(--color-accent);
+  background-color: #171717;
 }
 
 ::-moz-selection {
-  background-color: #5f8a9f;
-  color: #171717;
+  color: var(--color-accent);
+  background-color: #171717;
 }
 
-body, html {
-  font-family: 'IBM Plex', monospace, sans-serif;
+body,
+html {
+  font-family: "IBM Plex", monospace, sans-serif;
 }
 
 .subheading-anchor {
