@@ -8,12 +8,12 @@ import { Article } from "./article";
 export const revalidate = 60;
 export default async function ProjectsPage() {
   const featured = allProjects.find(
-    (project) => project.slug === "pred-prey-rd",
-  )!;
-  const top2 = allProjects.find(
     (project) => project.slug === "nextjs-auth-template",
   )!;
-  const top3 = allProjects.find((project) => project.slug === "portfolio")!;
+  const top2 = allProjects.find(
+    (project) => project.slug === "portfolio",
+  )!;
+  const top3 = allProjects.find((project) => project.slug === "userstyles")!;
   const sorted = allProjects
     .filter((p) => p.published)
     .filter(
