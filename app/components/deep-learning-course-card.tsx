@@ -3,7 +3,7 @@ import { Block } from "./block";
 
 const DLCourseCard = () => {
   return (
-    <Block gap>
+    <Block className="gap-6">
       <h2 className="text-lg">Deep Learning Course</h2>
       <p className="text-center">
         I am writing <br />
