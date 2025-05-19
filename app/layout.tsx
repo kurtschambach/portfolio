@@ -79,7 +79,19 @@ export default function RootLayout({
         <ToggleFavicon />
         <GithubRepo />
         <div className="flex flex-col w-[100dvw] h-[100dvh] bg-bg">
-          {children}
+          <div className="lg:hidden fixed inset-0 z-50 bg-bg text-text flex items-center justify-center p-4 text-center">
+            <div className="max-w-md">
+              <h1 className="text-2xl font-bold mb-4">
+                Mobile View Coming Soon
+              </h1>
+              <p className="text-lg">
+                I'm currently working on optimizing this website for mobile
+                devices. Please view this site on a larger screen for the best
+                experience.
+              </p>
+            </div>
+          </div>
+          <div className="hidden lg:block w-full h-full">{children}</div>
         </div>
       </body>
     </html>

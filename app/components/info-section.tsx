@@ -4,7 +4,7 @@ import { Block } from "./block";
 const InfoSection = () => {
   return (
     <Block className="bg-mauve selection:text-mauve">
-      <div className="w-[100dvw] 2xl:w-[96rem] h-[100dvh] p-4 md:p-12 lg:px-24 flex flex-col item-center justify-center">
+      <div className="w-[100dvw] 2xl:w-[96rem] h-fit min-h-[100dvh] p-4 md:p-12 lg:px-24 flex flex-col item-center justify-center">
         <h1 className="uppercase text-6xl text-mauve bg-crust -mt-24 mb-24 w-fit p-1 px-2">
           #1 About Me
         </h1>

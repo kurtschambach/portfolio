@@ -28,7 +28,7 @@ const ContactSection = () => {
 
   return (
     <Block className="bg-yellow selection:text-yellow">
-      <div className="w-[100dvw] 2xl:w-[96rem] h-[100dvh] p-24 flex flex-col item-center justify-center">
+      <div className="w-[100dvw] 2xl:w-[96rem] h-fit min-h-[100dvh] p-24 flex flex-col item-center justify-center">
         <h1 className="uppercase text-6xl text-yellow bg-crust mb-24 w-fit p-1 px-2">
           #5 Contact
         </h1>

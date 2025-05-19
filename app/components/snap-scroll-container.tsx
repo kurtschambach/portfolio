@@ -78,7 +78,7 @@ export default function SnapScrollContainer({
           <div
             id={`section-${index}`}
             key={index}
-            className="snap-center w-[100dvw] h-[100dvh]"
+            className="snap-top w-[100dvw] h-fit"
           >
             {section}
           </div>
