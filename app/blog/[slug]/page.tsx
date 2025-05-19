@@ -74,7 +74,7 @@ export default async function ArticlePage({ params }: Props) {
           {article.title}
         </span>
       </div>
-      <div className="h-full w-full overflow-y-scroll scrollbar-thin scrollbar-track-bg scrollbar-thumb-text p-4 bg-mantle dark:bg-amber-100">
+      <div className="h-full w-full overflow-y-scroll scrollbar-thin scrollbar-track-bg scrollbar-thumb-text p-4 bg-mantle">
         <div className="group relative w-full h-full bg-inherit rounded-3xl m-0">
           <div className="lg:absolute top-2 w-full lg:w-fit pl-0 sm:pl-4 lg:pl-0 right-2 flex flex-row lg:flex-col gap-2 items-center lg:justify-center">
             <FullScreenSwitch />
