@@ -20,7 +20,7 @@ const components = {
   h2: ({ className, ...props }) => (
     <h2
       className={clsx(
-        "mt-12 scroll-m-20 border-b-2 border-b-bg dark:border-b-amber-200 text-text pb-1 text-3xl font-semibold tracking-tight first:mt-0",
+        "mt-12 scroll-m-20 border-b-2 border-b-crust text-text pb-1 text-3xl font-semibold tracking-tight first:mt-0",
         className,
       )}
       {...props}
@@ -115,7 +115,7 @@ const components = {
     // eslint-disable-next-line @next/next/no-img-element
     <img
       className={clsx(
-        "rounded-xl invert-0 dark:invert border-2 border-mantle",
+        "rounded-xl border-2 border-mantle",
         className,
       )}
       alt={alt}
