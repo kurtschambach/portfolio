@@ -49,10 +49,10 @@ export default async function PostPage({ params }: Props) {
   }
 
   return (
-    <div className="bg-bg text-text pr-4">
+    <div className="bg-base text-text pr-4">
       <Header project={project} />
 
-      <div className="group w-full h-full bg-bg hover:bg-mantle duration-1000 rounded-3xl mt-4">
+      <div className="group w-full h-full bg-base hover:bg-mantle duration-1000 rounded-3xl mt-4">
         <article
           className={
             "px-4 py-12 mx-auto text-text hover:text-hover duration-1000 text-lg font-bold bg-transparent prose prose-quoteless selection:text-black selection:bg-green"

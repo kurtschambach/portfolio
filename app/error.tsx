@@ -10,7 +10,7 @@ export default function Error({
   reset: () => void;
 }) {
   return (
-    <div className="w-full h-full bg-bg text-hover flex flex-col items-center justify-center">
+    <div className="w-full h-full bg-base text-hover flex flex-col items-center justify-center">
       <h2 className="font-bold text-2xl">Something went wrong!</h2>
       <div className="w-fit h-fit bg-mantle p-2 px-4 rounded-xl flex flex-col sm:flex-row gap-4 items-center justify-center">
         <button onClick={() => reset()} className="text-text hover:text-hover">

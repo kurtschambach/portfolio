@@ -124,7 +124,7 @@ function ArticleCard({
 
 function CategoryTag({ name, count }: { name: string; count: number }) {
   return (
-    <div className="flex items-center justify-between bg-bg text-text rounded-lg p-px h-10">
+    <div className="flex items-center justify-between bg-base text-text rounded-lg p-px h-10">
       <span className="font-semibold p-2 text-teal">{name}</span>
       <span className="bg-teal text-crust w-fit px-3 h-full text-sm rounded-r-md flex items-center justify-center">
         {count}

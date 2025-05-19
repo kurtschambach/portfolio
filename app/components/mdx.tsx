@@ -101,7 +101,7 @@ const components = {
   blockquote: ({ className, ...props }) => (
     <blockquote
       className={clsx(
-        "mt-4 border-l-2 not-italic border-green pl-6 my-0 py-[1px] text-inherit bg-bg",
+        "mt-4 border-l-2 not-italic border-green pl-6 my-0 py-[1px] text-inherit bg-base",
         className,
       )}
       {...props}
@@ -132,7 +132,7 @@ const components = {
   ),
   tr: ({ className, ...props }: React.HTMLAttributes<HTMLTableRowElement>) => (
     <tr
-      className={clsx("m-0 border-t border-crust p-0 even:bg-bg", className)}
+      className={clsx("m-0 border-t border-crust p-0 even:bg-base", className)}
       {...props}
     />
   ),
@@ -157,7 +157,7 @@ const components = {
   pre: ({ className, ...props }) => (
     <pre
       className={clsx(
-        "mt-6 mb-4 duration-1000 overflow-x-auto rounded-2xl bg-bg scrollbar-thin scrollbar-track-bg group-hover:scrollbar-track-mantle scrollbar-thumb-text py-4",
+        "mt-6 mb-4 duration-1000 overflow-x-auto rounded-2xl bg-base scrollbar-thin scrollbar-track-bg group-hover:scrollbar-track-mantle scrollbar-thumb-text py-4",
         className,
       )}
       {...props}

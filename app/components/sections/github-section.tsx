@@ -87,7 +87,7 @@ function StatCard({
   label,
 }: { icon: React.ReactNode; value: number; label: string }) {
   return (
-    <div className="bg-bg text-text p-6 rounded-lg flex flex-col items-center justify-center shadow-md hover:shadow-lg transition-shadow">
+    <div className="bg-base text-text p-6 rounded-lg flex flex-col items-center justify-center shadow-md hover:shadow-lg transition-shadow">
       <div className="text-blue mb-2">{icon}</div>
       <div className="text-3xl font-bold">{value}</div>
       <div className="text-subtext">{label}</div>

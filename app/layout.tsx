@@ -71,15 +71,15 @@ export default function RootLayout({
   return (
     <html lang="en" className="font-plex">
       <body
-        className={`bg-bg flex flex-col items-center ${
+        className={`bg-base flex flex-col items-center ${
           process.env.NODE_ENV === "development" ? "debug-screens" : undefined
         }`}
       >
         <Analytics />
         <ToggleFavicon />
         <GithubRepo />
-        <div className="flex flex-col w-[100dvw] h-[100dvh] bg-bg">
-          <div className="lg:hidden fixed inset-0 z-50 bg-bg text-text flex items-center justify-center p-4 text-center">
+        <div className="flex flex-col w-[100dvw] h-[100dvh] bg-base">
+          <div className="lg:hidden fixed inset-0 z-50 bg-base text-text flex items-center justify-center p-4 text-center">
             <div className="max-w-md">
               <h1 className="text-2xl font-bold mb-4">
                 Mobile View Coming Soon

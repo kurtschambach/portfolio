@@ -53,7 +53,7 @@ export default async function ArticlePage({ params }: Props) {
   }
 
   return (
-    <div className="w-full h-[100dvh] bg-bg">
+    <div className="w-full h-[100dvh] bg-base">
       <div className="sticky top-0 z-10 w-full h-16 flex flex-row items-center justify-start gap-4 md:gap-8 bg-crust text-text text-xl font-bold px-8">
         <Link
           href="/blog"

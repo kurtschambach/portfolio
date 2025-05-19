@@ -10,7 +10,7 @@ export const Article: React.FC<Props> = ({ project }) => {
   return (
     <Link
       href={`/projects/${project.slug}`}
-      className="hover:no-underline w-full h-full bg-bg text-text group rounded-2xl"
+      className="hover:no-underline w-full h-full bg-base text-text group rounded-2xl"
     >
       <article className="p-4 md:p-8">
         <div className="flex justify-between gap-2 items-center">

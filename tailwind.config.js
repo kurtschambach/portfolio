@@ -62,7 +62,7 @@ module.exports = {
         accent: "#fab387",
         text: "var(--color-text)",
         subtext: "var(--color-subtext)",
-        bg: "var(--color-base)",
+        base: "var(--color-base)",
         mantle: "var(--color-mantle)",
         crust: "#11111b",
         mauve: "#cba6f7",

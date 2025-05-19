@@ -75,7 +75,7 @@ function ProjectCard({
 }) {
   return (
     <div className="bg-crust rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow h-[24rem] max-h-[24rem]">
-      <div className="h-48 bg-bg flex items-center justify-center">
+      <div className="h-48 bg-base flex items-center justify-center">
         {image ? (
           <img src={image} alt={title} className="w-full h-full object-cover" />
         ) : (

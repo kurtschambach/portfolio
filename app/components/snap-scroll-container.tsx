@@ -64,7 +64,7 @@ export default function SnapScrollContainer({
         className="flex flex-col snap-y h-[calc(100dvh-96px)] w-[100dvw] overflow-y-auto scrollbar-thin scrollbar-track-bg scrollbar-thumb-text"
         onWheel={handleWheel}
       >
-        <div className="absolute group top-1/2 -translate-y-1/2 left-6 h-fit w-fit p-2 rounded-full bg-bg space-y-2">
+        <div className="absolute group top-1/2 -translate-y-1/2 left-6 h-fit w-fit p-2 rounded-full bg-base space-y-2">
           {sections.map((_, index) => (
             <SectionTooltip
               key={index}
@@ -140,8 +140,8 @@ const SectionTooltip = ({
         styles,
       )}
     >
-      <div className="absolute hidden group-hover/section-ind:flex items-center justify-center left-12 top-1/2 -translate-y-1/2 bg-bg text-text w-fit rounded-full drop-shadow-md">
-        <div className="bg-bg w-4 h-4 rotate-45 -mx-1" />
+      <div className="absolute hidden group-hover/section-ind:flex items-center justify-center left-12 top-1/2 -translate-y-1/2 bg-base text-text w-fit rounded-full drop-shadow-md">
+        <div className="bg-base w-4 h-4 rotate-45 -mx-1" />
         <span className="p-2 pl-0.5 z-10 w-fit min-w-max">
           {sectionNameMap[section]}
         </span>
