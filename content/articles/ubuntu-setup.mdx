@@ -1,12 +1,17 @@
 ---
 title: Ubuntu Customization
 description: Some Ubuntu 24.04 customizations for a catppuccin look, aestethics (and efficiency?)
-topic: tech
+topic: Customization
 date: "2025-04-21"
 published: true
 ---
 
 # Ubuntu Customization
+
+Basically my call on "How to make Ubuntu look good™".
+
+I recently discovered [catppuccin](https://catppuccin.com), 
+so it'll be mostly this.
 
 Scope:
 - GTK Theme
@@ -15,4 +20,96 @@ Scope:
 - Fish Shell
 - Some Gnome extensions
 - Some catppuccin themes for various apps
+- Starship
+
+![](/blog-images/example-ubuntu-customization.png)
+
+---
+
+## Tweaks
+
+First we'll need to install gnome-tweaks, 
+a tool to customize a few important settings.
+
+```bash
+sudo apt install gnome-tweaks
+```
+
+## GTK Theme
+
+This is just an overall catppuccin style theme replacing the default GTK theme.
+
+Download the `Catppuccin-Dark-B-LB.zip` (Mocha, Dark, Border, Legacy Buttons)
+from the **Files tab** at [gnome-look.org](https://www.gnome-look.org/p/1715554).
+
+Create a directory for all your themes at `~/.themes`, 
+and move your downloaded folder there.
+
+Now add a symlink from you gtk files (usually located at `~/.config/gtk-4.0`), 
+to the respecting files in your themes directory.
+
+There should be a `assets` folder, and `gtk.css`, and `gtk-dark.css` files.
+
+You can create symlinks using the following command (replace 'username'):
+
+```bash title="~/.config/gtk-4.0"
+ln -sf /home/username/.themes/Catppuccin-Dark-Macchiato-B-LB/Catppuccin-Dark-Macchiato/gtk-4.0/assets/ ./assets/
+```
+
+
+## Cursor Theme
+
+https://www.gnome-look.org/p/1358330/
+
+01-Vimix-cursors.tar.xz
+
+Set the cursor theme in Tweaks/Appearance
+
+
+## Icon Theme
+
+https://www.gnome-look.org/p/1214931
+
+01-Flat-Remix-GTK-Blue-20240730.tar.xz
+
+Set the icon theme in Tweaks/Appearance
+
+
+## Fish Shell
+
+```bash
+sudo apt update
+sudo apt install fish
+```
+
+More info about fish: https://fishshell.com/
+
+
+## Some Gnome extensions
+
+![](/blog-images/user-extensions.png)
+
+install gnome extensions
+https://addons.mozilla.org/en-US/firefox/addon/gnome-shell-integration/ for addon
+
+sudo apt install gnome-browser-connector
+
+https://extensions.gnome.org/ to install extensions
+
+sudo apt install gnome-shell-extension-manager
+
+
+## Some catppuccin themes for various apps
+
+https://catppuccin.com/ports/ for all ports
+
+https://github.com/catppuccin/userstyles/tree/main?tab=readme-ov-file#-userstyles for web, select all you use, install stylus
+https://addons.mozilla.org/de/firefox/addon/styl-us/
+
+vsc, alacritty
+
+
+## Starship
+
+check out [Starship](/blog/starship) for more info, the new version is with catppuccin theme colors.
 

@@ -5,12 +5,12 @@ export function useMDXComponents(components: any): any {
   return {
     // Allows customizing built-in components, e.g. to add styling.
     h1: ({ children }: PropsWithChildren) => (
-      <h1 className="mt-2 text-3xl font-bold tracking-tight text-hover dark:text-crust md:text-center sm:text-4xl">
+      <h1 className="mt-2 text-3xl font-bold tracking-tight text-text md:text-center sm:text-4xl">
         {children}
       </h1>
     ),
     h2: ({ children }: PropsWithChildren) => (
-      <h2 className="text-hover dark:text-crust">{children}</h2>
+      <h2 className="text-text">{children}</h2>
     ),
     ...components,
   };

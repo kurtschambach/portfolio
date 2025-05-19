@@ -2,6 +2,23 @@
 
 import { cn } from "@/util/utils";
 import React from "react";
+import Navigation from "./navigation";
+
+const classNameMap: Record<number, string> = {
+  0: "bg-mauve",
+  1: "bg-blue",
+  2: "bg-teal",
+  3: "bg-green",
+  4: "bg-yellow",
+};
+
+const sectionNameMap: Record<number, string> = {
+  0: "About Me",
+  1: "GitHub",
+  2: "Blog",
+  3: "Projects",
+  4: "Contact",
+};
 
 export default function SnapScrollContainer({
   children,
@@ -36,29 +53,37 @@ export default function SnapScrollContainer({
   }, [activeSection]);
 
   return (
-    <div
-      className="flex flex-col snap-y h-[100dvh] w-[100dvw] overflow-y-auto scrollbar-thin scrollbar-track-bg scrollbar-thumb-text"
-      onWheel={handleWheel}
-    >
-      <div className="absolute group top-1/2 -translate-y-1/2 left-6 h-fit w-fit p-2 rounded-full bg-bg space-y-2">
-        {sections.map((_, index) => (
-          <SectionTooltip
+    <div className="h-[100dvh] w-[100dvw]">
+      <Navigation
+        className={cn(
+          "transition-colors duration-500",
+          classNameMap[activeSection],
+        )}
+      />
+      <div
+        className="flex flex-col snap-y h-[calc(100dvh-96px)] w-[100dvw] overflow-y-auto scrollbar-thin scrollbar-track-bg scrollbar-thumb-text"
+        onWheel={handleWheel}
+      >
+        <div className="absolute group top-1/2 -translate-y-1/2 left-6 h-fit w-fit p-2 rounded-full bg-bg space-y-2">
+          {sections.map((_, index) => (
+            <SectionTooltip
+              key={index}
+              section={index}
+              activeSection={activeSection === index}
+              setActiveSection={setActiveSection}
+            />
+          ))}
+        </div>
+        {sections.map((section, index) => (
+          <div
+            id={`section-${index}`}
             key={index}
-            section={index}
-            activeSection={activeSection === index}
-            setActiveSection={setActiveSection}
-          />
+            className="snap-center w-[100dvw] h-[100dvh]"
+          >
+            {section}
+          </div>
         ))}
       </div>
-      {sections.map((section, index) => (
-        <div
-          id={`section-${index}`}
-          key={index}
-          className="snap-center w-[100dvw] h-[100dvh]"
-        >
-          {section}
-        </div>
-      ))}
     </div>
   );
 }
@@ -111,9 +136,16 @@ const SectionTooltip = ({
     <div
       onClick={() => setActiveSection(section)}
       className={cn(
-        "w-5 h-8 rounded-full border-2 duration-500 cursor-pointer",
+        "group/section-ind w-5 h-8 relative rounded-full border-2 duration-500 cursor-pointer",
         styles,
       )}
-    />
+    >
+      <div className="absolute hidden group-hover/section-ind:flex items-center justify-center left-12 top-1/2 -translate-y-1/2 bg-bg text-text w-fit rounded-full drop-shadow-md">
+        <div className="bg-bg w-4 h-4 rotate-45 -mx-1" />
+        <span className="p-2 pl-0.5 z-10 w-fit min-w-max">
+          {sectionNameMap[section]}
+        </span>
+      </div>
+    </div>
   );
 };

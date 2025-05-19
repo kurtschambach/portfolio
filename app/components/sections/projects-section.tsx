@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Block } from "../block";
-import { Code, ExternalLink, Github } from "lucide-react";
+import { Code2, ExternalLink, Github } from "lucide-react";
 import { allProjects } from "@/.contentlayer/generated";
 
 const ProjectsSection = () => {
@@ -74,17 +74,18 @@ function ProjectCard({
   url?: string;
 }) {
   return (
-    <div className="bg-crust rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+    <div className="bg-crust rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow h-[24rem] max-h-[24rem]">
       <div className="h-48 bg-bg flex items-center justify-center">
         {image ? (
           <img src={image} alt={title} className="w-full h-full object-cover" />
         ) : (
-          <Code size={64} className="text-green opacity-30" />
+          <Code2 size={64} className="text-green opacity-50" />
         )}
       </div>
-      <div className="p-6">
+      <div className="p-6 flex flex-col h-[12rem]">
         <h3 className="text-xl font-bold text-green">{title}</h3>
-        <p className="text-subtext mt-2 line-clamp-3">{description}</p>
+        <p className="text-subtext mt-2 line-clamp-2">{description}</p>
+        <div className="flex-grow" />
         <div className="mt-6 flex gap-4">
           <Link
             href={`/projects/${slug}`}

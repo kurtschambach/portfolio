@@ -1,24 +1,24 @@
 "use client";
 
+import { cn } from "@/util/utils";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
 const navigation = [
+  { name: "Home", href: "/" },
   { name: "Projects", href: "/projects" },
-  { name: "Contact", href: "/contact" },
   { name: "Blog", href: "/blog" },
-  //{ name: "Theme", href: "/theme" },
 ];
 
-const Navigation = () => {
+const Navigation = ({ className }: { className?: string }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <nav className="fixed top-0 w-full backdrop-blur-3xl">
+    <nav className={cn("w-full h-[96px]", className)}>
       <div className="max-w-[96rem] w-full flex flex-row items-center justify-between p-4 md:px-12 lg:px-24 mx-auto">
         <Link
           href="/"
-          className="mt-6 md:mt-0 w-fit flex flex-col items-center justify-center text-crust font-bold font-plex text-3xl whitespace-nowrap"
+          className="mt-6 md:mt-0 w-fit flex flex-col items-center justify-center text-crust font-bold font-plex text-3xl whitespace-nowrap hover:no-underline"
         >
           <span className="text-lg">Kurt Schambach</span>
           <span className="pl-6">a3chron</span>
@@ -47,7 +47,7 @@ const Navigation = () => {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-xl font-bold font-plex duration-500 text-crust hover:underline"
+                className="text-xl font-bold font-plex duration-500 hover:underline"
               >
                 {item.name}
               </Link>

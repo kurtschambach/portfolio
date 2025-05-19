@@ -11,7 +11,7 @@ const components = {
   h1: ({ className, ...props }) => (
     <h1
       className={clsx(
-        "[&:not(:first-child)]:mt-16 scroll-m-20 text-4xl font-bold tracking-tight text-hover dark:text-crust",
+        "[&:not(:first-child)]:mt-16 scroll-m-20 text-4xl font-bold tracking-tight text-text",
         className,
       )}
       {...props}
@@ -20,7 +20,7 @@ const components = {
   h2: ({ className, ...props }) => (
     <h2
       className={clsx(
-        "mt-12 scroll-m-20 border-b-2 border-b-bg dark:border-b-amber-200 text-hover dark:text-crust pb-1 text-3xl font-semibold tracking-tight first:mt-0",
+        "mt-12 scroll-m-20 border-b-2 border-b-bg dark:border-b-amber-200 text-text pb-1 text-3xl font-semibold tracking-tight first:mt-0",
         className,
       )}
       {...props}
@@ -29,7 +29,7 @@ const components = {
   h3: ({ className, ...props }) => (
     <h3
       className={clsx(
-        "mt-8 scroll-m-20 text-2xl text-hover dark:text-crust font-semibold tracking-tight",
+        "mt-8 scroll-m-20 text-2xl text-text font-semibold tracking-tight",
         className,
       )}
       {...props}
@@ -38,7 +38,7 @@ const components = {
   h4: ({ className, ...props }) => (
     <h4
       className={clsx(
-        "mt-8 scroll-m-20 text-xl text-hover dark:text-crust font-semibold tracking-tight",
+        "mt-8 scroll-m-20 text-xl text-text font-semibold tracking-tight",
         className,
       )}
       {...props}
@@ -47,7 +47,7 @@ const components = {
   h5: ({ className, ...props }) => (
     <h5
       className={clsx(
-        "mt-8 scroll-m-20 text-lg text-hover dark:text-crust font-semibold tracking-tight",
+        "mt-8 scroll-m-20 text-lg text-text font-semibold tracking-tight",
         className,
       )}
       {...props}
@@ -56,7 +56,7 @@ const components = {
   h6: ({ className, ...props }) => (
     <h6
       className={clsx(
-        "mt-8 scroll-m-20 text-base text-hover dark:text-crust font-semibold tracking-tight",
+        "mt-8 scroll-m-20 text-base text-text font-semibold tracking-tight",
         className,
       )}
       {...props}
@@ -64,10 +64,7 @@ const components = {
   ),
   a: ({ className, ...props }) => (
     <a
-      className={clsx(
-        "font-medium text-violet underline underline-offset-4",
-        className,
-      )}
+      className={clsx("font-medium text-green underline", className)}
       {...props}
     />
   ),
@@ -104,7 +101,7 @@ const components = {
   blockquote: ({ className, ...props }) => (
     <blockquote
       className={clsx(
-        "mt-4 border-l-2 not-italic border-accent pl-6 my-0 py-[1px] text-inherit bg-bg dark:bg-amber-200",
+        "mt-4 border-l-2 not-italic border-green pl-6 my-0 py-[1px] text-inherit bg-bg",
         className,
       )}
       {...props}
@@ -118,7 +115,7 @@ const components = {
     // eslint-disable-next-line @next/next/no-img-element
     <img
       className={clsx(
-        "rounded-xl invert-0 dark:invert border-2 border-mantle dark:border-amber-100",
+        "rounded-xl invert-0 dark:invert border-2 border-mantle",
         className,
       )}
       alt={alt}
@@ -126,7 +123,7 @@ const components = {
     />
   ),
   hr: ({ ...props }) => (
-    <hr className="my-4 md:my-8 border-1 border-text w-full" {...props} />
+    <hr className="my-4 md:my-8 border-1 border-subtext w-full" {...props} />
   ),
   table: ({ className, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
     <div className="w-full my-6 overflow-y-auto">
@@ -135,14 +132,14 @@ const components = {
   ),
   tr: ({ className, ...props }: React.HTMLAttributes<HTMLTableRowElement>) => (
     <tr
-      className={clsx("m-0 border-t border-mantle p-0 even:bg-bg", className)}
+      className={clsx("m-0 border-t border-crust p-0 even:bg-bg", className)}
       {...props}
     />
   ),
   th: ({ className, ...props }) => (
     <th
       className={clsx(
-        "border border-text px-4 py-2 text-mantle dark:text-amber-200 bg-text font-extrabold text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right",
+        "border border-subtext px-4 py-2 text-text bg-text text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right",
         className,
       )}
       {...props}
@@ -151,7 +148,7 @@ const components = {
   td: ({ className, ...props }) => (
     <td
       className={clsx(
-        "border border-text px-4 py-2 text-text group-hover:text-hover dark:text-crust dark:group-hover:text-crust duration-1000 bg-mantle dark:bg-amber-100 text-left [&[align=center]]:text-center [&[align=right]]:text-right",
+        "border border-text px-4 py-2 text-text bg-mantle text-left [&[align=center]]:text-center [&[align=right]]:text-right",
         className,
       )}
       {...props}
@@ -160,22 +157,19 @@ const components = {
   pre: ({ className, ...props }) => (
     <pre
       className={clsx(
-        "mt-6 mb-4 duration-1000 overflow-x-auto rounded-2xl bg-mantle dark:bg-neutral-100 group-hover:bg-bg dark:group-hover:bg-neutral-100 scrollbar-thin scrollbar-track-bg group-hover:scrollbar-track-mantle scrollbar-thumb-text py-4",
+        "mt-6 mb-4 duration-1000 overflow-x-auto rounded-2xl bg-bg scrollbar-thin scrollbar-track-bg group-hover:scrollbar-track-mantle scrollbar-thumb-text py-4",
         className,
       )}
       {...props}
     />
   ),
   strong: ({ className, ...props }) => (
-    <strong
-      className={clsx("text-hover dark:text-crust font-bold", className)}
-      {...props}
-    />
+    <strong className={clsx("text-green font-bold", className)} {...props} />
   ),
   code: ({ className, ...props }) => (
     <code
       className={clsx(
-        "relative rounded border-0 border-text bg-slate-700 dark:bg-neutral-100 text-accent dark:text-slate-800 inline-block py-[0.1rem] px-[0.3rem] font-mono text-sm",
+        "relative rounded bg-crust text-text inline-block py-[0.1rem] px-[0.3rem] font-mono font-light",
         className,
       )}
       {...props}

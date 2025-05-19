@@ -53,8 +53,8 @@ export default async function ArticlePage({ params }: Props) {
   }
 
   return (
-    <div className="w-full h-full rounded-3xl bg-bg pr-2">
-      <div className="sticky top-0 z-10 w-full h-16 flex flex-row items-center justify-start gap-4 md:gap-8 bg-mantle text-text text-xl font-bold border-2 border-text px-8 rounded-t-3xl">
+    <div className="w-full h-[100dvh] bg-bg">
+      <div className="sticky top-0 z-10 w-full h-16 flex flex-row items-center justify-start gap-4 md:gap-8 bg-crust text-text text-xl font-bold px-8">
         <Link
           href="/blog"
           className="flex flex-row gap-2 items-center justify-center text-text hover:text-hover duration-500"
@@ -74,7 +74,7 @@ export default async function ArticlePage({ params }: Props) {
           {article.title}
         </span>
       </div>
-      <div className="h-[calc(100vh-20rem)] w-full overflow-y-scroll scrollbar-thin scrollbar-track-bg scrollbar-thumb-text p-4 bg-mantle dark:bg-amber-100 rounded-b-3xl">
+      <div className="h-full w-full overflow-y-scroll scrollbar-thin scrollbar-track-bg scrollbar-thumb-text p-4 bg-mantle dark:bg-amber-100">
         <div className="group relative w-full h-full bg-inherit rounded-3xl m-0">
           <div className="lg:absolute top-2 w-full lg:w-fit pl-0 sm:pl-4 lg:pl-0 right-2 flex flex-row lg:flex-col gap-2 items-center lg:justify-center">
             <FullScreenSwitch />
@@ -82,7 +82,7 @@ export default async function ArticlePage({ params }: Props) {
           </div>
           <article
             className={
-              "px-0 sm:px-4 py-12 mx-auto text-text hover:text-hover dark:text-text dark:hover:text-crust text-lg duration-1000 transition-[color] font-bold bg-inherit prose sm:prose-quoteless"
+              "px-0 sm:px-4 py-12 mx-auto text-text hover:text-hover dark:text-text dark:hover:text-crust text-lg duration-1000 transition-[color] font-bold bg-inherit prose sm:prose-quoteless selection:text-black selection:bg-teal"
             }
           >
             <Mdx code={article.body.code} />

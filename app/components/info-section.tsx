@@ -41,7 +41,7 @@ const InfoSection = () => {
             Projects
           </Link>{" "}
           or I write on articles for my{" "}
-          <Link href="/projects" className="underline text-crust">
+          <Link href="/blog" className="underline text-crust">
             Blog
           </Link>
           .

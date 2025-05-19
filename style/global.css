@@ -4,17 +4,10 @@
 
 @layer base {
   :root {
-    --color-accent: #fab387;
     --color-text: #1e1e2e;
     --color-subtext: #45475a;
     --color-base: #f5e0dc;
     --color-mantle: #fab387;
-    --color-crust: #fab387;
-    --color-mauve: #cba6f7;
-    --color-blue: #89b4fa;
-    --color-teal: #94e2d5;
-    --color-green: #a6e3a1;
-    --color-yellow: #f9e2af;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -23,7 +16,6 @@
       --color-subtext: #a6adc8;
       --color-base: #1e1e2e;
       --color-mantle: #181825;
-      --color-crust: #11111b;
     }
   }
 

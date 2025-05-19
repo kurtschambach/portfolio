@@ -55,7 +55,7 @@ const ModeSwitch = () => {
   return (
     <button
       onClick={handleMode}
-      className="bg-transparent border-2 border-orange/60 hover:border-orange dark:border-text dark:hover:border-mantle text-orange/60 hover:text-orange dark:text-text dark:hover:text-mantle font-bold p-2 rounded-lg duration-500"
+      className="bg-transparent border-2 border-teal/60 hover:border-teal dark:border-text dark:hover:border-mantle text-teal/60 hover:text-teal dark:text-text dark:hover:text-mantle font-bold p-2 rounded-lg duration-500"
     >
       {isDark ? <Sun /> : <Moon />}
     </button>

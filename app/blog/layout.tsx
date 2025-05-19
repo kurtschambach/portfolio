@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Navigation from "../components/navigation";
 
 export default function BlogLayout({
   children,
@@ -6,7 +7,8 @@ export default function BlogLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex flex-col w-full h-full overflow-hidden bg-bg py-4">
+    <div className="flex flex-col w-full h-full overflow-hidden bg-teal">
+      <Navigation className="bg-teal" />
       {children}
     </div>
   );

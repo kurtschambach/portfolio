@@ -57,11 +57,11 @@ const ThumbsUpDown = ({ articleSlug }: { articleSlug: string }) => {
             alreadyVoted
               ? "opacity-50 cursor-default scale-75 origin-bottom-right border-none px-0"
               : "h-fit"
-          } origin-bottom bg-transparent border-2 border-accent/60 hover:border-accent dark:border-text dark:hover:border-mantle text-accent/60 hover:text-accent dark:text-text dark:hover:text-mantle font-bold p-2 rounded-lg duration-500`}
+          } origin-bottom bg-transparent border-2 border-green/60 hover:border-green dark:border-text dark:hover:border-mantle text-green/60 hover:text-green dark:text-text dark:hover:text-mantle font-bold p-2 rounded-lg duration-500`}
         >
           <ThumbsUp />
         </button>
-        <p className="text-xs text-accent dark:text-text mr-1">{likes}</p>
+        <p className="text-xs text-green dark:text-text mr-1">{likes}</p>
       </div>
       <div className="w-fit h-fit flex flex-col items-start justify-center gap-2">
         <button
@@ -70,11 +70,11 @@ const ThumbsUpDown = ({ articleSlug }: { articleSlug: string }) => {
             alreadyVoted
               ? "opacity-50 cursor-default scale-75 origin-bottom-left border-none px-0"
               : "h-fit"
-          } origin-bottom bg-transparent border-2 border-violet/60 hover:border-violet dark:border-text dark:hover:border-mantle text-violet/60 hover:text-violet dark:text-text dark:hover:text-mantle font-bold p-2 rounded-lg duration-500`}
+          } origin-bottom bg-transparent border-2 border-red/60 hover:border-red dark:border-text dark:hover:border-mantle text-red/60 hover:text-red dark:text-text dark:hover:text-mantle font-bold p-2 rounded-lg duration-500`}
         >
           <ThumbsDown />
         </button>
-        <p className="text-xs text-violet dark:text-text ml-1">{dislikes}</p>
+        <p className="text-xs text-red dark:text-text ml-1">{dislikes}</p>
       </div>
     </div>
   );

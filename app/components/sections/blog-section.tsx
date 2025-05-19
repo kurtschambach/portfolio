@@ -2,7 +2,7 @@ import { Article, allArticles } from "@/.contentlayer/generated";
 import Link from "next/link";
 import { Block } from "../block";
 import { getSortedArticlesbyDate } from "@/util/utils";
-import { BookOpen, Calendar } from "lucide-react";
+import { Calendar } from "lucide-react";
 
 function getTwoLatestArticles(articles: Article[]): Article[] {
   const sortedArticles = getSortedArticlesbyDate(articles);
@@ -13,6 +13,27 @@ const BlogSection = () => {
   const latestArticles = getTwoLatestArticles(
     allArticles.filter((art) => art.published),
   );
+
+  const categoriesRaw = new Map<string, number>();
+
+  allArticles
+    .filter((article) => article.published)
+    .forEach((article) => {
+      if (
+        categoriesRaw.has(article.topic) ||
+        categoriesRaw.get(article.topic) !== undefined
+      ) {
+        categoriesRaw.set(article.topic, categoriesRaw.get(article.topic) ?? 2); // TODO: not working
+      } else {
+        categoriesRaw.set(article.topic, 1);
+      }
+    });
+
+  const categories: { name: string; count: number }[] = [];
+
+  Array.from(categoriesRaw.entries()).forEach((category) => {
+    categories.push({ name: category[0], count: category[1] });
+  });
 
   return (
     <Block className="bg-teal selection:text-teal">
@@ -52,11 +73,13 @@ const BlogSection = () => {
           <div className="mt-12">
             <h2 className="text-2xl font-bold mb-4">Categories</h2>
             <div className="flex flex-col gap-4">
-              <CategoryTag name="Web Development" count={6} />
-              <CategoryTag name="LLMs" count={4} />
-              <CategoryTag name="React" count={3} />
-              <CategoryTag name="NextJS" count={5} />
-              <CategoryTag name="TypeScript" count={2} />
+              {categories.map((category) => (
+                <CategoryTag
+                  key={category.name}
+                  name={category.name}
+                  count={category.count}
+                />
+              ))}
             </div>
             <Link
               href="/blog"
