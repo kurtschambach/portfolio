@@ -5,7 +5,6 @@ import "@/style/mdx.css";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import FullScreenSwitch from "@/app/components/fullscreen-switch";
-import ModeSwitch from "@/app/components/light-switch";
 import ThumbsUpDown from "@/app/components/thumbs-up-down";
 import { Metadata } from "next";
 
@@ -78,7 +77,6 @@ export default async function ArticlePage({ params }: Props) {
         <div className="group relative w-full h-full bg-inherit rounded-3xl m-0">
           <div className="lg:absolute top-2 w-full lg:w-fit pl-0 sm:pl-4 lg:pl-0 right-2 flex flex-row lg:flex-col gap-2 items-center lg:justify-center">
             <FullScreenSwitch />
-            <ModeSwitch />
           </div>
           <article
             className={
