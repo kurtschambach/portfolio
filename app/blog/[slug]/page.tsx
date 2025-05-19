@@ -28,6 +28,7 @@ export async function generateMetadata({
   if (article) {
     return {
       title: article.title,
+      description: article.description,
     };
   }
   return {
