@@ -157,7 +157,7 @@ const components = {
   pre: ({ className, ...props }) => (
     <pre
       className={clsx(
-        "mt-6 mb-4 duration-1000 overflow-x-auto rounded-2xl bg-base scrollbar-thin scrollbar-track-bg group-hover:scrollbar-track-mantle scrollbar-thumb-text py-4",
+        "mt-6 mb-4 duration-1000 overflow-x-auto rounded-2xl bg-base scrollbar-thin scrollbar-track-base group-hover:scrollbar-track-mantle scrollbar-thumb-text py-4",
         className,
       )}
       {...props}

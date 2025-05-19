@@ -61,7 +61,7 @@ export default function SnapScrollContainer({
         )}
       />
       <div
-        className="flex flex-col snap-y h-[calc(100dvh-96px)] w-[100dvw] overflow-y-auto scrollbar-thin scrollbar-track-bg scrollbar-thumb-text"
+        className="flex flex-col snap-y h-[calc(100dvh-96px)] w-[100dvw] overflow-y-auto scrollbar-thin scrollbar-track-base scrollbar-thumb-text"
         onWheel={handleWheel}
       >
         <div className="absolute group top-1/2 -translate-y-1/2 left-6 h-fit w-fit p-2 rounded-full bg-base space-y-2">
