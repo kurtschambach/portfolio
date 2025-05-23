@@ -26,6 +26,14 @@ Scope:
 
 ---
 
+## Update packages
+
+We will need a few new packages, so make sure you are up to date:
+```bash
+sudo apt update
+sudo apt upgrade
+```
+
 ## Tweaks
 
 First we'll need to install gnome-tweaks, 
@@ -59,57 +67,91 @@ ln -sf /home/username/.themes/Catppuccin-Dark-Macchiato-B-LB/Catppuccin-Dark-Mac
 
 ## Cursor Theme
 
-https://www.gnome-look.org/p/1358330/
+Now we will install a new Cursor Theme.  
+Download the files at [gnome look](https://www.gnome-look.org/p/1358330/)
 
-01-Vimix-cursors.tar.xz
+You shoud now have `01-Vimix-cursors.tar.xz` in your Downloads.
+Extract it, and copy the `dist` directory to `/usr/share/icons/vimix`.  
+Optionally you can also copy `dist-white` to `/usr/share/icons/vimix-white`.
 
-Set the cursor theme in Tweaks/Appearance
+```bash
+sudo mv dist "/usr/share/icons/vimix"
+sudo mv dist-white "/usr/share/icons/vimix-white"
+```
+
+You can now set the cursor theme in Tweaks/Appearance -> Cursor, just search for vimix.
 
 
 ## Icon Theme
 
-https://www.gnome-look.org/p/1214931
+Here we will download a Icon Theme, to replace the default ubuntu one.
+IF you like others more, you can use these too, [Papirus]() for example is a quite common one.
 
-01-Flat-Remix-GTK-Blue-20240730.tar.xz
+We will use [Flat-Remix](https://www.gnome-look.org/p/1214931) here.
 
-Set the icon theme in Tweaks/Appearance
+After downloading, you should have `01-Flat-Remix-GTK-Blue-20240730.tar.xz` in your Downloads.
+
+Extract it, and move the `Flat-Remix-Blue-Dark` directory to `~/.local/share/icons`.
+
+```bash
+mv "Flat-Remix-Blue-Dark" ~/.local/share/icons
+```
+
+You can now set the icon theme in Tweaks/Appearance -> Icons.
 
 
 ## Fish Shell
 
+This improvement is more about efficiency than looking good.  
+
+If you are not already using fish, you can install it by running:
 ```bash
-sudo apt update
 sudo apt install fish
 ```
 
 More info about fish: https://fishshell.com/
+
+Now just run `fish` in the terminal, and try out the auto-completion 
+and other features of fish, like improved reverse-search (Ctrl + R).
 
 
 ## Some Gnome extensions
 
 ![](/blog-images/user-extensions.png)
 
-install gnome extensions
-https://addons.mozilla.org/en-US/firefox/addon/gnome-shell-integration/ for addon
+Gnome extensions are just small but very useful extensions for your Desktop.
 
-sudo apt install gnome-browser-connector
-
-https://extensions.gnome.org/ to install extensions
-
+To install the extension manager run:
+```bash
 sudo apt install gnome-shell-extension-manager
+```
 
+You can search and view extension at [extensions.gnome](https://extensions.gnome.org/),
+and install them in the extension manager.
+
+Optionally, to install extensions right away from the browser, 
+install the [gnome shell firefox addon](https://addons.mozilla.org/en-US/firefox/addon/gnome-shell-integration/),
+and run:
+```bash
+sudo apt install gnome-browser-connector
+```
+
+Now you can use the install button at a extensions page.
 
 ## Some catppuccin themes for various apps
 
-https://catppuccin.com/ports/ for all ports
+There are catppuccin themes for many apps, 
+you can view all ports at their [official site](https://catppuccin.com/ports/).
 
-https://github.com/catppuccin/userstyles/tree/main?tab=readme-ov-file#-userstyles for web, select all you use, install stylus
-https://addons.mozilla.org/de/firefox/addon/styl-us/
+Search for any relevant apps, and follow their installation instructions.
 
-vsc, alacritty
+One of the bigger ports are userstyles, I have a seperate article on them: [Userstyles](/blog/userstyles)
 
 
 ## Starship
 
-check out [Starship](/blog/starship) for more info, the new version is with catppuccin theme colors.
+Starship is another improvement for your terminal.
 
+I have a older articel on [Starship](/blog/starship) which covers installation and configuration, 
+with my old and current configuration file at the end.  
+You can copy the new one, for a catppuccin theme in your terminal, and configure it further if you want.

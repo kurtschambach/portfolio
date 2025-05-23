@@ -53,7 +53,7 @@ export default async function ArticlePage({ params }: Props) {
   }
 
   return (
-    <div className="w-full h-[100dvh] bg-base">
+    <div className="w-full h-[calc(100dvh-6rem)] bg-base flex flex-col">
       <div className="sticky top-0 z-10 w-full h-16 flex flex-row items-center justify-start gap-4 md:gap-8 bg-crust text-text text-xl font-bold px-8">
         <Link
           href="/blog"
@@ -64,17 +64,15 @@ export default async function ArticlePage({ params }: Props) {
         </Link>
         <span
           className={`hidden sm:block cursor-default ${
-            (article.topic.includes("tech") && "text-violet") ||
-            (article.topic.includes("portfolio") && "text-accent") ||
-            (article.topic.includes("dev-apps")
-              ? "text-amber-300"
-              : "text-text")
+            (article.topic.includes("AI") && "text-violet") ||
+            (article.topic.includes("Customization") && "text-accent") ||
+            "text-text"
           }`}
         >
           {article.title}
         </span>
       </div>
-      <div className="h-full w-full overflow-y-scroll scrollbar-thin scrollbar-track-base scrollbar-thumb-text p-4 bg-mantle">
+      <div className="h-full w-full overflow-y-scroll scrollbar-thin p-4 bg-mantle">
         <div className="group relative w-full h-full bg-inherit rounded-3xl m-0">
           <div className="lg:absolute top-2 w-full lg:w-fit pl-0 sm:pl-4 lg:pl-0 right-2 flex flex-row lg:flex-col gap-2 items-center lg:justify-center">
             <FullScreenSwitch />

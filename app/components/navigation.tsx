@@ -14,7 +14,7 @@ const navigation = [
 const Navigation = ({ className }: { className?: string }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <nav className={cn("w-full h-[96px]", className)}>
+    <nav className={cn("w-full h-[6rem]", className)}>
       <div className="max-w-[96rem] w-full flex flex-row items-center justify-between p-4 md:px-12 lg:px-24 mx-auto">
         <Link
           href="/"
