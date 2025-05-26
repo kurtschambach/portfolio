@@ -111,7 +111,7 @@ function RepoCard({
   return (
     <Link
       href={href}
-      className="group/repo-card border border-bg hover:no-underline p-6 rounded-lg transition-colors text-crust"
+      className="group/repo-card border border-base hover:no-underline p-6 rounded-lg transition-colors text-crust"
     >
       <h3 className="text-xl font-bold group-hover/repo-card:underline">
         {name}
