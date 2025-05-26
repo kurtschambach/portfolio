@@ -2,10 +2,7 @@ import { NextResponse } from "next/server";
 import { createRouteHandlerClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 
-export async function GET(
-  request: Request,
-  { params }: { params: { slug: string } },
-) {
+export async function GET({ params }: { params: { slug: string } }) {
   const articleSlug = params.slug;
 
   const supabase_url = process.env.SUPABASE_URL;
@@ -16,6 +13,7 @@ export async function GET(
       {
         likes: 0,
         dislikes: 0,
+        message: "failed to load env supabase variables",
       },
       { status: 400 },
     );
@@ -39,7 +37,7 @@ export async function GET(
       {
         likes: 0,
         dislikes: 0,
-        msg: "failed to retrieve likes/dislikes from DB",
+        message: "failed to retrieve likes/dislikes from DB",
       },
       { status: 400 },
     );
