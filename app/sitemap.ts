@@ -1,13 +1,14 @@
 import { allArticles } from "contentlayer/generated";
+import { MetadataRoute } from "next";
 
-export default function sitemap() {
+export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://a3chron.vercel.app";
 
   const staticPages = [
     {
       url: baseUrl,
       lastModified: new Date(),
-      changeFrequency: "weekly" as const,
+      changeFrequency: "monthly" as const,
       priority: 1,
     },
     {
@@ -20,7 +21,7 @@ export default function sitemap() {
       url: `${baseUrl}/projects`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
-      priority: 0.7,
+      priority: 0.6,
     },
   ];
 
