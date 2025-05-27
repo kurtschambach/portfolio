@@ -1,6 +1,20 @@
 import { Metadata } from "next";
 import Navigation from "../components/navigation";
 
+export const metadata: Metadata = {
+  title: {
+    template: "%s | Blog",
+    default: "Blog",
+  },
+  description:
+    "Read my latest thoughts on Ubuntu Customization and AI - technical articles, tutorials, and insights",
+  openGraph: {
+    title: "Blog | A3chron",
+    description: "Read my latest thoughts on Ubuntu Customization and AI",
+    url: "https://a3chron.vercel.app/blog",
+  },
+};
+
 export default function BlogLayout({
   children,
 }: {
@@ -13,10 +27,3 @@ export default function BlogLayout({
     </div>
   );
 }
-
-export const metadata: Metadata = {
-  title: {
-    template: "%s | Blog",
-    default: "Blog",
-  },
-};

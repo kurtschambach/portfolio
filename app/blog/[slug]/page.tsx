@@ -16,23 +16,35 @@ type Props = {
   };
 };
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
-  const slug = (await params).slug;
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const article = allArticles.find((article) => article.slug === params.slug);
 
-  const article = allArticles.find((article) => article.slug === slug);
+  if (!article) {
+    return {};
+  }
 
-  if (article) {
-    return {
+  return {
+    title: article.title,
+    description: article.description,
+    keywords: [article.topic, "blog", "article"],
+    authors: [{ name: "Kurt Schambach" }],
+    openGraph: {
       title: article.title,
       description: article.description,
-    };
-  }
-  return {
-    title: "Untitled", // should not happen
+      type: "article",
+      url: `https://a3chron.vercel.app/blog/${article.slug}`,
+      publishedTime: article.date,
+      authors: ["Kurt Schambach"],
+      section: article.topic,
+      images: [
+        {
+          url: "/https://a3chron.vercel.app/a3chron.png",
+          width: 1200,
+          height: 630,
+          alt: article.title,
+        },
+      ],
+    },
   };
 }
 

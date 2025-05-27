@@ -28,8 +28,9 @@ export const metadata: Metadata = {
     "Neural Network",
     "NN",
   ],
+  authors: [{ name: "Kurt Schambach" }],
   openGraph: {
-    title: "Kurt Schambach",
+    title: "a3chron",
     description:
       "Hi, my name is Kurt Schambach. I'm a Software Developer at Titanom Technologies, working on some of my own Projects in free time",
     url: "https://a3chron.vercel.app/",
@@ -60,6 +61,9 @@ export const metadata: Metadata = {
   icons: {
     shortcut: "/a3-active.png",
   },
+  verification: {
+    google: "waG0eqk7cOJVSMbB42gHQIR-bDsRmy5ABoQWNFI8UKQ",
+  },
   metadataBase: new URL("https://a3chron.vercel.app/"),
 };
 
@@ -70,9 +74,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="font-plex">
-      <head>
-        <meta name="google-site-verification" content="waG0eqk7cOJVSMbB42gHQIR-bDsRmy5ABoQWNFI8UKQ" />
-      </head>
       <body
         className={`bg-base flex flex-col items-center ${
           process.env.NODE_ENV === "development" ? "debug-screens" : undefined
