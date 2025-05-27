@@ -70,6 +70,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="font-plex">
+      <head>
+        <meta name="google-site-verification" content="waG0eqk7cOJVSMbB42gHQIR-bDsRmy5ABoQWNFI8UKQ" />
+      </head>
       <body
         className={`bg-base flex flex-col items-center ${
           process.env.NODE_ENV === "development" ? "debug-screens" : undefined
