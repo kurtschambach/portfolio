@@ -82,6 +82,17 @@ export default async function ArticlePage({ params }: Props) {
               "px-0 sm:px-4 py-12 mx-auto text-text text-lg font-bold bg-inherit prose sm:prose-quoteless selection:text-black selection:bg-teal"
             }
           >
+            {!article.published && (
+              <div className="bg-warning/10 border-2 border-warning text-warning selection:bg-warning w-full h-fit p-6 flex flex-col items-center justify-center rounded-lg text-center mb-12">
+                <h3 className="text-warning text-base mt-0">
+                  This article is not yet published
+                </h3>
+                <span className="text-sm">
+                  It may be incomplete, contain an inhumane amount of spelling
+                  mistakes, and pottentially wrong information. Use at own risk.
+                </span>
+              </div>
+            )}
             <Mdx code={article.body.code} />
           </article>
           <div className="h-24 w-full bg-transparent flex flex-col items-center justify-center">

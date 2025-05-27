@@ -70,11 +70,11 @@ const ThumbsUpDown = ({ articleSlug }: { articleSlug: string }) => {
             alreadyVoted
               ? "opacity-50 cursor-default scale-75 origin-bottom-left border-none px-0"
               : "h-fit"
-          } origin-bottom bg-transparent border-2 border-red/60 hover:border-red text-red/60 hover:text-red font-bold p-2 rounded-lg duration-500`}
+          } origin-bottom bg-transparent border-2 border-error/60 hover:border-error text-error/60 hover:text-error font-bold p-2 rounded-lg duration-500`}
         >
           <ThumbsDown />
         </button>
-        <p className="text-xs text-red ml-1">{dislikes}</p>
+        <p className="text-xs text-error ml-1">{dislikes}</p>
       </div>
     </div>
   );
