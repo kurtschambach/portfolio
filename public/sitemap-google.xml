@@ -1,7 +1,4 @@
-<urlset xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!--
- created with Free Online Sitemap Generator www.xml-sitemaps.com 
--->
+<urlset>
 <url>
 <loc>https://a3chron.vercel.app/</loc>
 <lastmod>2025-05-29T10:26:07+00:00</lastmod>
@@ -28,9 +25,7 @@
 <priority>0.80</priority>
 </url>
 <url>
-<loc>
-https://a3chron.vercel.app/projects/nextjs-auth-template
-</loc>
+<loc>https://a3chron.vercel.app/projects/nextjs-auth-template</loc>
 <lastmod>2025-05-29T10:26:07+00:00</lastmod>
 <priority>0.80</priority>
 </url>
@@ -60,16 +55,12 @@ https://a3chron.vercel.app/projects/nextjs-auth-template
 <priority>0.64</priority>
 </url>
 <url>
-<loc>
-https://a3chron.vercel.app/projects/github-workflow-generator
-</loc>
+<loc>https://a3chron.vercel.app/projects/github-workflow-generator</loc>
 <lastmod>2025-05-29T10:26:07+00:00</lastmod>
 <priority>0.64</priority>
 </url>
 <url>
-<loc>
-https://a3chron.vercel.app/projects/productivity-app
-</loc>
+<loc>https://a3chron.vercel.app/projects/productivity-app</loc>
 <lastmod>2025-05-29T10:26:07+00:00</lastmod>
 <priority>0.64</priority>
 </url>
@@ -79,16 +70,12 @@ https://a3chron.vercel.app/projects/productivity-app
 <priority>0.64</priority>
 </url>
 <url>
-<loc>
-https://a3chron.vercel.app/blog/neural-network-learning
-</loc>
+<loc>https://a3chron.vercel.app/blog/neural-network-learning</loc>
 <lastmod>2025-05-29T10:26:07+00:00</lastmod>
 <priority>0.64</priority>
 </url>
 <url>
-<loc>
-https://a3chron.vercel.app/blog/neural-network-structure
-</loc>
+<loc>https://a3chron.vercel.app/blog/neural-network-structure</loc>
 <lastmod>2025-05-29T10:26:07+00:00</lastmod>
 <priority>0.64</priority>
 </url>
@@ -98,16 +85,12 @@ https://a3chron.vercel.app/blog/neural-network-structure
 <priority>0.64</priority>
 </url>
 <url>
-<loc>
-https://a3chron.vercel.app/blog/neural-network-basics
-</loc>
+<loc>https://a3chron.vercel.app/blog/neural-network-basics</loc>
 <lastmod>2025-05-29T10:26:07+00:00</lastmod>
 <priority>0.64</priority>
 </url>
 <url>
-<loc>
-https://a3chron.vercel.app/blog/deep-learning-course
-</loc>
+<loc>https://a3chron.vercel.app/blog/deep-learning-course</loc>
 <lastmod>2025-05-29T10:26:07+00:00</lastmod>
 <priority>0.64</priority>
 </url>
