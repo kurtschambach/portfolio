@@ -7,19 +7,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
     {
       url: baseUrl,
-      lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 1,
     },
     {
       url: `${baseUrl}/blog`,
-      lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: 0.8,
     },
     {
       url: `${baseUrl}/projects`,
-      lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.6,
     },
@@ -29,7 +26,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     .filter((article) => article.published !== false)
     .map((article) => ({
       url: `${baseUrl}/blog/${article.slug}`,
-      lastModified: article.date ? new Date(article.date) : new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.6,
     }));
@@ -38,7 +34,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const projects = ["next-js-auth-template", "portfolio", "userstyles"].map(
     (slug) => ({
       url: `${baseUrl}/projects/${slug}`,
-      lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.5,
     }),
