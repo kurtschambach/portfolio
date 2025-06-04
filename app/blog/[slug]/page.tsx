@@ -1,11 +1,11 @@
 import { notFound } from "next/navigation";
 import { allArticles } from "contentlayer/generated";
-import { Mdx } from "@/app/components/mdx";
+import { Mdx } from "@/components/mdx";
 import "@/style/mdx.css";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import FullScreenSwitch from "@/app/components/fullscreen-switch";
-import ThumbsUpDown from "@/app/components/thumbs-up-down";
+import FullScreenSwitch from "@/components/fullscreen-switch";
+import ThumbsUpDown from "@/components/thumbs-up-down";
 import { Metadata } from "next";
 
 export const revalidate = 60;

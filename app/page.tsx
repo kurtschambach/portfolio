@@ -1,10 +1,10 @@
 import React from "react";
-import GithubSection from "@/app/components/sections/github-section";
-import InfoSection from "@/app/components/info-section";
-import ContactSection from "@/app/components/sections/contact-section";
-import BlogSection from "./components/sections/blog-section";
-import SnapScrollContainer from "./components/snap-scroll-container";
-import ProjectsSection from "./components/sections/projects-section";
+import GithubSection from "@/components/sections/github-section";
+import InfoSection from "@/components/info-section";
+import ContactSection from "@/components/sections/contact-section";
+import BlogSection from "@/components/sections/blog-section";
+import SnapScrollContainer from "@/components/snap-scroll-container";
+import ProjectsSection from "@/components/sections/projects-section";
 
 export default function Home() {
   return (
