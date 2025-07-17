@@ -85,7 +85,7 @@ export default function RootLayout({
         <div className="flex flex-col w-[100dvw] h-[100dvh] bg-base text-text">
           <h1 className="text-2xl">Website under construction</h1>
           <p>I am currently working on a bigger rework</p>
-          <p className="text-xs">I could have done it on a branch, but I didn't, don't ask me why - enjoy this page instead</p>
+          <p className="text-xs">I could have done it on a branch, but I didn&apos;t, don&apos;t ask me why - enjoy this page instead</p>
         </div>
       </body>
     </html>
