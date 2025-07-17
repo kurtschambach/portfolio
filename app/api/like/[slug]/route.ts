@@ -1,29 +1,26 @@
 import { NextResponse } from "next/server";
-import { createRouteHandlerClient } from "@supabase/auth-helpers-nextjs";
-import { cookies } from "next/headers";
+import { createClient } from "@supabase/supabase-js";
 
 export async function GET(
   _request: Request,
-  { params }: { params: { slug: string } },
+  { params }: { params: { slug: string } }
 ) {
   const articleSlug = params.slug;
 
-  const supabase_url = process.env.SUPABASE_URL;
-  const anon_key = process.env.SUPABASE_API_KEY;
-  if (!(supabase_url && anon_key)) {
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+  if (!(supabaseUrl && anonKey)) {
     console.error("failed to load env supabase variables");
     return NextResponse.json(
       {
         msg: "failed to load env variables",
       },
-      { status: 400 },
+      { status: 400 }
     );
   }
 
-  const supabase = createRouteHandlerClient(
-    { cookies },
-    { supabaseUrl: supabase_url, supabaseKey: anon_key },
-  );
+  const supabase = createClient(supabaseUrl, anonKey);
 
   const { data } = await supabase
     .from("articles")
@@ -37,7 +34,7 @@ export async function GET(
       {
         msg: "failed to retrieve previous likes",
       },
-      { status: 400 },
+      { status: 400 }
     );
   }
 
@@ -51,7 +48,7 @@ export async function GET(
       {
         msg: "failed to update likes",
       },
-      { status: 400 },
+      { status: 400 }
     );
   }
 
@@ -59,6 +56,6 @@ export async function GET(
     {
       msg: "updated likes",
     },
-    { status: 201 },
+    { status: 201 }
   );
 }

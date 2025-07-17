@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Block } from "../block";
 import { Code2, ExternalLink, Github } from "lucide-react";
-import { allProjects } from "@/.contentlayer/generated";
+import { allProjects } from "contentlayer/generated";
 
 const ProjectsSection = () => {
   const featured = allProjects.find(

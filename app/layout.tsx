@@ -82,24 +82,6 @@ export default function RootLayout({
         <Analytics />
         <ToggleFavicon />
         <GithubRepo />
-        <div className="flex flex-col w-[100dvw] h-[100dvh] bg-base text-text">
-          <h1 className="text-2xl">Website under construction</h1>
-          <p>I am currently working on a bigger rework</p>
-          <p className="text-xs">I could have done it on a branch, but I didn&apos;t, don&apos;t ask me why - enjoy this page instead</p>
-        </div>
-      </body>
-    </html>
-  )
-  return (
-    <html lang="en">
-      <body
-        className={`bg-base ${
-          process.env.NODE_ENV === "development" ? "debug-screens" : undefined
-        }`}
-      >
-        <Analytics />
-        <ToggleFavicon />
-        <GithubRepo />
         <div className="w-[100dvw] h-[100dvh] bg-base">
           <div className="lg:hidden fixed inset-0 z-50 bg-base text-text flex items-center justify-center p-4 text-center">
             <div className="max-w-md">

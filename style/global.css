@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind reference;
 
 @layer base {
   :root {
@@ -35,7 +36,7 @@ a:hover {
 }
 
 *:focus-visible {
-  @apply outline-none ring-2 ring-accent ring-offset-4 rounded-lg ring-offset-mantle;
+  @apply outline-none ring-2 ring-[#a6adc8] ring-offset-4 rounded-lg ring-offset-mantle;
 }
 
 ::selection {

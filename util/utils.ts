@@ -1,4 +1,4 @@
-import { Article } from "@/.contentlayer/generated/types";
+import { Article } from "contentlayer/generated";
 
 export function getSortedArticlesbyDate(articles: Article[]) {
   const sortedArticles = articles.sort((a, b) => {

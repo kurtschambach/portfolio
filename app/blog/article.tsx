@@ -1,4 +1,4 @@
-import type { Article as ArticleType } from "@/.contentlayer/generated";
+import type { Article as ArticleType } from "contentlayer/generated";
 import Link from "next/link";
 
 type Props = {

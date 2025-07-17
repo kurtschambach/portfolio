@@ -1,4 +1,4 @@
-import { Article, allArticles } from "@/.contentlayer/generated";
+import { Article, allArticles } from "contentlayer/generated";
 import Link from "next/link";
 import { Block } from "../block";
 import { getSortedArticlesbyDate } from "@/util/utils";
