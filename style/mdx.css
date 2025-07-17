@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 [data-rehype-pretty-code-fragment] code {
-  @apply grid min-w-full break-words rounded-2xl border-0 bg-transparent p-0 text-sm scrollbar-thin scrollbar-track-base scrollbar-thumb-text;
+  @apply grid min-w-full break-words rounded-2xl border-0 bg-transparent p-0 text-sm;
   counter-reset: line;
   box-decoration-break: clone;
 }
