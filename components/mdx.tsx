@@ -10,7 +10,7 @@ const components = {
   h1: ({ className, ...props }: {className: string}) => (
     <h1
       className={clsx(
-        "[&:not(:first-child)]:mt-16 scroll-m-20 text-4xl font-bold tracking-tight text-text",
+        "not-first:mt-16 scroll-m-20 text-4xl font-bold tracking-tight text-text",
         className,
       )}
       {...props}
@@ -70,7 +70,7 @@ const components = {
   p: ({ className, ...props }: {className: string}) => (
     <p
       className={clsx(
-        "leading-7 text-inherit [&:not(:first-child)]:mt-6",
+        "leading-7 text-inherit not-first:mt-6",
         className,
       )}
       {...props}
@@ -100,7 +100,7 @@ const components = {
   blockquote: ({ className, ...props }: {className: string}) => (
     <blockquote
       className={clsx(
-        "mt-4 border-l-2 not-italic border-green pl-6 my-0 py-[1px] text-inherit bg-base",
+        "mt-4 border-l-2 not-italic border-green pl-6 my-0 py-px text-inherit bg-base",
         className,
       )}
       {...props}
@@ -119,7 +119,7 @@ const components = {
     />
   ),
   hr: ({ ...props }) => (
-    <hr className="my-4 md:my-8 border-1 border-subtext w-full" {...props} />
+    <hr className="my-4 md:my-8 border border-subtext w-full" {...props} />
   ),
   table: ({ className, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
     <div className="w-full my-6 overflow-y-auto">

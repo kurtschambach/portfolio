@@ -14,7 +14,7 @@ const stats = {
 const GithubSection = () => {
   return (
     <Block className="bg-blue selection:text-blue">
-      <div className="w-[100dvw] 2xl:w-[96rem] h-fit min-h-[100dvh] p-24 flex flex-col item-center justify-center">
+      <div className="w-dvw 2xl:w-384 h-fit min-h-dvh p-24 flex flex-col item-center justify-center">
         <h1 className="uppercase text-6xl text-blue bg-crust mb-24 w-fit p-1 px-2">
           #2 GitHub
         </h1>

@@ -26,7 +26,7 @@ export default async function ProjectsPage() {
     );
 
   return (
-    <div className="relative w-full h-full max-h-full p-6 max-w-[96rem] mx-auto">
+    <div className="relative w-full h-full max-h-full p-6 max-w-384 mx-auto">
       <div className="space-y-8 md:space-y-16 pr-4">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 xl:mt-8">
           <Link
@@ -58,7 +58,7 @@ export default async function ProjectsPage() {
                     >
                       {featured.title}
                     </h2>
-                    <div className="h-[2px] w-0 bg-gradient-to-r from-green/0 to-transparent group-hover:w-full group-hover:to-green duration-700" />
+                    <div className="h-[2px] w-0 bg-linear-to-r from-green/0 to-transparent group-hover:w-full group-hover:to-green duration-700" />
                   </div>
                   <div className="rounded-full h-fit w-fit ring-2 ring-mantle group-hover:ring-green shadow-md shadow-crust group-hover:shadow-text duration-150 delay-300 ring-offset-2 ring-offset-crust">
                     <Image
@@ -96,7 +96,7 @@ export default async function ProjectsPage() {
           </div>
         </div>
 
-        <div className="w-full h-px bg-gradient-to-l from-black/0 via-black to-black/0" />
+        <div className="w-full h-px bg-linear-to-l from-black/0 via-black to-black/0" />
 
         <div className="grid grid-cols-1 gap-4 mx-auto lg:mx-0 md:grid-cols-3">
           <div className="grid grid-cols-1 gap-4">

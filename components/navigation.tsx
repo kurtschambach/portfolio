@@ -14,8 +14,8 @@ const navigation = [
 const Navigation = ({ className }: { className?: string }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <nav className={cn("w-full h-[6rem]", className)}>
-      <div className="max-w-[96rem] w-full flex flex-row items-center justify-between p-4 md:px-12 lg:px-24 mx-auto">
+    <nav className={cn("w-full h-24", className)}>
+      <div className="max-w-384 w-full flex flex-row items-center justify-between p-4 md:px-12 lg:px-24 mx-auto">
         <Link
           href="/"
           className="mt-6 md:mt-0 w-fit flex flex-col items-center justify-center text-crust font-bold font-plex text-3xl whitespace-nowrap hover:no-underline"
@@ -27,7 +27,7 @@ const Navigation = ({ className }: { className?: string }) => {
           {menuOpen && (
             <div
               onClick={() => setMenuOpen(false)}
-              className="z-30 bg-transparent backdrop-blur-xl fixed left-0 top-0 w-[100vw] h-[100vh] flex md:hidden items-center justify-center"
+              className="z-30 bg-transparent backdrop-blur-xl fixed left-0 top-0 w-screen h-screen flex md:hidden items-center justify-center"
             >
               <ul className="flex flex-col items-center justify-center gap-8 bg-mantle p-4 px-6 rounded-xl border-2 border-text">
                 {navigation.map((item) => (

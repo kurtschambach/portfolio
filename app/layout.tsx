@@ -82,7 +82,7 @@ export default function RootLayout({
         <Analytics />
         <ToggleFavicon />
         <GithubRepo />
-        <div className="w-[100dvw] h-[100dvh] bg-base">
+        <div className="w-dvw h-dvh bg-base">
           <div className="lg:hidden fixed inset-0 z-50 bg-base text-text flex items-center justify-center p-4 text-center">
             <div className="max-w-md">
               <h1 className="text-2xl font-bold mb-4">

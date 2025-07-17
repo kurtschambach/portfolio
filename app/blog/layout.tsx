@@ -21,7 +21,7 @@ export default function BlogLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex flex-col w-full h-full max-h-[100dvh] overflow-hidden bg-teal">
+    <div className="flex flex-col w-full h-full max-h-dvh overflow-hidden bg-teal">
       <Navigation className="bg-teal" />
       <div className="h-[cal(100dvh-6rem)] overflow-y-auto">{children}</div>
     </div>

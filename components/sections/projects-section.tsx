@@ -14,7 +14,7 @@ const ProjectsSection = () => {
 
   return (
     <Block className="bg-green selection:text-green">
-      <div className="w-[100dvw] 2xl:w-[96rem] h-fit min-h-[100dvh] p-24 flex flex-col item-center justify-center">
+      <div className="w-dvw 2xl:w-384 h-fit min-h-dvh p-24 flex flex-col item-center justify-center">
         <h1 className="uppercase text-6xl text-green bg-crust mb-24 w-fit p-1 px-2">
           #4 Projects
         </h1>
@@ -74,7 +74,7 @@ function ProjectCard({
   url?: string;
 }) {
   return (
-    <div className="bg-crust rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow h-[24rem] max-h-[24rem]">
+    <div className="bg-crust rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow h-96 max-h-96">
       <div className="h-48 bg-base flex items-center justify-center">
         {image ? (
           <img src={image} alt={title} className="w-full h-full object-cover" />
@@ -82,10 +82,10 @@ function ProjectCard({
           <Code2 size={64} className="text-green opacity-50" />
         )}
       </div>
-      <div className="p-6 flex flex-col h-[12rem]">
+      <div className="p-6 flex flex-col h-48">
         <h3 className="text-xl font-bold text-green">{title}</h3>
         <p className="text-subtext mt-2 line-clamp-2">{description}</p>
-        <div className="flex-grow" />
+        <div className="grow" />
         <div className="mt-6 flex gap-4">
           <Link
             href={`/projects/${slug}`}

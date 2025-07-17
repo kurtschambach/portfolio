@@ -32,7 +32,7 @@ export const Article: React.FC<Props> = ({ project }) => {
               <h2 className="z-20 text-xl font-medium duration-300 lg:text-3xl no-wrap min-w-max text-hover font-display">
                 {project.title}
               </h2>
-              <div className="h-[2px] w-0 bg-gradient-to-r from-green/0 to-transparent group-hover:w-full group-hover:to-green duration-700" />
+              <div className="h-[2px] w-0 bg-linear-to-r from-green/0 to-transparent group-hover:w-full group-hover:to-green duration-700" />
             </div>
             <div className="rounded-full h-fit w-fit ring-2 ring-mantle group-hover:ring-green shadow-md shadow-crust group-hover:shadow-text duration-150 delay-300 ring-offset-2 ring-offset-crust">
               <Image

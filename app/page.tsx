@@ -8,7 +8,7 @@ import ProjectsSection from "@/components/sections/projects-section";
 
 export default function Home() {
   return (
-    <div className="w-[100dvw] h-[100dvh]">
+    <div className="w-dvw h-dvh">
       <SnapScrollContainer>
         <InfoSection />
         <GithubSection />
