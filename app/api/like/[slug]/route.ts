@@ -12,7 +12,7 @@ export async function GET(request: Request) {
     console.error("failed to load env supabase variables");
     return NextResponse.json(
       { msg: "failed to load env variables" },
-      { status: 400 }
+      { status: 400 },
     );
   }
 
@@ -28,7 +28,7 @@ export async function GET(request: Request) {
   if (!data) {
     return NextResponse.json(
       { msg: "failed to retrieve previous likes" },
-      { status: 400 }
+      { status: 400 },
     );
   }
 
@@ -40,7 +40,7 @@ export async function GET(request: Request) {
   if (error) {
     return NextResponse.json(
       { msg: "failed to update likes" },
-      { status: 400 }
+      { status: 400 },
     );
   }
 

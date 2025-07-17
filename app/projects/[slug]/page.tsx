@@ -12,9 +12,7 @@ type Props = {
   }>;
 };
 
-export async function generateMetadata({
-  params,
-}: Props): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const slug = (await params).slug;
 
   const project = allProjects.find((project) => project.slug === slug);
@@ -48,7 +46,7 @@ export default async function PostPage({ params }: Props) {
   return (
     <div className="bg-base text-text pr-4">
       <Header project={project} />
-      
+
       <div className="group w-full h-full bg-base hover:bg-mantle duration-1000 rounded-3xl mt-4">
         <article
           className={

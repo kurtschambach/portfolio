@@ -1,4 +1,4 @@
-import { fontFamily as _fontFamily } from "tailwindcss/defaultTheme";
+import defaultTheme from "tailwindcss/defaultTheme";
 
 /** @type {import('tailwindcss').Config} */
 export const content = [
@@ -32,9 +32,9 @@ export const theme = {
       width: "width",
     },
     fontFamily: {
-      sans: ["var(--font-inter)", ..._fontFamily.sans],
+      sans: [...defaultTheme.fontFamily.sans],
       display: ["var(--font-calsans)"],
-      plex: ["IBM Plex", _fontFamily.mono],
+      plex: ["IBM Plex", defaultTheme.fontFamily.mono],
     },
     backgroundImage: {
       "gradient-radial": "radial-gradient(50% 50% at 50% 50%, 20)",
