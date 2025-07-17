@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "format": "pnpm rome check . --apply-suggested && pnpm rome format . --write",
+    "format": "pnpm rome format --write .",
     "lint": "next lint"
   },
   "dependencies": {

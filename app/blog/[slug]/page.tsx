@@ -11,13 +11,14 @@ import { Metadata } from "next";
 export const revalidate = 60;
 
 type Props = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const article = allArticles.find((article) => article.slug === params.slug);
+  const { slug } = await params;
+  const article = allArticles.find((article) => article.slug === slug);
 
   if (!article) {
     return {};
@@ -48,7 +49,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export async function generateStaticParams(): Promise<Props["params"][]> {
+export async function generateStaticParams(): Promise<{ slug: string }[]> {
   return allArticles
     .filter((p) => p.published)
     .map((p) => ({
@@ -57,7 +58,7 @@ export async function generateStaticParams(): Promise<Props["params"][]> {
 }
 
 export default async function ArticlePage({ params }: Props) {
-  const slug = params?.slug;
+  const { slug } = await params;
   const article = allArticles.find((article) => article.slug === slug);
 
   if (!article) {

@@ -1,36 +1,27 @@
 import { NextResponse } from "next/server";
-import { createRouteHandlerClient } from "@supabase/auth-helpers-nextjs";
-import { cookies } from "next/headers";
+import { createClient } from "@supabase/supabase-js";
 
-export async function GET(
-  _request: Request,
-  { params }: { params: { slug: string } },
-) {
-  const articleSlug = params.slug;
+export async function GET(request: Request) {
+  const { pathname } = new URL(request.url);
+  const slug = pathname.split("/").pop();
 
-  const supabase_url = process.env.SUPABASE_URL;
-  const anon_key = process.env.SUPABASE_API_KEY;
-  if (!(supabase_url && anon_key)) {
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+  if (!(supabaseUrl && anonKey)) {
     console.error("failed to load env supabase variables");
     return NextResponse.json(
-      {
-        likes: 0,
-        dislikes: 0,
-        message: "failed to load env supabase variables",
-      },
-      { status: 400 },
+      { msg: "failed to load env variables" },
+      { status: 400 }
     );
   }
 
-  const supabase = createRouteHandlerClient(
-    { cookies },
-    { supabaseUrl: supabase_url, supabaseKey: anon_key },
-  );
+  const supabase = createClient(supabaseUrl, anonKey);
 
   const { data, error } = await supabase
     .from("articles")
     .select("likes, dislikes")
-    .eq("article_id", articleSlug)
+    .eq("article_id", slug)
     .limit(1)
     .single();
 
@@ -42,7 +33,7 @@ export async function GET(
         dislikes: 0,
         message: "failed to retrieve likes/dislikes from DB",
       },
-      { status: 400 },
+      { status: 400 }
     );
   }
 
@@ -51,6 +42,6 @@ export async function GET(
       likes: data.likes,
       dislikes: data.dislikes,
     },
-    { status: 200 },
+    { status: 200 }
   );
 }

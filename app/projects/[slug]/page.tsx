@@ -1,23 +1,20 @@
 import { notFound } from "next/navigation";
 import { allProjects } from "contentlayer/generated";
 import { Mdx } from "@/components/mdx";
-import { Header } from "./header";
 import "@/style/mdx.css";
 import type { Metadata } from "next";
-
+import { Header } from "./header";
 export const revalidate = 60;
 
 type Props = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
 export async function generateMetadata({
   params,
-}: {
-  params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
+}: Props): Promise<Metadata> {
   const slug = (await params).slug;
 
   const project = allProjects.find((project) => project.slug === slug);
@@ -32,7 +29,7 @@ export async function generateMetadata({
   };
 }
 
-export async function generateStaticParams(): Promise<Props["params"][]> {
+export async function generateStaticParams(): Promise<{ slug: string }[]> {
   return allProjects
     .filter((p) => p.published)
     .map((p) => ({
@@ -41,7 +38,7 @@ export async function generateStaticParams(): Promise<Props["params"][]> {
 }
 
 export default async function PostPage({ params }: Props) {
-  const slug = params?.slug;
+  const { slug } = await params;
   const project = allProjects.find((project) => project.slug === slug);
 
   if (!project) {
@@ -51,7 +48,7 @@ export default async function PostPage({ params }: Props) {
   return (
     <div className="bg-base text-text pr-4">
       <Header project={project} />
-
+      
       <div className="group w-full h-full bg-base hover:bg-mantle duration-1000 rounded-3xl mt-4">
         <article
           className={
