@@ -89,7 +89,7 @@ export default function RootLayout({
                 Mobile View Coming Soon
               </h1>
               <p className="text-lg">
-                I'm currently working on optimizing this website for mobile
+                I&apos;m currently working on optimizing this website for mobile
                 devices. Please view this site on a larger screen for the best
                 experience.
               </p>

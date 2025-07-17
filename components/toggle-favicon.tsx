@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 const ToggleFavicon = () => {
   const handleFaviconBlur = () => {
-    var link: HTMLAnchorElement | null =
+    const link: HTMLAnchorElement | null =
       document.querySelector("link[rel~='icon']");
     if (link) {
       link.href = "/favicon.png";
@@ -12,7 +12,7 @@ const ToggleFavicon = () => {
   };
 
   const handleFaviconFocus = () => {
-    var link: HTMLAnchorElement | null =
+    const link: HTMLAnchorElement | null =
       document.querySelector("link[rel~='icon']");
     if (link) {
       link.href = "/a3-active.png";

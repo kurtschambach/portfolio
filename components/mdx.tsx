@@ -1,9 +1,11 @@
+// FIXME:
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-nocheck
 import * as React from "react";
 import Image from "next/image";
 import { useMDXComponent } from "next-contentlayer/hooks";
 
-export function clsx(...args: any) {
+export function clsx(...args: string | undefined) {
   return args.filter(Boolean).join(" ");
 }
 

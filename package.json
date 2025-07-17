@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "format": "pnpm rome check . --apply-suggested && pnpm rome format . --write"
+    "format": "pnpm rome check . --apply-suggested && pnpm rome format . --write",
+    "lint": "next lint"
   },
   "dependencies": {
     "@supabase/auth-helpers-nextjs": "^0.9.0",
@@ -29,7 +30,11 @@
   "devDependencies": {
     "@catppuccin/tailwindcss": "^0.1.6",
     "@tailwindcss/typography": "^0.5.10",
+    "@typescript-eslint/eslint-plugin": "^8.37.0",
+    "@typescript-eslint/parser": "^8.37.0",
     "autoprefixer": "^10.4.17",
+    "eslint": "^8",
+    "eslint-config-next": "15.4.1",
     "postcss-nesting": "^12.0.2",
     "rome": "^11.0.0",
     "tailwind-scrollbar": "^3.0.5",

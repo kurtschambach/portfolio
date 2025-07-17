@@ -1,4 +1,4 @@
-import { BookMarked, Code, GitFork, Github, Star, Users } from "lucide-react";
+import { BookMarked, Code, GitFork, Star, Users } from "lucide-react";
 import { Block } from "../block";
 import Link from "next/link";
 

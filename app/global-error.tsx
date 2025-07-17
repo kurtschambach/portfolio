@@ -9,6 +9,7 @@ export default function Error({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
+  console.error(error);
   return (
     <div className="w-full h-full bg-base text-hover flex flex-col items-center justify-center">
       <h2 className="font-bold text-2xl">Something went wrong!</h2>

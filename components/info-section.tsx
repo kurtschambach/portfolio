@@ -25,7 +25,8 @@ const InfoSection = () => {
           happen to do some other stuff too.
         </p>
         <p className="text-2xl font-semibold font-plex mt-12 w-2/3">
-          I'm currently pursuing my Bachelor's degree in Computer Science at{" "}
+          I&apos;m currently pursuing my Bachelor&apos;s degree in Computer
+          Science at{" "}
           <Link
             href="https://www.tum.de"
             target="_blank"

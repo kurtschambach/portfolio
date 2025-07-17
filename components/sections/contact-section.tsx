@@ -35,7 +35,7 @@ const ContactSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div>
             <h1 className="text-4xl font-bold flex items-center gap-3">
-              Let's Get In Touch
+              Let&apos;s Get In Touch
             </h1>
             <p className="text-2xl font-semibold mt-12 w-2/3">
               Have a question or want to work together? Feel free to reach out
