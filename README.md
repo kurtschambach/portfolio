@@ -12,19 +12,18 @@ I will (maybe) refactor this some day, don't have the time now, so don't expect 
 ## Running Locally
 
 Install dependencies and run the development server:
+
 ```sh-session
-pnpm install
+pnpm i
 pnpm dev
 ```
 
 create a .env with the following information:
+
 ```
 SUPABASE_URL=your-db-url
 SUPABASE_API_KEY=your-secret-key
 ```
-
-or any other DB, but I'm currently using Supabase
-
 
 ## Cloning / Forking
 
