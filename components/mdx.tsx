@@ -19,7 +19,7 @@ const components = {
   h2: ({ className, ...props }: { className: string }) => (
     <h2
       className={clsx(
-        "mt-12 scroll-m-20 border-b-2 border-b-crust text-text pb-1 text-3xl font-semibold tracking-tight first:mt-0",
+        "mt-12 scroll-m-20 underline text-text pb-1 text-3xl font-semibold tracking-tight first:mt-0",
         className,
       )}
       {...props}
@@ -55,7 +55,7 @@ const components = {
   h6: ({ className, ...props }: { className: string }) => (
     <h6
       className={clsx(
-        "mt-8 scroll-m-20 text-base text-text font-semibold tracking-tight",
+        "mt-8 scroll-m-20 text-text font-semibold tracking-tight",
         className,
       )}
       {...props}
@@ -94,15 +94,75 @@ const components = {
   li: ({ className, ...props }: { className: string }) => (
     <li className={clsx("mt-2 text-inherit", className)} {...props} />
   ),
-  blockquote: ({ className, ...props }: { className: string }) => (
-    <blockquote
-      className={clsx(
-        "mt-4 border-l-2 not-italic border-green pl-6 my-0 py-px text-inherit bg-base",
-        className,
-      )}
-      {...props}
-    />
-  ),
+  blockquote: ({
+    className,
+    children,
+    ...props
+  }: { className?: string; children: React.ReactNode }) => {
+    let type: "info" | "warning" | "default" = "default";
+    let content = children;
+
+    const childrenArray = children as React.ReactNode[];
+
+    if (
+      Array.isArray(childrenArray) &&
+      childrenArray[1] &&
+      React.isValidElement(childrenArray[1]) &&
+      typeof (childrenArray[1] as React.ReactElement<any>).props.children ===
+        "string" &&
+      ((
+        (childrenArray[1] as React.ReactElement<any>).props.children as string
+      ).startsWith("[INFO]") ||
+        (
+          (childrenArray[1] as React.ReactElement<any>).props.children as string
+        ).startsWith("[WARNING]"))
+    ) {
+      const childString = (childrenArray[1] as React.ReactElement<any>).props
+        .children as string;
+      if (childString.startsWith("[INFO]")) {
+        type = "info";
+        const newChild = React.cloneElement(
+          childrenArray[1] as React.ReactElement<any>,
+          {},
+          childString.replace(/^\[INFO\]\s*/, ""),
+        );
+        content = [childrenArray[0], newChild, ...childrenArray.slice(2)];
+      } else if (childString.startsWith("[WARNING]")) {
+        type = "warning";
+        const newChild = React.cloneElement(
+          childrenArray[1] as React.ReactElement<any>,
+          {},
+          childString.replace(/^\[WARNING\]\s*/, ""),
+        );
+        content = [childrenArray[0], newChild, ...childrenArray.slice(2)];
+      }
+    }
+
+    let typeClass = "";
+    if (type === "info") typeClass = "border-blue bg-blue/5";
+    if (type === "warning") typeClass = "border-yellow bg-yellow/5";
+
+    return (
+      <blockquote
+        className={clsx(
+          "mt-4 border-l-2 not-italic pl-6 py-2 text-inherit",
+          typeClass || "border-teal bg-teal/5",
+          className,
+        )}
+        {...props}
+      >
+        {type === "info" && <span className="mr-2">🛈</span>}
+        {type === "warning" && <span className="mr-2">⚠️</span>}
+        {Array.isArray(content)
+          ? content.map((child, idx) =>
+              React.isValidElement(child)
+                ? React.cloneElement(child, { key: idx })
+                : child,
+            )
+          : content}
+      </blockquote>
+    );
+  },
   img: ({
     className,
     alt,
@@ -116,7 +176,10 @@ const components = {
     />
   ),
   hr: ({ ...props }) => (
-    <hr className="my-4 md:my-8 border border-subtext w-full" {...props} />
+    <hr
+      className="my-4 md:my-8 border-none h-px bg-gradient-to-r from-transparent via-overlay to-transparent w-full"
+      {...props}
+    />
   ),
   table: ({ className, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
     <div className="w-full my-6 overflow-y-auto">
@@ -149,10 +212,7 @@ const components = {
   ),
   pre: ({ className, ...props }: { className: string }) => (
     <pre
-      className={clsx(
-        "mt-6 mb-4 duration-1000 overflow-x-auto rounded-2xl bg-base scrollbar-thin scrollbar-track-base group-hover:scrollbar-track-mantle scrollbar-thumb-text py-4",
-        className,
-      )}
+      className={clsx("overflow-x-auto rounded-2xl bg-crust! p-2", className)}
       {...props}
     />
   ),
@@ -162,7 +222,7 @@ const components = {
   code: ({ className, ...props }: { className: string }) => (
     <code
       className={clsx(
-        "relative rounded bg-crust text-text inline-block py-[0.1rem] px-[0.3rem] font-mono font-light",
+        "relative rounded bg-crust text-text inline-block px-2 font-mono font-light",
         className,
       )}
       {...props}
