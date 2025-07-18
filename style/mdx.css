@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
-[data-rehype-pretty-code-fragment] code {
-  @apply grid min-w-full break-words rounded-2xl border-0 bg-transparent p-0 text-sm;
+[data-rehype-pretty-code-figure] {
+  @apply bg-[#1e1e2e] rounded-2xl my-4;
+}
+[data-rehype-pretty-code-figure] code {
+  @apply break-words text-sm bg-[#11111b];
   counter-reset: line;
   box-decoration-break: clone;
 }
-[data-rehype-pretty-code-fragment] .line {
-  @apply px-4 py-1;
-}
-[data-rehype-pretty-code-fragment] [data-line-numbers] > .line::before {
+[data-rehype-pretty-code-figure] [data-line-numbers] > .line::before {
   counter-increment: line;
   content: counter(line);
   display: inline-block;
@@ -17,15 +17,15 @@
   text-align: right;
   color: #526777;
 }
-[data-rehype-pretty-code-fragment] .line--highlighted {
+[data-rehype-pretty-code-figure] .line--highlighted {
   @apply bg-zinc-300 rounded-lg;
 }
-[data-rehype-pretty-code-fragment] .line-highlighted span {
+[data-rehype-pretty-code-figure] .line-highlighted span {
   @apply relative;
 }
-[data-rehype-pretty-code-fragment] .word--highlighted {
-  @apply rounded-lg bg-[#F00] p-1;
+[data-rehype-pretty-code-figure] .word--highlighted {
+  @apply rounded-lg bg-zinc-300 text-black p-1;
 }
 [data-rehype-pretty-code-title] {
-  @apply mt-4 py-2 px-4 text-sm font-medium;
+  @apply mt-4 py-2 px-4 text-sm;
 }
