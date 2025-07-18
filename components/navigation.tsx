@@ -18,7 +18,7 @@ const Navigation = ({ className }: { className?: string }) => {
       <div className="max-w-384 w-full flex flex-row items-center justify-between p-4 md:px-12 lg:px-24 mx-auto">
         <Link
           href="/"
-          className="mt-6 md:mt-0 w-fit flex flex-col items-center justify-center text-crust font-bold font-plex text-3xl whitespace-nowrap hover:no-underline"
+          className="mt-6 md:mt-0 w-fit flex flex-col items-center justify-center text-crust font-bold font-plex text-3xl whitespace-nowrap no-underline!"
         >
           <span className="text-lg">Kurt Schambach</span>
           <span className="pl-6">a3chron</span>
@@ -47,7 +47,7 @@ const Navigation = ({ className }: { className?: string }) => {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-xl font-bold font-plex duration-500 hover:underline"
+                className="text-xl font-bold font-plex duration-500 hover:underline decoration-2"
               >
                 {item.name}
               </Link>

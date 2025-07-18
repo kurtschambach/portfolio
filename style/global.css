@@ -1,13 +1,40 @@
 @import "tailwindcss";
 
+@theme {
+  --color-text: #cdd6f4;
+  --color-subtext: #a6adc8;
+  --color-base: #1e1e2e;
+  --color-mantle: #181825;
+  --color-accent: #fab387;
+  --color-crust: #11111b;
+  --color-mauve: #cba6f7;
+  --color-blue: #89b4fa;
+  --color-teal: #94e2d5;
+  --color-green: #a6e3a1;
+  --color-yellow: #f9e2af;
+  --color-error: #f38ba8;
+  --color-warning: #fab387;
+
+  --font-family-display: var(--font-calsans);
+  --font-family-plex: "IBM Plex", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+@layer components {
+  .prose code::before,
+  .prose code::after {
+    content: "";
+  }
+  
+  .prose-quoteless blockquote p:first-of-type::before,
+  .prose-quoteless blockquote p:first-of-type::after {
+    content: none;
+  }
+}
+
 @layer base {
   .text-edge-outline {
     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
   }
-}
-
-a:hover {
-  @apply underline;
 }
 
 @font-face {
