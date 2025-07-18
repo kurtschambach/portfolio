@@ -1,7 +1,7 @@
 import * as React from "react";
 import Image from "next/image";
 import { useMDXComponent } from "next-contentlayer2/hooks";
-import { InfoIcon, TriangleAlertIcon } from "lucide-react";
+import { FlameIcon, InfoIcon, TriangleAlertIcon } from "lucide-react";
 
 export function clsx(...args: (string | undefined)[]) {
   return args.filter(Boolean).join(" ");
@@ -112,7 +112,7 @@ export function Mdx({ code, page }: MdxProps) {
       children,
       ...props
     }: { className?: string; children: React.ReactNode }) => {
-      let type: "info" | "warning" | "default" = "default";
+      let type: "info" | "warning" | "new" | "default" = "default";
       let title: string = "";
       let content = children;
 
@@ -130,35 +130,55 @@ export function Mdx({ code, page }: MdxProps) {
           (
             (childrenArray[1] as React.ReactElement<any>).props
               .children as string
-          ).startsWith("[WARNING]"))
+          ).startsWith("[WARNING]") ||
+          (
+            (childrenArray[1] as React.ReactElement<any>).props
+              .children as string
+          ).startsWith("[NEW]"))
       ) {
         const childString = (childrenArray[1] as React.ReactElement<any>).props
           .children as string;
+
         if (childString.startsWith("[INFO]")) {
           type = "info";
-          title = childString.replace("[INFO]", "");
+          title = childString.split("\n")[0].replace("[INFO]", "");
           const newChild = React.cloneElement(
             childrenArray[1] as React.ReactElement<any>,
             {},
-            childString.replace(/^\[INFO\]\s*/, ""),
+            childString.split("\n").slice(1).join("\n"),
           );
           content = [childrenArray[0], newChild, ...childrenArray.slice(2)];
         } else if (childString.startsWith("[WARNING]")) {
           type = "warning";
-          title = childString.replace("[WARNING]", "");
+          title = childString.split("\n")[0].replace("[WARNING]", "");
           const newChild = React.cloneElement(
             childrenArray[1] as React.ReactElement<any>,
             {},
-            childString.replace(/^\[WARNING\]\s*/, ""),
+            childString.split("\n").slice(1).join("\n"),
+          );
+          content = [childrenArray[0], newChild, ...childrenArray.slice(2)];
+        } else if (childString.startsWith("[NEW]")) {
+          type = "new";
+          title = childString.split("\n")[0].replace("[NEW]", "");
+          const newChild = React.cloneElement(
+            childrenArray[1] as React.ReactElement<any>,
+            {},
+            childString.split("\n").slice(1).join("\n"),
           );
           content = [childrenArray[0], newChild, ...childrenArray.slice(2)];
         }
       }
 
       let typeClass = "";
-      if (type === "info") typeClass = "border-blue bg-blue/5 text-blue!";
+      if (type === "info")
+        typeClass =
+          "border-blue bg-blue/5 text-blue! selection:bg-blue! selection:text-black";
       if (type === "warning")
-        typeClass = "border-yellow bg-yellow/5 text-yellow!";
+        typeClass =
+          "border-yellow bg-yellow/5 text-yellow! selection:bg-yellow selection:text-black";
+      if (type === "new")
+        typeClass =
+          "border-mauve bg-mauve/5 text-mauve! selection:bg-mauve! selection:text-black";
 
       return (
         <blockquote
@@ -166,8 +186,8 @@ export function Mdx({ code, page }: MdxProps) {
             "mt-4 border-l-2 not-italic pl-6 py-2",
             typeClass ||
               (page === "blog"
-                ? "border-teal bg-teal/5 text-teal"
-                : "border-green bg-green/5 text-green"),
+                ? "border-teal bg-teal/5 text-teal selection:bg-teal selection:text-black"
+                : "border-green bg-green/5 text-green selection:bg-green selection:text-black"),
             className,
           )}
           {...props}
@@ -181,6 +201,12 @@ export function Mdx({ code, page }: MdxProps) {
           {type === "warning" && (
             <span className="flex gap-2 items-center">
               <TriangleAlertIcon />
+              {title}
+            </span>
+          )}
+          {type === "new" && (
+            <span className="flex gap-2 items-center">
+              <FlameIcon />
               {title}
             </span>
           )}

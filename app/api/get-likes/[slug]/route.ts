@@ -13,7 +13,7 @@ export async function GET(request: Request) {
       console.error("failed to load env supabase variables");
       return NextResponse.json(
         { msg: "failed to load env variables" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -34,7 +34,7 @@ export async function GET(request: Request) {
           dislikes: 0,
           message: "Failed to retrieve likes from DB",
         },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
@@ -43,7 +43,7 @@ export async function GET(request: Request) {
         likes: data.likes,
         dislikes: data.dislikes,
       },
-      { status: 200 }
+      { status: 200 },
     );
   } catch (e) {
     console.error("Failed to fetch likes: " + e);
@@ -53,7 +53,7 @@ export async function GET(request: Request) {
         dislikes: -1,
         message: "Failed to fetch likes",
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
