@@ -11,15 +11,17 @@ export default function Error({
 }) {
   console.error(error);
   return (
-    <div className="w-full h-full bg-base text-hover flex flex-col items-center justify-center">
-      <h2 className="font-bold text-2xl">Something went wrong!</h2>
-      <div className="w-fit h-fit bg-mantle p-2 px-4 rounded-xl flex flex-col sm:flex-row gap-4 items-center justify-center">
-        <button onClick={() => reset()} className="text-text hover:text-hover">
-          Try again
-        </button>
-        <Link href="/" className="text-text hover:text-hover">
-          Home
-        </Link>
+    <div className="w-full h-full bg-base flex flex-col items-center justify-center">
+      <div className="text-text bg-mantle border-2 border-text/60 rounded-2xl p-8 px-12 flex flex-col items-center justify-center gap-6">
+        <h2 className="font-bold text-2xl">Something went wrong!</h2>
+        <div className="w-full h-fit flex gap-4 items-center justify-center">
+          <button onClick={() => reset()} className="bg-text hover:bg-subtext p-2 px-4 rounded-lg text-crust font-bold w-full text-center cursor-pointer">
+            Try again
+          </button>
+          <Link href="/" className="bg-text hover:bg-subtext p-2 px-4 rounded-lg text-crust font-bold w-full text-center">
+            Home
+          </Link>
+        </div>
       </div>
     </div>
   );
