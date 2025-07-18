@@ -53,7 +53,7 @@ export default async function PostPage({ params }: Props) {
             "px-4 py-12 mx-auto text-text hover:text-hover duration-1000 text-lg font-bold prose prose-quoteless selection:text-black selection:bg-green"
           }
         >
-          <Mdx code={project.body.code} />
+          <Mdx code={project.body.code} page="project" />
         </article>
       </div>
     </div>
