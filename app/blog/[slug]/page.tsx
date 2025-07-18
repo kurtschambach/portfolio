@@ -79,9 +79,9 @@ export default async function ArticlePage({ params }: Props) {
           {article.title}
         </span>
       </div>
-      <div className="h-full w-full overflow-y-scroll scrollbar-thin p-4 bg-mantle">
-        <div className="group relative w-[80dvw] max-w-5xl mx-auto h-full">
-          <div className="lg:absolute top-2 w-full lg:w-fit pl-0 sm:pl-4 lg:pl-0 right-2 flex flex-row lg:flex-col gap-2 items-center lg:justify-center">
+      <div className="h-full w-full overflow-y-scroll p-4 bg-mantle relative">
+        <div className="group w-[80dvw] max-w-5xl mx-auto h-full">
+          <div className="lg:absolute top-16 right-6">
             <FullScreenSwitch />
           </div>
           <article
