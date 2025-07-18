@@ -1,22 +1,6 @@
 @import "tailwindcss";
 
 @layer base {
-  :root {
-    --color-text: #1e1e2e;
-    --color-subtext: #45475a;
-    --color-base: #f5e0dc;
-    --color-mantle: #fab387;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --color-text: #cdd6f4;
-      --color-subtext: #a6adc8;
-      --color-base: #1e1e2e;
-      --color-mantle: #181825;
-    }
-  }
-
   .text-edge-outline {
     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
   }
@@ -37,12 +21,12 @@ a:hover {
 }
 
 ::selection {
-  color: var(--color-accent);
+  color: #fab387;
   background-color: #171717;
 }
 
 ::-moz-selection {
-  color: var(--color-accent);
+  color: #fab387;
   background-color: #171717;
 }
 
