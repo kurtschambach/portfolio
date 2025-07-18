@@ -1,6 +1,6 @@
 import React from "react";
 import GithubSection from "@/components/sections/github-section";
-import InfoSection from "@/components/info-section";
+import InfoSection from "@/components/sections/info-section";
 import ContactSection from "@/components/sections/contact-section";
 import BlogSection from "@/components/sections/blog-section";
 import SnapScrollContainer from "@/components/snap-scroll-container";

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Block } from "./block";
+import { Block } from "../block";
 
 const InfoSection = () => {
   return (
