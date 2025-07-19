@@ -6,7 +6,7 @@ export const revalidate = 60;
 
 export default async function Blog() {
   const sorted = allArticles
-    .filter((p) => p.published)
+    .filter((article) => article.published)
     .sort(
       (a, b) =>
         new Date(b.date ?? Number.POSITIVE_INFINITY).getTime() -

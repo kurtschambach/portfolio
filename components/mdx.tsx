@@ -147,7 +147,7 @@ export function Mdx({ code, page }: MdxProps) {
             {},
             childString.split("\n").slice(1).join("\n"),
           );
-          content = [childrenArray[0], newChild, ...childrenArray.slice(2)];
+          content = [newChild, ...childrenArray.slice(2)];
         } else if (childString.startsWith("[WARNING]")) {
           type = "warning";
           title = childString.split("\n")[0].replace("[WARNING]", "");
@@ -156,7 +156,7 @@ export function Mdx({ code, page }: MdxProps) {
             {},
             childString.split("\n").slice(1).join("\n"),
           );
-          content = [childrenArray[0], newChild, ...childrenArray.slice(2)];
+          content = [newChild, ...childrenArray.slice(2)];
         } else if (childString.startsWith("[NEW]")) {
           type = "new";
           title = childString.split("\n")[0].replace("[NEW]", "");
@@ -165,7 +165,22 @@ export function Mdx({ code, page }: MdxProps) {
             {},
             childString.split("\n").slice(1).join("\n"),
           );
-          content = [childrenArray[0], newChild, ...childrenArray.slice(2)];
+          content = [newChild, ...childrenArray.slice(2)];
+        }
+      }
+
+      let contentWithKeys = content;
+
+      if (Array.isArray(content)) {
+        console.log("isArray", content)
+        contentWithKeys = content.map((child, idx) =>
+          React.isValidElement(child)
+            ? React.cloneElement(child, { key: idx })
+            : child,
+        )
+
+        if (contentWithKeys?.toString().trim() === "") {
+          contentWithKeys === undefined;
         }
       }
 
@@ -210,13 +225,7 @@ export function Mdx({ code, page }: MdxProps) {
               {title}
             </span>
           )}
-          {Array.isArray(content)
-            ? content.map((child, idx) =>
-                React.isValidElement(child)
-                  ? React.cloneElement(child, { key: idx })
-                  : child,
-              )
-            : content}
+          {contentWithKeys}
         </blockquote>
       );
     },
@@ -261,7 +270,7 @@ export function Mdx({ code, page }: MdxProps) {
     th: ({ className, ...props }: { className: string }) => (
       <th
         className={clsx(
-          "border border-subtext px-4 py-2 text-text bg-text text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right",
+          "border border-text px-4 py-2 text-crust bg-text text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right",
           className,
         )}
         {...props}
@@ -283,7 +292,7 @@ export function Mdx({ code, page }: MdxProps) {
       />
     ),
     strong: ({ className, ...props }: { className: string }) => (
-      <strong className={clsx("text-green font-bold", className)} {...props} />
+      <strong className={clsx("font-bold", page === "blog" ? "text-teal" : "text-green", className)} {...props} />
     ),
     code: ({ className, ...props }: { className: string }) => (
       <code

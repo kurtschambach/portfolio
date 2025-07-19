@@ -31,7 +31,7 @@ export default async function ProjectsPage() {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 xl:mt-8">
           <Link
             href={`/projects/${featured.slug}`}
-            className="hover:no-underline bg-base text-text rounded-2xl"
+            className="hover:no-underline bg-mantle text-text border-2 border-green rounded-2xl"
           >
             <div className="relative w-full h-full p-4 md:p-8">
               <div className="flex items-center justify-between gap-2">

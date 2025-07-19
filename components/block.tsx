@@ -9,7 +9,7 @@ export const Block = ({
   className?: string;
 }) => {
   const styles = cn(
-    "group text-start w-dvw h-fit snap-center text-crust flex items-center justify-center",
+    "group text-start w-dvw h-fit snap-center text-crust flex items-center justify-center selection:bg-black",
     className,
   );
 

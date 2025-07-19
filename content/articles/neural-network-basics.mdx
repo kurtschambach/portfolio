@@ -69,6 +69,7 @@ to the dendrites or synapses of other neurons.
 
 The Soma is the centrum of the neuron, it's the place where all the input signal are collected, 
 and where the output signal starts, when the input signals crosses a specific value.
+(A little bit simplifing biological facts)
 
 ## First Models of Neurons
 
@@ -113,7 +114,7 @@ or `1` (=`true`)).
 
 
 > This is still quite a simple and minimalistic perceptron.
-> For more information please see: [What the hell is Perceptron?](https://towardsdatascience.com/what-the-hell-is-perceptron-626217814f53)
+> For further reading you can check out: [What the hell is Perceptron?](https://towardsdatascience.com/what-the-hell-is-perceptron-626217814f53)
 
 ---
 
@@ -190,7 +191,7 @@ the number of input signals (`0`) is bigger or equal to the threshold (`0`).
 Here we'll run into a problem. This logic gate is not solveable with a perceptron.
 
 Actually, this can be shown graphically.  
-*(green (pink) dot -> return `true`; red (cyan) -> `false`)*
+*(green dot -> return `true`; red -> `false`)*
 
 ![perceptron graphical logic gates](/blog-images/perceptron-graphical.png)
 
@@ -203,7 +204,7 @@ can be solved with a finite number of perceptrons.
 
 As you could see, we have set the thresholds manually in the examples. 
 This is our next problem: getting the threshold values right for every singel perceptron.
-(usually they additionally have weights, and an activation function, see the link at the begining).
+(usually they additionally have weights, and an activation function).
 
 With bigger NN (a few million/billion neurons) this is very hard (=not possible), and that's why NNs need to be trained. 
 During the training, they adjust the thresholds (i.e. we don't do this manually anymore), to get better and better results.
@@ -211,16 +212,13 @@ During the training, they adjust the thresholds (i.e. we don't do this manually 
 > Little side note for those who don't know how an NN is trained:
 >
 > You take data and label it (i.e. you match every data entry with the right solution).
-> As we need much of this data, our only hope is that someone else has already done this 
+> As we need much of this data, our only hope is usually that someone else has already done this 
 > (more about this when we come to MNIST). 
 >
 > Now we'll give the NN one data entry, and it will generate probabilities for all possbile solutions.
 > It will suggest the most probable solution as the correct one.
-> We compare this suggestion with the corresponding label, and tell the NN whether it was right or wrong.
+> We compare this suggestion with the corresponding label, and tell the NN whether it was right or wrong.  
 > Based on this, the NN adjusts the thresholds (using backpropagation, we will learn about this in a extra article).
-> All this happens automatically, i.e. *we* don't really *tell* the NN if it's wrong, not manually.
->
-> In the End, if we wanna do it right (yes we want), we evaluate the NN with data it has never seen during it's training (we'll see later why).
 
 Now that we know how a NN is learning, let's compare that to our brain real quick:
 
