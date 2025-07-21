@@ -16,7 +16,7 @@ const InfoSection = () => {
             href="https://www.titanom.com"
             className="underline text-crust"
           >
-            Titanom Technologies
+            Titanom Solutions
           </Link>
           .
         </h1>
