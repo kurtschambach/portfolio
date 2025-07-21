@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: article.title,
     description: article.description,
-    keywords: [article.topic, "blog", "article"],
+    keywords: [...article.topic.split(" "), "blog", "article"],
     authors: [{ name: "Kurt Schambach" }],
     openGraph: {
       title: article.title,

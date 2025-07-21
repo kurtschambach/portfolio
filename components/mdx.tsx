@@ -112,120 +112,114 @@ export function Mdx({ code, page }: MdxProps) {
       children,
       ...props
     }: { className?: string; children: React.ReactNode }) => {
-      let type: "info" | "warning" | "new" | "default" = "default";
-      let title: string = "";
-      let content = children;
-
-      const childrenArray = children as React.ReactNode[];
-
-      if (
-        Array.isArray(childrenArray) &&
-        childrenArray[1] !== undefined &&
-        React.isValidElement(childrenArray[1]) &&
-        typeof (childrenArray[1] as React.ReactElement<any>).props.children ===
-          "string" &&
-        ((
-          (childrenArray[1] as React.ReactElement<any>).props.children as string
-        ).startsWith("[INFO]") ||
-          (
-            (childrenArray[1] as React.ReactElement<any>).props
-              .children as string
-          ).startsWith("[WARNING]") ||
-          (
-            (childrenArray[1] as React.ReactElement<any>).props
-              .children as string
-          ).startsWith("[NEW]"))
-      ) {
-        const childString = (childrenArray[1] as React.ReactElement<any>).props
-          .children as string;
-
-        if (childString.startsWith("[INFO]")) {
-          type = "info";
-          title = childString.split("\n")[0].replace("[INFO]", "");
-          const newChild = React.cloneElement(
-            childrenArray[1] as React.ReactElement<any>,
-            {},
-            childString.split("\n").slice(1).join("\n"),
-          );
-          content = [newChild, ...childrenArray.slice(2)];
-        } else if (childString.startsWith("[WARNING]")) {
-          type = "warning";
-          title = childString.split("\n")[0].replace("[WARNING]", "");
-          const newChild = React.cloneElement(
-            childrenArray[1] as React.ReactElement<any>,
-            {},
-            childString.split("\n").slice(1).join("\n"),
-          );
-          content = [newChild, ...childrenArray.slice(2)];
-        } else if (childString.startsWith("[NEW]")) {
-          type = "new";
-          title = childString.split("\n")[0].replace("[NEW]", "");
-          const newChild = React.cloneElement(
-            childrenArray[1] as React.ReactElement<any>,
-            {},
-            childString.split("\n").slice(1).join("\n"),
-          );
-          content = [newChild, ...childrenArray.slice(2)];
+      const typeConfigs = {
+        info: {
+          prefix: "[INFO]",
+          icon: <InfoIcon />,
+          className: "border-blue bg-blue/5 text-blue! selection:bg-blue! selection:text-black"
+        },
+        warning: {
+          prefix: "[WARNING]",
+          icon: <TriangleAlertIcon />,
+          className: "border-yellow bg-yellow/5 text-yellow! selection:bg-yellow selection:text-black"
+        },
+        new: {
+          prefix: "[NEW]",
+          icon: <FlameIcon />,
+          className: "border-mauve bg-mauve/5 text-mauve! selection:bg-mauve! selection:text-black"
         }
-      }
-
-      let contentWithKeys = content;
-
-      if (Array.isArray(content)) {
-        console.log("isArray", content)
-        contentWithKeys = content.map((child, idx) =>
-          React.isValidElement(child)
-            ? React.cloneElement(child, { key: idx })
-            : child,
-        )
-
-        if (contentWithKeys?.toString().trim() === "") {
-          contentWithKeys === undefined;
+      };
+    
+      type BlockquoteType = keyof typeof typeConfigs;
+    
+      const extractTypeInfo = (children: React.ReactNode) => {
+        const childrenArray = children as React.ReactNode[];
+        if (!Array.isArray(childrenArray) || !childrenArray[1]) {
+          return { type: "default", title: "", content: children };
         }
-      }
-
-      let typeClass = "";
-      if (type === "info")
-        typeClass =
-          "border-blue bg-blue/5 text-blue! selection:bg-blue! selection:text-black";
-      if (type === "warning")
-        typeClass =
-          "border-yellow bg-yellow/5 text-yellow! selection:bg-yellow selection:text-black";
-      if (type === "new")
-        typeClass =
-          "border-mauve bg-mauve/5 text-mauve! selection:bg-mauve! selection:text-black";
-
+    
+        const secondChild = childrenArray[1];
+        if (
+          !React.isValidElement(secondChild) ||
+          typeof (secondChild.props as any)?.children !== "string"
+        ) {
+          return { type: "default", title: "", content: children };
+        }
+    
+        const childString = (secondChild.props as any).children as string;
+        for (const [typeName, config] of Object.entries(typeConfigs)) {
+          if (childString.startsWith(config.prefix)) {
+            const lines = childString.split("\n");
+            const title = lines[0].replace(config.prefix, "").trim();
+            const remainingContent = lines.slice(1).join("\n");
+            
+            // Only create new child if there's actual content
+            const content = [];
+            if (remainingContent.trim()) {
+              const newChild = React.cloneElement(secondChild, {}, remainingContent);
+              content.push(newChild);
+            }
+            content.push(...childrenArray.slice(2));
+            
+            return { type: typeName as keyof typeof typeConfigs, title, content };
+          }
+        }
+        return { type: "default", title: "", content: children };
+      };
+    
+      const { type, title, content } = extractTypeInfo(children);
+    
+      const processContent = (content: React.ReactNode) => {
+        if (!Array.isArray(content)) return content;
+        
+        const contentWithKeys = content
+          .map((child, idx) =>
+            React.isValidElement(child) ? React.cloneElement(child, { key: idx }) : child
+          )
+          .filter((child) => {
+            if (React.isValidElement(child)) {
+              const props = child.props as any;
+              if (props?.children === "" || 
+                  (typeof props?.children === "string" && props.children.trim() === "")) {
+                return false;
+              }
+            }
+            if (typeof child === "string") {
+              return child.trim() !== "";
+            }
+            return child != null;
+          });
+    
+        return contentWithKeys.length === 0 ? undefined : contentWithKeys;
+      };
+    
+      const processedContent = processContent(content);
+    
+      const getTypeClassName = () => {
+        if (type !== "default" && type in typeConfigs) {
+          return typeConfigs[type as BlockquoteType].className;
+        }
+        return page === "blog"
+          ? "border-teal bg-teal/5 text-teal selection:bg-teal selection:text-black"
+          : "border-green bg-green/5 text-green selection:bg-green selection:text-black";
+      };
+    
       return (
         <blockquote
           className={clsx(
             "mt-4 border-l-2 not-italic pl-6 py-2",
-            typeClass ||
-              (page === "blog"
-                ? "border-teal bg-teal/5 text-teal selection:bg-teal selection:text-black"
-                : "border-green bg-green/5 text-green selection:bg-green selection:text-black"),
-            className,
+            getTypeClassName(),
+            className
           )}
           {...props}
         >
-          {type === "info" && (
+          {type !== "default" && (
             <span className="flex gap-2 items-center">
-              <InfoIcon />
+              {typeConfigs[type as BlockquoteType].icon}
               {title}
             </span>
           )}
-          {type === "warning" && (
-            <span className="flex gap-2 items-center">
-              <TriangleAlertIcon />
-              {title}
-            </span>
-          )}
-          {type === "new" && (
-            <span className="flex gap-2 items-center">
-              <FlameIcon />
-              {title}
-            </span>
-          )}
-          {contentWithKeys}
+          {processedContent}
         </blockquote>
       );
     },
