@@ -44,13 +44,14 @@ const Navigation = ({ className }: { className?: string }) => {
           )}
           <ul className="hidden md:flex items-center justify-center gap-8">
             {navigation.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-xl font-bold font-plex duration-500 hover:underline decoration-2"
-              >
-                {item.name}
-              </Link>
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  className="text-xl font-bold font-plex duration-500 hover:underline decoration-2"
+                >
+                  {item.name}
+                </Link>
+              </li>
             ))}
           </ul>
           <div
