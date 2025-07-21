@@ -14,21 +14,21 @@ const ColorHeader: React.FC<{ children: React.ReactNode; topic: string }> = ({
   switch (topic) {
     case "Customization": {
       return (
-        <div className="flex flex-row items-center justify-between h-16 w-full bg-blue text-black border-b-2 border-blue rounded-t-xl px-8">
+        <div className="flex flex-row items-center justify-between h-14 w-full bg-crust text-text border-b-2 border-teal rounded-t-xl px-8">
           {children}
         </div>
       );
     }
     case "AI": {
       return (
-        <div className="flex flex-row items-center justify-between h-16 w-full bg-black text-text border-b-2 border-black rounded-t-xl px-4 md:px-8">
+        <div className="flex flex-row items-center justify-between h-14 w-full bg-crust text-text border-b-2 border-overlay rounded-t-xl px-4 md:px-8">
           {children}
         </div>
       );
     }
     default: {
       return (
-        <div className="flex flex-row items-center justify-between h-16 w-full bg-crust text-text border-b-2 border-teal rounded-t-xl px-8">
+        <div className="flex flex-row items-center justify-between h-14 w-full bg-crust text-text border-b-2 border-teal rounded-t-xl px-8">
           {children}
         </div>
       );
@@ -40,7 +40,7 @@ export const Article: React.FC<Props> = ({ article }) => {
   return (
     <Link
       href={`/blog/${article.slug}`}
-      className="group w-full sm:w-[396px] h-fit sm:h-80 bg-mantle rounded-2xl hover:no-underline"
+      className="group w-full sm:w-[396px] h-fit sm:h-72 bg-mantle rounded-2xl hover:no-underline"
     >
       <article className="h-fit sm:h-72 w-full">
         <ColorHeader topic={article.topic}>
@@ -55,10 +55,10 @@ export const Article: React.FC<Props> = ({ article }) => {
               <span>SOON</span>
             )}
           </span>
-          <span className="hidden sm:block text-xs duration-300 group-hover:bg-blue group-hover:text-black rounded-md p-1 px-3">
+          <span className="hidden sm:block text-xs duration-300 group-hover:bg-teal group-hover:text-black rounded-md p-1 px-3">
             {readingTime(`${article.body.code}`).text}
           </span>
-          <span className="block sm:hidden text-xs duration-300 group-hover:bg-blue group-hover:text-black rounded-md p-1 px-3">
+          <span className="block sm:hidden text-xs duration-300 group-hover:bg-teal group-hover:text-black rounded-md p-1 px-3">
             {readingTime(`${article.body.code}`).minutes}m
           </span>
         </ColorHeader>
@@ -66,7 +66,7 @@ export const Article: React.FC<Props> = ({ article }) => {
           <h2 className="z-20 text-xl font-medium duration-300 lg:text-3xl text-text font-display">
             {article.title}
           </h2>
-          <p className="z-20 mt-4 text-base font-bold duration-300 text-subtext block">
+          <p className="z-20 mt-4 font-bold duration-300 text-subtext block">
             {article.description}
           </p>
         </div>

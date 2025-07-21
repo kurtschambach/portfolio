@@ -9,13 +9,13 @@ body:
       value: "**Thanks for taking the time to fill out this issue!**"
   - type: textarea
     attributes:
-      label: Where did you find the mistake
-      placeholder: e.g. "in the introduction blog article, the word helpfull" or a link
+      label: The misspelled word
+      placeholder: e.g. "helpfull"
     validations:
       required: true
   - type: textarea
     attributes:
-      label: Correct spelling
+      label: Correct spelling (optional)
       placeholder: e.g. "helpful"
     validations:
       required: false
