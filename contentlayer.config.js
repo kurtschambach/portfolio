@@ -108,7 +108,7 @@ export default makeSource({
         rehypePrettyCode,
         {
           theme: JSON.parse(
-            fs.readFileSync("./themes/andromeda.json", "utf-8"),
+            fs.readFileSync("./themes/catppuccin-mocha.json", "utf-8"),
           ),
           onVisitLine(node) {
             // Prevent lines from collapsing in `display: grid` mode, and allow empty
