@@ -15,7 +15,9 @@ type Props = {
 export const Header: React.FC<Props> = ({ project }) => {
   const links: { label: "Repo" | "Live"; href: string }[] = [];
   if (project.repo) {
-    const repoLink = project.repo.includes("/") ? `https://github.com/${project.repo}` : `https://github.com/kurtschambach/${project.repo}`
+    const repoLink = project.repo.includes("/")
+      ? `https://github.com/${project.repo}`
+      : `https://github.com/kurtschambach/${project.repo}`;
     links.push({
       label: "Repo",
       href: repoLink,
@@ -44,7 +46,12 @@ export const Header: React.FC<Props> = ({ project }) => {
           <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
             <div className="grid grid-cols-1 gap-y-6 gap-x-8 text-subtext text-sm leading-7 sm:grid-cols-2 md:flex lg:gap-x-10">
               {links.map((link) => (
-                <Link target="_blank" key={link.label} href={link.href} className="flex items-center gap-1.5 hover:underline">
+                <Link
+                  target="_blank"
+                  key={link.label}
+                  href={link.href}
+                  className="flex items-center gap-1.5 hover:underline"
+                >
                   {link.label === "Repo" ? (
                     <Github size={16} />
                   ) : (

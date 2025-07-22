@@ -4,6 +4,7 @@ import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import fs from "node:fs";
+import { HashIcon } from "lucide-react";
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {
@@ -132,7 +133,11 @@ export default makeSource({
             className: ["subheading-anchor"],
             ariaLabel: "Link to section",
           },
-          behavior: "wrap",
+          headingProperties: {
+            className: ["subheading"],
+          },
+          content: { type: "text", value: "#" },
+          behavior: "prepend",
         },
       ],
     ],

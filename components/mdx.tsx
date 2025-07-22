@@ -19,7 +19,7 @@ export function Mdx({ code, page }: MdxProps) {
     h1: ({ className, ...props }: { className: string }) => (
       <h1
         className={clsx(
-          "not-first:mt-16 scroll-m-20 text-4xl font-bold tracking-tight text-text",
+          "not-first:mt-16 scroll-m-20 text-4xl font-bold tracking-tight text-text group/heading",
           className,
         )}
         {...props}
@@ -28,7 +28,7 @@ export function Mdx({ code, page }: MdxProps) {
     h2: ({ className, ...props }: { className: string }) => (
       <h2
         className={clsx(
-          "mt-12 scroll-m-20 underline text-text pb-1 text-3xl font-semibold tracking-tight first:mt-0",
+          "mt-12 scroll-m-10 underline text-text pb-1 text-3xl font-semibold tracking-tight first:mt-0 group/heading",
           className,
         )}
         {...props}
@@ -37,7 +37,7 @@ export function Mdx({ code, page }: MdxProps) {
     h3: ({ className, ...props }: { className: string }) => (
       <h3
         className={clsx(
-          "mt-8 scroll-m-20 text-2xl text-text font-semibold tracking-tight",
+          "mt-8 scroll-m-10 text-2xl text-text font-semibold tracking-tight group/heading",
           className,
         )}
         {...props}
@@ -46,7 +46,7 @@ export function Mdx({ code, page }: MdxProps) {
     h4: ({ className, ...props }: { className: string }) => (
       <h4
         className={clsx(
-          "mt-8 scroll-m-20 text-xl text-text font-semibold tracking-tight",
+          "mt-8 scroll-m-10 text-xl text-text font-semibold tracking-tight group/heading",
           className,
         )}
         {...props}
@@ -55,7 +55,7 @@ export function Mdx({ code, page }: MdxProps) {
     h5: ({ className, ...props }: { className: string }) => (
       <h5
         className={clsx(
-          "mt-8 scroll-m-20 text-lg text-text font-semibold tracking-tight",
+          "mt-8 scroll-m-10 text-lg text-text font-semibold tracking-tight group/heading",
           className,
         )}
         {...props}
@@ -64,7 +64,7 @@ export function Mdx({ code, page }: MdxProps) {
     h6: ({ className, ...props }: { className: string }) => (
       <h6
         className={clsx(
-          "mt-8 scroll-m-20 text-text font-semibold tracking-tight",
+          "mt-8 scroll-m-10 text-text font-semibold tracking-tight group/heading",
           className,
         )}
         {...props}

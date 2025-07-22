@@ -66,7 +66,7 @@ export default function SnapScrollContainer({
         className={cn(
           "transition-colors duration-500 selection:bg-black",
           classNameMap[activeSection],
-          selectTextMap[activeSection]
+          selectTextMap[activeSection],
         )}
       />
       <div
