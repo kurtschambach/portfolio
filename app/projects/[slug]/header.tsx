@@ -1,3 +1,4 @@
+import { ExternalLink, Github } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
@@ -5,23 +6,23 @@ type Props = {
   project: {
     title: string;
     description: string;
-    repository?: string;
+    repo?: string;
     url?: string;
     image?: string;
   };
 };
 
 export const Header: React.FC<Props> = ({ project }) => {
-  const links: { label: string; href: string }[] = [];
-  if (project.repository) {
+  const links: { label: "Repo" | "Live"; href: string }[] = [];
+  if (project.repo) {
     links.push({
-      label: "GitHub",
-      href: `https://github.com/${project.repository}`,
+      label: "Repo",
+      href: `https://github.com/${project.repo}`,
     });
   }
   if (project.url) {
     links.push({
-      label: "Website",
+      label: "Live",
       href: project.url,
     });
   }
@@ -42,8 +43,13 @@ export const Header: React.FC<Props> = ({ project }) => {
           <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
             <div className="grid grid-cols-1 gap-y-6 gap-x-8 text-subtext text-sm leading-7 sm:grid-cols-2 md:flex lg:gap-x-10">
               {links.map((link) => (
-                <Link target="_blank" key={link.label} href={link.href}>
-                  {link.label} <span aria-hidden="true">&rarr;</span>
+                <Link target="_blank" key={link.label} href={link.href} className="flex items-center gap-1.5 hover:underline">
+                  {link.label === "Repo" ? (
+                    <Github size={16} />
+                  ) : (
+                    <ExternalLink size={16} />
+                  )}
+                  {link.label}
                 </Link>
               ))}
             </div>
