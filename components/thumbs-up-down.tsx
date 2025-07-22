@@ -56,7 +56,7 @@ const ThumbsUpDown = ({ articleSlug }: { articleSlug: string }) => {
           className={`${
             alreadyVoted
               ? "opacity-50 cursor-default scale-75 origin-bottom-right border-none px-0"
-              : "h-fit"
+              : "h-fit cursor-pointer"
           } origin-bottom bg-transparent border-2 border-teal/60 hover:border-teal text-teal/60 hover:text-teal font-bold p-2 rounded-lg duration-500`}
         >
           <ThumbsUp />
@@ -69,7 +69,7 @@ const ThumbsUpDown = ({ articleSlug }: { articleSlug: string }) => {
           className={`${
             alreadyVoted
               ? "opacity-50 cursor-default scale-75 origin-bottom-left border-none px-0"
-              : "h-fit"
+              : "h-fit cursor-pointer"
           } origin-bottom bg-transparent border-2 border-error/60 hover:border-error text-error/60 hover:text-error font-bold p-2 rounded-lg duration-500`}
         >
           <ThumbsDown />

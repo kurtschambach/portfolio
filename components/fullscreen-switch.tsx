@@ -50,7 +50,7 @@ const FullScreenSwitch = () => {
   return (
     <button
       onClick={handleFullScreen}
-      className="bg-transparent border-2 border-sapphire/60 hover:border-sapphire text-sapphire/60 hover:text-sapphire font-bold p-2 rounded-lg duration-500"
+      className="bg-transparent cursor-pointer border-2 border-sapphire/60 hover:border-sapphire text-sapphire/60 hover:text-sapphire font-bold p-2 rounded-lg duration-500"
     >
       {isFullScreen ? <Minimize /> : <Maximize />}
     </button>
