@@ -15,9 +15,10 @@ type Props = {
 export const Header: React.FC<Props> = ({ project }) => {
   const links: { label: "Repo" | "Live"; href: string }[] = [];
   if (project.repo) {
+    const repoLink = project.repo.includes("/") ? `https://github.com/${project.repo}` : `https://github.com/kurtschambach/${project.repo}`
     links.push({
       label: "Repo",
-      href: `https://github.com/${project.repo}`,
+      href: repoLink,
     });
   }
   if (project.url) {
