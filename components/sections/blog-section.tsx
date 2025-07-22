@@ -36,9 +36,9 @@ const BlogSection = () => {
   });
 
   return (
-    <Block className="bg-teal selection:text-teal">
+    <Block className="bg-sapphire selection:text-sapphire">
       <div className="w-dvw 2xl:w-384 h-fit min-h-dvh p-24 flex flex-col item-center justify-center">
-        <h1 className="uppercase text-6xl text-teal bg-crust mb-24 w-fit p-1 px-2">
+        <h1 className="uppercase text-6xl text-sapphire bg-crust mb-24 w-fit p-1 px-2">
           #3 Blog
         </h1>
         <div className="grid grid-cols-3 gap-12">
@@ -83,7 +83,7 @@ const BlogSection = () => {
             </div>
             <Link
               href="/blog"
-              className="mt-8 inline-block bg-crust text-teal py-3 px-6 rounded-lg font-bold hover:bg-opacity-90 transition-colors"
+              className="mt-8 inline-block bg-crust text-sapphire py-3 px-6 rounded-lg font-bold hover:bg-opacity-90 transition-colors"
             >
               View All Articles
             </Link>
@@ -110,7 +110,7 @@ function ArticleCard({
       href={`/blog/${slug}`}
       className="bg-crust p-6 rounded-lg hover:shadow-lg transition-all"
     >
-      <h3 className="text-xl font-bold text-teal">{title}</h3>
+      <h3 className="text-xl font-bold text-sapphire">{title}</h3>
       <p className="text-subtext mt-2 line-clamp-2">{description}</p>
       {date && (
         <div className="flex items-center gap-2 mt-4 text-sm text-gray-500">
@@ -125,8 +125,8 @@ function ArticleCard({
 function CategoryTag({ name, count }: { name: string; count: number }) {
   return (
     <div className="flex items-center justify-between bg-base text-text rounded-lg p-px h-10">
-      <span className="font-semibold p-2 text-teal">{name}</span>
-      <span className="bg-teal text-crust w-fit px-3 h-full text-sm rounded-r-md flex items-center justify-center">
+      <span className="font-semibold p-2 text-sapphire">{name}</span>
+      <span className="bg-sapphire text-crust w-fit px-3 h-full text-sm rounded-r-md flex items-center justify-center">
         {count}
       </span>
     </div>

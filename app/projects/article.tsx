@@ -10,7 +10,7 @@ export const Article: React.FC<Props> = ({ project }) => {
   return (
     <Link
       href={`/projects/${project.slug}`}
-      className="hover:no-underline w-full h-full bg-mantle text-text border-2 border-green group rounded-2xl"
+      className="hover:no-underline w-full h-full bg-mantle text-text border-2 border-teal group rounded-2xl"
     >
       <article className="p-4 md:p-8">
         <div className="flex justify-between gap-2 items-center">
@@ -32,9 +32,9 @@ export const Article: React.FC<Props> = ({ project }) => {
               <h2 className="z-20 text-xl font-medium duration-300 lg:text-3xl no-wrap min-w-max text-hover font-display">
                 {project.title}
               </h2>
-              <div className="h-[2px] w-0 bg-linear-to-r from-green/0 to-transparent group-hover:w-full group-hover:to-green duration-700" />
+              <div className="h-[2px] w-0 bg-linear-to-r from-teal/0 to-transparent group-hover:w-full group-hover:to-teal duration-700" />
             </div>
-            <div className="rounded-full h-fit w-fit ring-2 ring-mantle group-hover:ring-green shadow-md shadow-crust group-hover:shadow-text duration-150 delay-300 ring-offset-2 ring-offset-crust">
+            <div className="rounded-full h-fit w-fit ring-2 ring-mantle group-hover:ring-teal shadow-md shadow-crust group-hover:shadow-text duration-150 delay-300 ring-offset-2 ring-offset-crust">
               <Image
                 width={36}
                 height={36}

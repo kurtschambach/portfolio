@@ -74,7 +74,7 @@ export function Mdx({ code, page }: MdxProps) {
       <a
         className={clsx(
           "font-medium underline",
-          page === "blog" ? "text-teal" : "text-green",
+          page === "blog" ? "text-sapphire" : "text-teal",
           className,
         )}
         {...props}
@@ -216,8 +216,8 @@ export function Mdx({ code, page }: MdxProps) {
           return typeConfigs[type as BlockquoteType].className;
         }
         return page === "blog"
-          ? "border-teal bg-teal/5 text-teal selection:bg-teal selection:text-black"
-          : "border-green bg-green/5 text-green selection:bg-green selection:text-black";
+          ? "border-sapphire bg-sapphire/5 text-sapphire selection:bg-sapphire selection:text-black"
+          : "border-teal bg-teal/5 text-teal selection:bg-teal selection:text-black";
       };
 
       return (
@@ -305,7 +305,7 @@ export function Mdx({ code, page }: MdxProps) {
       <strong
         className={clsx(
           "font-bold",
-          page === "blog" ? "text-teal" : "text-green",
+          page === "blog" ? "text-sapphire" : "text-teal",
           className,
         )}
         {...props}

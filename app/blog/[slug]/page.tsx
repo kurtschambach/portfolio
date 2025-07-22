@@ -86,7 +86,7 @@ export default async function ArticlePage({ params }: Props) {
           </div>
           <article
             className={
-              "px-0 sm:px-4 py-12 mx-auto text-text text-lg font-bold bg-inherit prose sm:prose-quoteless selection:text-black selection:bg-teal"
+              "px-0 sm:px-4 py-12 mx-auto text-text text-lg font-bold bg-inherit prose sm:prose-quoteless selection:text-black selection:bg-sapphire"
             }
           >
             {!article.published && (

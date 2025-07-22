@@ -7,9 +7,17 @@ import Navigation from "./navigation";
 const classNameMap: Record<number, string> = {
   0: "bg-mauve",
   1: "bg-blue",
-  2: "bg-teal",
-  3: "bg-green",
+  2: "bg-sapphire",
+  3: "bg-teal",
   4: "bg-yellow",
+};
+
+const selectTextMap: Record<number, string> = {
+  0: "selection:text-mauve",
+  1: "selection:text-blue",
+  2: "selection:text-sapphire",
+  3: "selection:text-teal",
+  4: "selection:text-yellow",
 };
 
 const sectionNameMap: Record<number, string> = {
@@ -56,8 +64,9 @@ export default function SnapScrollContainer({
     <div className="h-dvh w-dvw">
       <Navigation
         className={cn(
-          "transition-colors duration-500",
+          "transition-colors duration-500 selection:bg-black",
           classNameMap[activeSection],
+          selectTextMap[activeSection]
         )}
       />
       <div
@@ -111,15 +120,15 @@ const SectionTooltip = ({
         : "bg-crust border-subtext",
     ),
     2: cn(
-      "group-hover:border-teal",
+      "group-hover:border-sapphire",
       activeSection
-        ? "bg-teal grayscale-0 border-teal"
+        ? "bg-sapphire grayscale-0 border-sapphire"
         : "bg-crust border-subtext",
     ),
     3: cn(
-      "group-hover:border-green",
+      "group-hover:border-teal",
       activeSection
-        ? "bg-green grayscale-0 border-green"
+        ? "bg-teal grayscale-0 border-teal"
         : "bg-crust border-subtext",
     ),
     4: cn(

@@ -31,7 +31,7 @@ export default async function ProjectsPage() {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 xl:mt-8">
           <Link
             href={`/projects/${featured.slug}`}
-            className="hover:no-underline bg-mantle text-text border-2 border-green rounded-2xl"
+            className="hover:no-underline bg-mantle text-text border-2 border-teal rounded-2xl"
           >
             <div className="relative w-full h-full p-4 md:p-8">
               <div className="flex items-center justify-between gap-2">
@@ -58,9 +58,9 @@ export default async function ProjectsPage() {
                     >
                       {featured.title}
                     </h2>
-                    <div className="h-[2px] w-0 bg-linear-to-r from-green/0 to-transparent group-hover:w-full group-hover:to-green duration-700" />
+                    <div className="h-[2px] w-0 bg-linear-to-r from-teal/0 to-transparent group-hover:w-full group-hover:to-teal duration-700" />
                   </div>
-                  <div className="rounded-full h-fit w-fit ring-2 ring-mantle group-hover:ring-green shadow-md shadow-crust group-hover:shadow-text duration-150 delay-300 ring-offset-2 ring-offset-crust">
+                  <div className="rounded-full h-fit w-fit ring-2 ring-mantle group-hover:ring-teal shadow-md shadow-crust group-hover:shadow-text duration-150 delay-300 ring-offset-2 ring-offset-crust">
                     <Image
                       width={36}
                       height={36}

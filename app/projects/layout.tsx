@@ -6,7 +6,7 @@ export default function ProjectsLayout({
 }: { children: React.ReactNode }) {
   return (
     <div className="relative h-full max-h-dvh overflow-y-auto bg-base">
-      <Navigation className="bg-green" />
+      <Navigation className="bg-teal" />
       {children}
     </div>
   );

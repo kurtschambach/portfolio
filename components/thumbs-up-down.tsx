@@ -57,11 +57,11 @@ const ThumbsUpDown = ({ articleSlug }: { articleSlug: string }) => {
             alreadyVoted
               ? "opacity-50 cursor-default scale-75 origin-bottom-right border-none px-0"
               : "h-fit"
-          } origin-bottom bg-transparent border-2 border-green/60 hover:border-green text-green/60 hover:text-green font-bold p-2 rounded-lg duration-500`}
+          } origin-bottom bg-transparent border-2 border-teal/60 hover:border-teal text-teal/60 hover:text-teal font-bold p-2 rounded-lg duration-500`}
         >
           <ThumbsUp />
         </button>
-        <p className="text-xs text-green mr-1">{likes}</p>
+        <p className="text-xs text-teal mr-1">{likes}</p>
       </div>
       <div className="w-fit h-fit flex flex-col items-start justify-center gap-2">
         <button

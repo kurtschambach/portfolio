@@ -14,7 +14,7 @@ const ColorHeader: React.FC<{ children: React.ReactNode; topic: string }> = ({
   switch (topic) {
     case "Customization": {
       return (
-        <div className="flex flex-row items-center justify-between h-14 w-full bg-crust text-text border-b-2 border-teal rounded-t-xl px-8">
+        <div className="flex flex-row items-center justify-between h-14 w-full bg-crust text-text border-b-2 border-sapphire rounded-t-xl px-8">
           {children}
         </div>
       );
@@ -28,7 +28,7 @@ const ColorHeader: React.FC<{ children: React.ReactNode; topic: string }> = ({
     }
     default: {
       return (
-        <div className="flex flex-row items-center justify-between h-14 w-full bg-crust text-text border-b-2 border-teal rounded-t-xl px-8">
+        <div className="flex flex-row items-center justify-between h-14 w-full bg-crust text-text border-b-2 border-sapphire rounded-t-xl px-8">
           {children}
         </div>
       );
@@ -55,10 +55,10 @@ export const Article: React.FC<Props> = ({ article }) => {
               <span>SOON</span>
             )}
           </span>
-          <span className="hidden sm:block text-xs duration-300 group-hover:bg-teal group-hover:text-black rounded-md p-1 px-3">
+          <span className="hidden sm:block text-xs duration-300 group-hover:bg-sapphire group-hover:text-black rounded-md p-1 px-3">
             {readingTime(`${article.body.code}`).text}
           </span>
-          <span className="block sm:hidden text-xs duration-300 group-hover:bg-teal group-hover:text-black rounded-md p-1 px-3">
+          <span className="block sm:hidden text-xs duration-300 group-hover:bg-sapphire group-hover:text-black rounded-md p-1 px-3">
             {readingTime(`${article.body.code}`).minutes}m
           </span>
         </ColorHeader>

@@ -13,9 +13,9 @@ const ProjectsSection = () => {
   const featuredProjects = [featured, top2, top3].filter((p) => p);
 
   return (
-    <Block className="bg-green selection:text-green">
+    <Block className="bg-teal selection:text-teal">
       <div className="w-dvw 2xl:w-384 h-fit min-h-dvh p-24 flex flex-col item-center justify-center">
-        <h1 className="uppercase text-6xl text-green bg-crust mb-24 w-fit p-1 px-2">
+        <h1 className="uppercase text-6xl text-teal bg-crust mb-24 w-fit p-1 px-2">
           #4 Projects
         </h1>
         <div className="grid grid-cols-1 gap-8">
@@ -39,7 +39,7 @@ const ProjectsSection = () => {
                 description={project.description}
                 image={project.image}
                 slug={project.slug}
-                repository={project.repository}
+                repo={project.repo}
                 url={project.url}
               />
             ))}
@@ -47,7 +47,7 @@ const ProjectsSection = () => {
           <div className="mt-8 flex justify-center">
             <Link
               href="/projects"
-              className="bg-crust text-green py-3 px-8 rounded-lg font-bold hover:bg-opacity-90 transition-colors"
+              className="bg-crust text-teal py-3 px-8 rounded-lg font-bold hover:bg-opacity-90 transition-colors"
             >
               View All Projects
             </Link>
@@ -63,14 +63,14 @@ function ProjectCard({
   description,
   image,
   slug,
-  repository,
+  repo,
   url,
 }: {
   title: string;
   description: string;
   image?: string;
   slug: string;
-  repository?: string;
+  repo?: string;
   url?: string;
 }) {
   return (
@@ -79,25 +79,25 @@ function ProjectCard({
         {image ? (
           <img src={image} alt={title} className="w-full h-full object-cover" />
         ) : (
-          <Code2 size={64} className="text-green opacity-50" />
+          <Code2 size={64} className="text-teal opacity-50" />
         )}
       </div>
       <div className="p-6 flex flex-col h-48">
-        <h3 className="text-xl font-bold text-green">{title}</h3>
+        <h3 className="text-xl font-bold text-teal">{title}</h3>
         <p className="text-subtext mt-2 line-clamp-2">{description}</p>
         <div className="grow" />
         <div className="mt-6 flex gap-4">
           <Link
             href={`/projects/${slug}`}
-            className="bg-green text-crust py-2 px-4 rounded font-medium hover:bg-opacity-90 transition-colors text-sm"
+            className="bg-teal text-crust py-2 px-4 rounded font-medium hover:bg-opacity-90 transition-colors text-sm"
           >
             Details
           </Link>
-          {repository && (
+          {repo && (
             <Link
-              href={repository}
+              href={repo}
               target="_blank"
-              className="flex items-center gap-1 text-green hover:underline text-sm"
+              className="flex items-center gap-1 text-teal hover:underline text-sm"
             >
               <Github size={16} />
               Repo
@@ -107,7 +107,7 @@ function ProjectCard({
             <Link
               href={url}
               target="_blank"
-              className="flex items-center gap-1 text-green hover:underline text-sm"
+              className="flex items-center gap-1 text-teal hover:underline text-sm"
             >
               <ExternalLink size={16} />
               Live
