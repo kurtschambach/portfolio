@@ -116,28 +116,31 @@ export function Mdx({ code, page }: MdxProps) {
         info: {
           prefix: "[INFO]",
           icon: <InfoIcon />,
-          className: "border-blue bg-blue/5 text-blue! selection:bg-blue! selection:text-black"
+          className:
+            "border-blue bg-blue/5 text-blue! selection:bg-blue! selection:text-black",
         },
         warning: {
           prefix: "[WARNING]",
           icon: <TriangleAlertIcon />,
-          className: "border-yellow bg-yellow/5 text-yellow! selection:bg-yellow selection:text-black"
+          className:
+            "border-yellow bg-yellow/5 text-yellow! selection:bg-yellow selection:text-black",
         },
         new: {
           prefix: "[NEW]",
           icon: <FlameIcon />,
-          className: "border-mauve bg-mauve/5 text-mauve! selection:bg-mauve! selection:text-black"
-        }
+          className:
+            "border-mauve bg-mauve/5 text-mauve! selection:bg-mauve! selection:text-black",
+        },
       };
-    
+
       type BlockquoteType = keyof typeof typeConfigs;
-    
+
       const extractTypeInfo = (children: React.ReactNode) => {
         const childrenArray = children as React.ReactNode[];
         if (!Array.isArray(childrenArray) || !childrenArray[1]) {
           return { type: "default", title: "", content: children };
         }
-    
+
         const secondChild = childrenArray[1];
         if (
           !React.isValidElement(secondChild) ||
@@ -145,42 +148,55 @@ export function Mdx({ code, page }: MdxProps) {
         ) {
           return { type: "default", title: "", content: children };
         }
-    
+
         const childString = (secondChild.props as any).children as string;
         for (const [typeName, config] of Object.entries(typeConfigs)) {
           if (childString.startsWith(config.prefix)) {
             const lines = childString.split("\n");
             const title = lines[0].replace(config.prefix, "").trim();
             const remainingContent = lines.slice(1).join("\n");
-            
+
             // Only create new child if there's actual content
             const content = [];
             if (remainingContent.trim()) {
-              const newChild = React.cloneElement(secondChild, {}, remainingContent);
+              const newChild = React.cloneElement(
+                secondChild,
+                {},
+                remainingContent,
+              );
               content.push(newChild);
             }
             content.push(...childrenArray.slice(2));
-            
-            return { type: typeName as keyof typeof typeConfigs, title, content };
+
+            return {
+              type: typeName as keyof typeof typeConfigs,
+              title,
+              content,
+            };
           }
         }
         return { type: "default", title: "", content: children };
       };
-    
+
       const { type, title, content } = extractTypeInfo(children);
-    
+
       const processContent = (content: React.ReactNode) => {
         if (!Array.isArray(content)) return content;
-        
+
         const contentWithKeys = content
           .map((child, idx) =>
-            React.isValidElement(child) ? React.cloneElement(child, { key: idx }) : child
+            React.isValidElement(child)
+              ? React.cloneElement(child, { key: idx })
+              : child,
           )
           .filter((child) => {
             if (React.isValidElement(child)) {
               const props = child.props as any;
-              if (props?.children === "" || 
-                  (typeof props?.children === "string" && props.children.trim() === "")) {
+              if (
+                props?.children === "" ||
+                (typeof props?.children === "string" &&
+                  props.children.trim() === "")
+              ) {
                 return false;
               }
             }
@@ -189,12 +205,12 @@ export function Mdx({ code, page }: MdxProps) {
             }
             return child != null;
           });
-    
+
         return contentWithKeys.length === 0 ? undefined : contentWithKeys;
       };
-    
+
       const processedContent = processContent(content);
-    
+
       const getTypeClassName = () => {
         if (type !== "default" && type in typeConfigs) {
           return typeConfigs[type as BlockquoteType].className;
@@ -203,13 +219,13 @@ export function Mdx({ code, page }: MdxProps) {
           ? "border-teal bg-teal/5 text-teal selection:bg-teal selection:text-black"
           : "border-green bg-green/5 text-green selection:bg-green selection:text-black";
       };
-    
+
       return (
         <blockquote
           className={clsx(
             "mt-4 border-l-2 not-italic pl-6 py-2",
             getTypeClassName(),
-            className
+            className,
           )}
           {...props}
         >
@@ -286,7 +302,14 @@ export function Mdx({ code, page }: MdxProps) {
       />
     ),
     strong: ({ className, ...props }: { className: string }) => (
-      <strong className={clsx("font-bold", page === "blog" ? "text-teal" : "text-green", className)} {...props} />
+      <strong
+        className={clsx(
+          "font-bold",
+          page === "blog" ? "text-teal" : "text-green",
+          className,
+        )}
+        {...props}
+      />
     ),
     code: ({ className, ...props }: { className: string }) => (
       <code

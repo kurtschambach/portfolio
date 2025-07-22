@@ -115,12 +115,13 @@ More info about fish: https://fishshell.com/
 Now just run `fish` in the terminal, and try out the auto-completion 
 and other features of fish, like improved reverse-search (Ctrl + R).
 
+> [INFO] Welcome message
+> 
+> If you want to customize the welcome message, 
+> you should be able to do so in `/etc/fish/config.fish`
+
 
 ## Some Gnome extensions
-
-![](/blog-images/user-extensions.png)
-
-"Blur my Shell" and "Rounded Window Corners Reborn" are the most important here for the look and feel.
 
 Gnome extensions are just small but very useful extensions for your Desktop.
 
@@ -132,6 +133,10 @@ sudo apt install gnome-shell-extension-manager
 You can search and view extension at [extensions.gnome](https://extensions.gnome.org/),
 and install them in the extension manager.
 
+![](/blog-images/user-extensions.png)
+
+"Blur my Shell" and "Rounded Window Corners Reborn" are the most important here for the look and feel.
+
 Optionally, to install extensions right away from the browser, 
 install the [gnome shell firefox addon](https://addons.mozilla.org/en-US/firefox/addon/gnome-shell-integration/),
 and run:
@@ -140,6 +145,7 @@ sudo apt install gnome-browser-connector
 ```
 
 Now you can use the install button at an extensions page.
+
 
 ## Some catppuccin themes for various apps
 
@@ -158,6 +164,18 @@ Starship is another improvement for your terminal.
 I have a older articel on [Starship](/blog/starship) which covers installation and configuration, 
 with a few versions of my configuration file at the end.  
 You can copy the one you like most, and configure it further if you want.
+
+
+## Conky
+
+The widgets in the background on the second image at the beginning are conky, 
+but my current setup has a little bug (visible in the image, the bars at storage & eth are missing),
+so I'll be fixing that, and probably adding some more widgets.
+
+If you want to try it out yourself, I installed it via `sudo apt-get install conky-all`,
+and you can get quite decent configs at [gnome-look](https://www.gnome-look.org/browse?cat=124).
+
+Otherwise, I'll be updating this as always when I'm done.
 
 
 ## Custom window close buttons
