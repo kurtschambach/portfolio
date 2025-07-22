@@ -13,9 +13,15 @@ I will (maybe) refactor this some day, don't have the time now, so don't expect 
 
 Install dependencies and run the development server:
 
-```sh-session
+```bash
 pnpm i
 pnpm dev
+```
+
+To get hot-reload on content changes too, run:
+
+```bash
+pnpm contentlayer2 dev
 ```
 
 create a .env with the following information:
