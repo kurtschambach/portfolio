@@ -9,8 +9,8 @@ export default async function ProjectsPage() {
   const featured = allProjects.find(
     (project) => project.slug === "nextjs-auth-template",
   )!;
-  const top2 = allProjects.find((project) => project.slug === "portfolio")!;
-  const top3 = allProjects.find((project) => project.slug === "userstyles")!;
+  const top2 = allProjects.find((project) => project.slug === "gith")!;
+  const top3 = allProjects.find((project) => project.slug === "portfolio")!;
   const sorted = allProjects
     .filter((p) => p.published)
     .filter(
