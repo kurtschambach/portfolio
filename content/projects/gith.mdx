@@ -1,0 +1,58 @@
+---
+title: Gith
+description: A command-line git helper
+repo: gith
+date: "2025-07-25"
+published: true
+appLogo: /project-logos/gith.png
+---
+
+
+![](/project-logos/gith.png)
+
+
+# Installation
+
+If you have Go installed already, you can skip to the [install gith](#install-gith) part.
+
+## Install go
+
+We will us [g](https://github.com/stefanmaric/g) here, 
+but you can use other version mangers like [another g](https://github.com/voidint/g) 
+or [gvm](https://github.com/moovweb/gvm) too if you'd like, even tough I only tested with the first one.
+
+To install Go, run:
+```bash
+curl -sSL https://git.io/g-install | sh -s
+# or
+wget -qO- https://git.io/g-install | sh -s
+```
+
+> [INFO] Multiple shells
+> 
+> You can configure multiple shells to add the environment variabls to if needed:
+> ```bash
+> curl -sSL https://git.io/g-install | sh -s -- fish bash zsh
+> ```
+> For more info see the [g README](https://github.com/stefanmaric/g?tab=readme-ov-file#shell-support)
+
+I am developing at Go version `1.24.5` so `1.24.x` should work, but the latest go version probably too.
+
+Now check Go is installed (you will have to restart you shell for that):
+```bash
+g list
+```
+
+## Install gith
+
+Now to install gith, you only have to run: 
+```bash
+go install github.com/kurtschambach/gith@latest
+```
+
+You should now be able to run gith:
+```bash
+gith
+```
+
+Enjoy :)
